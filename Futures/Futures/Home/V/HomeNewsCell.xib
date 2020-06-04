@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeNewsCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newsImg" translatesAutoresizingMaskIntoConstraints="NO" id="p5s-Zd-VWY" userLabel="NewsImgView">
+                        <rect key="frame" x="270" y="10" width="90" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="NbT-xW-wWb"/>
+                            <constraint firstAttribute="height" constant="55" id="paT-Ph-iae"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“隔离经济”来了!你在家隔离，这些行业 却迎来了新机会" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlP-mo-Fih" userLabel="ContentLabel">
+                        <rect key="frame" x="15.5" y="10" width="213" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="j4H-Mp-BW4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                        <color key="textColor" red="0.15294379" green="0.152936399" blue="0.15294143560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美国" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BA0-PL-wUE" userLabel="CountryLabel">
+                        <rect key="frame" x="15.5" y="56.5" width="35" height="8.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="EaU-fa-ieI"/>
+                            <constraint firstAttribute="height" constant="8.5" id="YUO-Lt-2y4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                        <color key="textColor" red="0.66667586570000004" green="0.66665023570000004" blue="0.66666758059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:27" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dO6-1j-aXa" userLabel="TimeLabel">
+                        <rect key="frame" x="60.5" y="56.5" width="35" height="8.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="94R-Dg-ZIS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                        <color key="textColor" red="0.66667586570000004" green="0.66665023570000004" blue="0.66666758059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2a-Jm-5v9" userLabel="BottomLineView">
+                        <rect key="frame" x="0.0" y="74.5" width="375" height="0.5"/>
+                        <color key="backgroundColor" red="0.91373777389999999" green="0.91370338200000001" blue="0.91372674700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="ReC-pM-LuS"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dO6-1j-aXa" firstAttribute="top" secondItem="BA0-PL-wUE" secondAttribute="top" id="3fI-sf-sJ3"/>
+                    <constraint firstItem="p5s-Zd-VWY" firstAttribute="leading" secondItem="UlP-mo-Fih" secondAttribute="trailing" constant="41.5" id="Boa-Xl-038"/>
+                    <constraint firstItem="dO6-1j-aXa" firstAttribute="bottom" secondItem="BA0-PL-wUE" secondAttribute="bottom" id="CiY-KF-xXJ"/>
+                    <constraint firstItem="UlP-mo-Fih" firstAttribute="top" secondItem="p5s-Zd-VWY" secondAttribute="top" id="CzR-Ot-sEf"/>
+                    <constraint firstItem="BA0-PL-wUE" firstAttribute="bottom" secondItem="p5s-Zd-VWY" secondAttribute="bottom" id="ISX-99-6cB"/>
+                    <constraint firstAttribute="bottom" secondItem="h2a-Jm-5v9" secondAttribute="bottom" id="LPa-qt-9Sp"/>
+                    <constraint firstItem="BA0-PL-wUE" firstAttribute="leading" secondItem="UlP-mo-Fih" secondAttribute="leading" id="Q8b-cH-bWB"/>
+                    <constraint firstItem="p5s-Zd-VWY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="cAa-VJ-jw5"/>
+                    <constraint firstItem="UlP-mo-Fih" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15.5" id="d4d-uW-nxP"/>
+                    <constraint firstItem="dO6-1j-aXa" firstAttribute="leading" secondItem="BA0-PL-wUE" secondAttribute="trailing" constant="10" id="gUA-ST-bcW"/>
+                    <constraint firstAttribute="trailing" secondItem="p5s-Zd-VWY" secondAttribute="trailing" constant="15" id="gYZ-r6-JTw"/>
+                    <constraint firstAttribute="trailing" secondItem="h2a-Jm-5v9" secondAttribute="trailing" id="iIB-A8-mhy"/>
+                    <constraint firstAttribute="bottom" secondItem="p5s-Zd-VWY" secondAttribute="bottom" constant="10" id="nsN-ph-PP4"/>
+                    <constraint firstItem="h2a-Jm-5v9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qg3-t4-CfJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="contentLabel" destination="UlP-mo-Fih" id="In6-ab-0r7"/>
+                <outlet property="countryLabel" destination="BA0-PL-wUE" id="V5K-dN-7QZ"/>
+                <outlet property="timeLabel" destination="dO6-1j-aXa" id="7EG-NK-zMB"/>
+            </connections>
+            <point key="canvasLocation" x="138.40579710144928" y="128.90625"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="newsImg" width="90" height="55"/>
+    </resources>
+</document>
