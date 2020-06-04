@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  HomewSearchBarView.h
 //  Futures
 //
 //  Created by Ssiswent on 2020/6/3.
@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+NS_ASSUME_NONNULL_BEGIN
 
-@property (strong, nonatomic) UIWindow * window;
+@interface HomewSearchBarView : UIView
 
 @end
 
+NS_ASSUME_NONNULL_END
