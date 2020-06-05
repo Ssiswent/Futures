@@ -6,8 +6,6 @@
 //  Copyright © 2020 Ssiswent. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 #import "ContentBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN

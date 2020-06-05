@@ -91,6 +91,8 @@ NSString *CommunityTopicCollectionCellID = @"CommunityTopicCollectionCell";
     NSLog(@"%ld ->  %ld",fromIndex,toIndex);
 }
 
+#pragma mark - API
+
 - (void)getTopics{
     WEAKSELF
     NSDate *todayDate = [NSDate date];

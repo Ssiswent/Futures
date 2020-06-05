@@ -170,6 +170,8 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
     }
 }
 
+#pragma mark - API
+
 - (void)getTopics{
     WEAKSELF
     NSDate *todayDate = [NSDate date];

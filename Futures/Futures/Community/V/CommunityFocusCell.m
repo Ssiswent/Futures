@@ -79,6 +79,8 @@ NSString *CommunityFocusCollectionCellID = @"CommunityFocusCollectionCell";
     NSLog(@"%ld ->  %ld",fromIndex,toIndex);
 }
 
+#pragma mark - API
+
 -(void)getRecommendUsers{
     WEAKSELF
     [ENDNetWorkManager getWithPathUrl:@"/user/follow/getRecommandUserList" parameters:nil queryParams:nil Header:nil success:^(BOOL success, id result) {

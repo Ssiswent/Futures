@@ -26,16 +26,29 @@
                         <outlet property="delegate" destination="-1" id="Dx4-9l-mxJ"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZV4-af-8P0" userLabel="PublishBtn">
+                    <rect key="frame" x="348.5" y="761" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="aQF-kL-R3A"/>
+                        <constraint firstAttribute="height" constant="50" id="f2e-sG-H2S"/>
+                    </constraints>
+                    <state key="normal" image="ic_publish"/>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="rL9-tY-iAn" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="02v-Ol-WdU"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ZV4-af-8P0" secondAttribute="trailing" constant="15.5" id="61f-Up-EVp"/>
                 <constraint firstItem="rL9-tY-iAn" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="8Jg-YA-k02"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="rL9-tY-iAn" secondAttribute="trailing" id="Ddy-K6-Jmi"/>
+                <constraint firstAttribute="bottom" secondItem="ZV4-af-8P0" secondAttribute="bottom" constant="85" id="GO4-uD-z5L"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="rL9-tY-iAn" secondAttribute="bottom" id="bw0-G2-ieF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="139" y="129"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_publish" width="50" height="50"/>
+    </resources>
 </document>

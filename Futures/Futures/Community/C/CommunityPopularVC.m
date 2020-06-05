@@ -125,6 +125,8 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
     }
 }
 
+#pragma mark - API
+
 - (void)getDynamics{
     WEAKSELF
     [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:nil Header:nil success:^(BOOL success, id result) {
