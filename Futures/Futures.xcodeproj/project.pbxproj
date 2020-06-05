@@ -88,6 +88,19 @@
 		CBAD628C248950140097BD9D /* CommunityHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD628A248950140097BD9D /* CommunityHeaderCell.xib */; };
 		CBAD6290248957AF0097BD9D /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD628F248957AF0097BD9D /* UserModel.m */; };
 		CBAD6293248957E10097BD9D /* MineUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD6292248957E10097BD9D /* MineUserModel.m */; };
+		CBAD62972489DCB50097BD9D /* CommunityTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD62952489DCB50097BD9D /* CommunityTopicCell.m */; };
+		CBAD62982489DCB50097BD9D /* CommunityTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD62962489DCB50097BD9D /* CommunityTopicCell.xib */; };
+		CBAD629C2489E55C0097BD9D /* CommunityTopicCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD629A2489E55C0097BD9D /* CommunityTopicCollectionCell.m */; };
+		CBAD629D2489E55C0097BD9D /* CommunityTopicCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD629B2489E55C0097BD9D /* CommunityTopicCollectionCell.xib */; };
+		CBAD62A6248A0F5C0097BD9D /* CommunityFocusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD62A4248A0F5C0097BD9D /* CommunityFocusCell.m */; };
+		CBAD62A7248A0F5C0097BD9D /* CommunityFocusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD62A5248A0F5C0097BD9D /* CommunityFocusCell.xib */; };
+		CBAD62AB248A15560097BD9D /* CommunityFocusCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD62A9248A15560097BD9D /* CommunityFocusCollectionCell.m */; };
+		CBAD62AC248A15560097BD9D /* CommunityFocusCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD62AA248A15560097BD9D /* CommunityFocusCollectionCell.xib */; };
+		CBAD62B0248A2A320097BD9D /* CommunityDynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD62AE248A2A320097BD9D /* CommunityDynamicCell.m */; };
+		CBAD62B1248A2A320097BD9D /* CommunityDynamicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD62AF248A2A320097BD9D /* CommunityDynamicCell.xib */; };
+		CBAD62B4248A7C970097BD9D /* CommunityDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD62B3248A7C970097BD9D /* CommunityDynamicModel.m */; };
+		CBAD62B8248A98CA0097BD9D /* CommunityDynamicHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD62B6248A98CA0097BD9D /* CommunityDynamicHeaderView.m */; };
+		CBAD62B9248A98CA0097BD9D /* CommunityDynamicHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD62B7248A98CA0097BD9D /* CommunityDynamicHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -247,6 +260,26 @@
 		CBAD628F248957AF0097BD9D /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		CBAD6291248957E10097BD9D /* MineUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineUserModel.h; sourceTree = "<group>"; };
 		CBAD6292248957E10097BD9D /* MineUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineUserModel.m; sourceTree = "<group>"; };
+		CBAD62942489DCB40097BD9D /* CommunityTopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityTopicCell.h; sourceTree = "<group>"; };
+		CBAD62952489DCB50097BD9D /* CommunityTopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityTopicCell.m; sourceTree = "<group>"; };
+		CBAD62962489DCB50097BD9D /* CommunityTopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityTopicCell.xib; sourceTree = "<group>"; };
+		CBAD62992489E55C0097BD9D /* CommunityTopicCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityTopicCollectionCell.h; sourceTree = "<group>"; };
+		CBAD629A2489E55C0097BD9D /* CommunityTopicCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityTopicCollectionCell.m; sourceTree = "<group>"; };
+		CBAD629B2489E55C0097BD9D /* CommunityTopicCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityTopicCollectionCell.xib; sourceTree = "<group>"; };
+		CBAD62A3248A0F5C0097BD9D /* CommunityFocusCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityFocusCell.h; sourceTree = "<group>"; };
+		CBAD62A4248A0F5C0097BD9D /* CommunityFocusCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityFocusCell.m; sourceTree = "<group>"; };
+		CBAD62A5248A0F5C0097BD9D /* CommunityFocusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityFocusCell.xib; sourceTree = "<group>"; };
+		CBAD62A8248A15560097BD9D /* CommunityFocusCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityFocusCollectionCell.h; sourceTree = "<group>"; };
+		CBAD62A9248A15560097BD9D /* CommunityFocusCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityFocusCollectionCell.m; sourceTree = "<group>"; };
+		CBAD62AA248A15560097BD9D /* CommunityFocusCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityFocusCollectionCell.xib; sourceTree = "<group>"; };
+		CBAD62AD248A2A320097BD9D /* CommunityDynamicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityDynamicCell.h; sourceTree = "<group>"; };
+		CBAD62AE248A2A320097BD9D /* CommunityDynamicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityDynamicCell.m; sourceTree = "<group>"; };
+		CBAD62AF248A2A320097BD9D /* CommunityDynamicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityDynamicCell.xib; sourceTree = "<group>"; };
+		CBAD62B2248A7C970097BD9D /* CommunityDynamicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityDynamicModel.h; sourceTree = "<group>"; };
+		CBAD62B3248A7C970097BD9D /* CommunityDynamicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityDynamicModel.m; sourceTree = "<group>"; };
+		CBAD62B5248A98CA0097BD9D /* CommunityDynamicHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDynamicHeaderView.h; sourceTree = "<group>"; };
+		CBAD62B6248A98CA0097BD9D /* CommunityDynamicHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDynamicHeaderView.m; sourceTree = "<group>"; };
+		CBAD62B7248A98CA0097BD9D /* CommunityDynamicHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDynamicHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -581,9 +614,27 @@
 		CBAD6274248937BA0097BD9D /* V */ = {
 			isa = PBXGroup;
 			children = (
+				CBAD62AD248A2A320097BD9D /* CommunityDynamicCell.h */,
+				CBAD62AE248A2A320097BD9D /* CommunityDynamicCell.m */,
+				CBAD62AF248A2A320097BD9D /* CommunityDynamicCell.xib */,
+				CBAD62B5248A98CA0097BD9D /* CommunityDynamicHeaderView.h */,
+				CBAD62B6248A98CA0097BD9D /* CommunityDynamicHeaderView.m */,
+				CBAD62B7248A98CA0097BD9D /* CommunityDynamicHeaderView.xib */,
+				CBAD62A3248A0F5C0097BD9D /* CommunityFocusCell.h */,
+				CBAD62A4248A0F5C0097BD9D /* CommunityFocusCell.m */,
+				CBAD62A5248A0F5C0097BD9D /* CommunityFocusCell.xib */,
+				CBAD62A8248A15560097BD9D /* CommunityFocusCollectionCell.h */,
+				CBAD62A9248A15560097BD9D /* CommunityFocusCollectionCell.m */,
+				CBAD62AA248A15560097BD9D /* CommunityFocusCollectionCell.xib */,
 				CBAD6288248950140097BD9D /* CommunityHeaderCell.h */,
 				CBAD6289248950140097BD9D /* CommunityHeaderCell.m */,
 				CBAD628A248950140097BD9D /* CommunityHeaderCell.xib */,
+				CBAD62942489DCB40097BD9D /* CommunityTopicCell.h */,
+				CBAD62952489DCB50097BD9D /* CommunityTopicCell.m */,
+				CBAD62962489DCB50097BD9D /* CommunityTopicCell.xib */,
+				CBAD62992489E55C0097BD9D /* CommunityTopicCollectionCell.h */,
+				CBAD629A2489E55C0097BD9D /* CommunityTopicCollectionCell.m */,
+				CBAD629B2489E55C0097BD9D /* CommunityTopicCollectionCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -591,6 +642,8 @@
 		CBAD6275248937C30097BD9D /* M */ = {
 			isa = PBXGroup;
 			children = (
+				CBAD62B2248A7C970097BD9D /* CommunityDynamicModel.h */,
+				CBAD62B3248A7C970097BD9D /* CommunityDynamicModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -674,12 +727,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBAD62AC248A15560097BD9D /* CommunityFocusCollectionCell.xib in Resources */,
 				CBAD62512488CCBA0097BD9D /* HomeBannerCollectionCell.xib in Resources */,
 				1814022F24876C6700CA3E92 /* LaunchScreen.storyboard in Resources */,
 				1814030C2487836D00CA3E92 /* HomeVC.xib in Resources */,
 				CBAD626A2488F7350097BD9D /* HomeGoldCell.xib in Resources */,
 				CBAD62652488F53C0097BD9D /* HomeADCell.xib in Resources */,
 				181403112487838200CA3E92 /* CommunityVC.xib in Resources */,
+				CBAD62B9248A98CA0097BD9D /* CommunityDynamicHeaderView.xib in Resources */,
+				CBAD629D2489E55C0097BD9D /* CommunityTopicCollectionCell.xib in Resources */,
 				CBAD628C248950140097BD9D /* CommunityHeaderCell.xib in Resources */,
 				CBAD627D2489384C0097BD9D /* CommunityPopularVC.xib in Resources */,
 				18140316248783BD00CA3E92 /* MineVC.xib in Resources */,
@@ -688,7 +744,10 @@
 				CBAD62562488D9C60097BD9D /* HomeBannerCell.xib in Resources */,
 				CBAD62602488F1B60097BD9D /* HomeCheckInCell.xib in Resources */,
 				CBAD6287248943320097BD9D /* HomeNewsHeaderView.xib in Resources */,
+				CBAD62A7248A0F5C0097BD9D /* CommunityFocusCell.xib in Resources */,
 				1814022C24876C6700CA3E92 /* Assets.xcassets in Resources */,
+				CBAD62B1248A2A320097BD9D /* CommunityDynamicCell.xib in Resources */,
+				CBAD62982489DCB50097BD9D /* CommunityTopicCell.xib in Resources */,
 				CBAD626F24891DCF0097BD9D /* HomeNewsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -751,6 +810,7 @@
 				181402E9248779DA00CA3E92 /* QHDetailViewController.m in Sources */,
 				181402D5248779DA00CA3E92 /* ENDNetWorkManager.m in Sources */,
 				CBAD627C2489384C0097BD9D /* CommunityPopularVC.m in Sources */,
+				CBAD62B0248A2A320097BD9D /* CommunityDynamicCell.m in Sources */,
 				181402D3248779DA00CA3E92 /* ENDLCPNetWorkGET.m in Sources */,
 				CBAD62692488F7350097BD9D /* HomeGoldCell.m in Sources */,
 				181402F9248779DA00CA3E92 /* YKLineEntity.m in Sources */,
@@ -761,6 +821,7 @@
 				181402DB248779DA00CA3E92 /* UIImage+OriginalImage.m in Sources */,
 				CBAD62502488CCBA0097BD9D /* HomeBannerCollectionCell.m in Sources */,
 				18140315248783BD00CA3E92 /* MineVC.m in Sources */,
+				CBAD62972489DCB50097BD9D /* CommunityTopicCell.m in Sources */,
 				181402D7248779DA00CA3E92 /* ENDNetWorkPUT.m in Sources */,
 				181402DC248779DA00CA3E92 /* BaseViewController.m in Sources */,
 				181402D2248779DA00CA3E92 /* EGHCodeTool.m in Sources */,
@@ -769,6 +830,7 @@
 				181402E2248779DA00CA3E92 /* QHLoctionModel.m in Sources */,
 				181402D9248779DA00CA3E92 /* UIColor+Hex.m in Sources */,
 				181402EE248779DA00CA3E92 /* CZ_NEWMarketVC.m in Sources */,
+				CBAD62B8248A98CA0097BD9D /* CommunityDynamicHeaderView.m in Sources */,
 				181402FC248779DA00CA3E92 /* ContentBaseViewController.m in Sources */,
 				1814030B2487836D00CA3E92 /* HomeVC.m in Sources */,
 				181402FD248779DA00CA3E92 /* BaseModel.m in Sources */,
@@ -791,6 +853,7 @@
 				181403102487838200CA3E92 /* CommunityVC.m in Sources */,
 				181402EF248779DA00CA3E92 /* BusinessProcess.m in Sources */,
 				CBAD62642488F53C0097BD9D /* HomeADCell.m in Sources */,
+				CBAD62A6248A0F5C0097BD9D /* CommunityFocusCell.m in Sources */,
 				CBAD6272248923B10097BD9D /* HomeNewsModel.m in Sources */,
 				181402FA248779DA00CA3E92 /* CustomTBC.m in Sources */,
 				181402E6248779DA00CA3E92 /* QHDHHeadCollectionViewCell.m in Sources */,
@@ -800,11 +863,14 @@
 				181402CB248779DA00CA3E92 /* TimerTool.m in Sources */,
 				181402D0248779DA00CA3E92 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				181402E1248779DA00CA3E92 /* YKTimeLineView.m in Sources */,
+				CBAD62B4248A7C970097BD9D /* CommunityDynamicModel.m in Sources */,
 				181402ED248779DA00CA3E92 /* QHDataCollectionViewCell.m in Sources */,
 				181402D8248779DA00CA3E92 /* ENDLCPNetWorkERROR.m in Sources */,
+				CBAD629C2489E55C0097BD9D /* CommunityTopicCollectionCell.m in Sources */,
 				1814030424877DD300CA3E92 /* LCPReachability.m in Sources */,
 				181402DE248779DA00CA3E92 /* YKLineDataSet.m in Sources */,
 				181402DD248779DA00CA3E92 /* YKLineChartViewBase.m in Sources */,
+				CBAD62AB248A15560097BD9D /* CommunityFocusCollectionCell.m in Sources */,
 				1814023224876C6700CA3E92 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

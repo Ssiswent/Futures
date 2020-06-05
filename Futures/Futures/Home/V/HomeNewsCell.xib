@@ -24,9 +24,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“隔离经济”来了!你在家隔离，这些行业 却迎来了新机会" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlP-mo-Fih" userLabel="ContentLabel">
-                        <rect key="frame" x="15.5" y="10" width="213" height="31"/>
+                        <rect key="frame" x="15.5" y="10" width="213" height="29"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="31" id="j4H-Mp-BW4"/>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="31" id="j4H-Mp-BW4"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                         <color key="textColor" red="0.15294379" green="0.152936399" blue="0.15294143560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
