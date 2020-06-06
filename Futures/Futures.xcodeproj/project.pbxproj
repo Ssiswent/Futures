@@ -530,9 +530,9 @@
 		181403072487828200CA3E92 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				18140312248783BD00CA3E92 /* MineVC.h */,
-				18140313248783BD00CA3E92 /* MineVC.m */,
-				18140314248783BD00CA3E92 /* MineVC.xib */,
+				CBEC542B248B3AE800B3D94C /* M */,
+				CBEC542A248B3AE300B3D94C /* V */,
+				CBEC5429248B3ADC00B3D94C /* C */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -657,6 +657,30 @@
 				CBAD6292248957E10097BD9D /* MineUserModel.m */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		CBEC5429248B3ADC00B3D94C /* C */ = {
+			isa = PBXGroup;
+			children = (
+				18140312248783BD00CA3E92 /* MineVC.h */,
+				18140313248783BD00CA3E92 /* MineVC.m */,
+				18140314248783BD00CA3E92 /* MineVC.xib */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		CBEC542A248B3AE300B3D94C /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		CBEC542B248B3AE800B3D94C /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 		FCFFF84F185EA06670CF78BE /* Pods */ = {

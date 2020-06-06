@@ -99,7 +99,12 @@
     [self.avatarImgView sd_setImageWithURL:[NSURL URLWithString:userModel.head]
     placeholderImage:[UIImage imageNamed:@"avatar"]];
     self.nameLabel.text = userModel.nickName;
+
+//    NSArray *contentArray = [dynamicModel.content componentsSeparatedByString:@"\r\n\r\n"];
+//    self.titleLabel.text = contentArray[0];
+//    self.contentLabel.text = contentArray[1];
     self.contentLabel.text = dynamicModel.content;
+    
     if(dynamicModel.picture)
     {
         self.contentImgView.hidden = NO;

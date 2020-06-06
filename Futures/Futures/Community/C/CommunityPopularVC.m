@@ -19,9 +19,12 @@
 
 @interface CommunityPopularVC ()<UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *publishBtn;
 @property (weak, nonatomic) IBOutlet UITableView *popularTableView;
 
 @property (strong , nonatomic) NSArray *dynamicsArray;
+
+@property (assign, nonatomic) CGRect pubOriginFrame;
 
 @end
 
@@ -33,6 +36,7 @@ NSString *CommunityFocusCellID = @"CommunityFocusCell";
 NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 
 - (void)viewDidLoad {
+    _pubOriginFrame = _publishBtn.frame;
     [self registTableView];
     [self getDynamics];
 }
@@ -122,6 +126,31 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
     else
     {
         return 0.001;
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGPoint translation = [scrollView.panGestureRecognizer translationInView:scrollView.superview];
+    CGRect showFrame = _pubOriginFrame;
+    showFrame.origin.y = kScaleFrom_iPhone8_Height(532);
+    CGRect hideFrame = _pubOriginFrame;
+    hideFrame.origin.y = kScaleFrom_iPhone8_Height(667);
+    //下滑
+    if (translation.y>0)
+    {
+        [UIView animateWithDuration:0.5 animations:^{
+            WEAKSELF
+            weakSelf.publishBtn.frame = showFrame;
+        }];
+    }
+    //上滑
+    else if(translation.y<0)
+    {
+        [UIView animateWithDuration:0.5 animations:^{
+            WEAKSELF
+            weakSelf.publishBtn.frame = hideFrame;
+        }];
     }
 }
 
