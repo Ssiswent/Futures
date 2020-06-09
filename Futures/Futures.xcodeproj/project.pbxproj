@@ -63,6 +63,13 @@
 		18140315248783BD00CA3E92 /* MineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18140313248783BD00CA3E92 /* MineVC.m */; };
 		18140316248783BD00CA3E92 /* MineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18140314248783BD00CA3E92 /* MineVC.xib */; };
 		2912F25113B14CAD1FAB718C /* Pods_Futures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093094F2C929266EE6142479 /* Pods_Futures.framework */; };
+		CBA5A340248F6E76003BA799 /* MineSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5A33E248F6E76003BA799 /* MineSettingsVC.m */; };
+		CBA5A341248F6E76003BA799 /* MineSettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA5A33F248F6E76003BA799 /* MineSettingsVC.xib */; };
+		CBA5A345248F6FE6003BA799 /* MineSettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5A343248F6FE6003BA799 /* MineSettingsCell.m */; };
+		CBA5A346248F6FE6003BA799 /* MineSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA5A344248F6FE6003BA799 /* MineSettingsCell.xib */; };
+		CBA5A349248F8013003BA799 /* YPNavigationController+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5A348248F8013003BA799 /* YPNavigationController+Configure.m */; };
+		CBA5A34D248FD5F5003BA799 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5A34B248FD5F5003BA799 /* LoginVC.m */; };
+		CBA5A34E248FD5F6003BA799 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA5A34C248FD5F5003BA799 /* LoginVC.xib */; };
 		CBAD62502488CCBA0097BD9D /* HomeBannerCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD624E2488CCBA0097BD9D /* HomeBannerCollectionCell.m */; };
 		CBAD62512488CCBA0097BD9D /* HomeBannerCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD624F2488CCBA0097BD9D /* HomeBannerCollectionCell.xib */; };
 		CBAD62552488D9C60097BD9D /* HomeBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD62532488D9C60097BD9D /* HomeBannerCell.m */; };
@@ -221,6 +228,17 @@
 		18140313248783BD00CA3E92 /* MineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
 		18140314248783BD00CA3E92 /* MineVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineVC.xib; sourceTree = "<group>"; };
 		3E49EC4B77A42CB5FF5BA89B /* Pods-Futures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Futures.release.xcconfig"; path = "Target Support Files/Pods-Futures/Pods-Futures.release.xcconfig"; sourceTree = "<group>"; };
+		CBA5A33D248F6E76003BA799 /* MineSettingsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineSettingsVC.h; sourceTree = "<group>"; };
+		CBA5A33E248F6E76003BA799 /* MineSettingsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineSettingsVC.m; sourceTree = "<group>"; };
+		CBA5A33F248F6E76003BA799 /* MineSettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineSettingsVC.xib; sourceTree = "<group>"; };
+		CBA5A342248F6FE6003BA799 /* MineSettingsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineSettingsCell.h; sourceTree = "<group>"; };
+		CBA5A343248F6FE6003BA799 /* MineSettingsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineSettingsCell.m; sourceTree = "<group>"; };
+		CBA5A344248F6FE6003BA799 /* MineSettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineSettingsCell.xib; sourceTree = "<group>"; };
+		CBA5A347248F8013003BA799 /* YPNavigationController+Configure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YPNavigationController+Configure.h"; sourceTree = "<group>"; };
+		CBA5A348248F8013003BA799 /* YPNavigationController+Configure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YPNavigationController+Configure.m"; sourceTree = "<group>"; };
+		CBA5A34A248FD5F5003BA799 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		CBA5A34B248FD5F5003BA799 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		CBA5A34C248FD5F5003BA799 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		CBAD624D2488CCBA0097BD9D /* HomeBannerCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBannerCollectionCell.h; sourceTree = "<group>"; };
 		CBAD624E2488CCBA0097BD9D /* HomeBannerCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBannerCollectionCell.m; sourceTree = "<group>"; };
 		CBAD624F2488CCBA0097BD9D /* HomeBannerCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBannerCollectionCell.xib; sourceTree = "<group>"; };
@@ -398,6 +416,8 @@
 				18140268248779D900CA3E92 /* UIImage+Image.m */,
 				18140266248779D900CA3E92 /* UIImage+OriginalImage.h */,
 				1814026A248779D900CA3E92 /* UIImage+OriginalImage.m */,
+				CBA5A347248F8013003BA799 /* YPNavigationController+Configure.h */,
+				CBA5A348248F8013003BA799 /* YPNavigationController+Configure.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -665,6 +685,12 @@
 				18140312248783BD00CA3E92 /* MineVC.h */,
 				18140313248783BD00CA3E92 /* MineVC.m */,
 				18140314248783BD00CA3E92 /* MineVC.xib */,
+				CBA5A33D248F6E76003BA799 /* MineSettingsVC.h */,
+				CBA5A33E248F6E76003BA799 /* MineSettingsVC.m */,
+				CBA5A33F248F6E76003BA799 /* MineSettingsVC.xib */,
+				CBA5A34A248FD5F5003BA799 /* LoginVC.h */,
+				CBA5A34B248FD5F5003BA799 /* LoginVC.m */,
+				CBA5A34C248FD5F5003BA799 /* LoginVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -672,6 +698,9 @@
 		CBEC542A248B3AE300B3D94C /* V */ = {
 			isa = PBXGroup;
 			children = (
+				CBA5A342248F6FE6003BA799 /* MineSettingsCell.h */,
+				CBA5A343248F6FE6003BA799 /* MineSettingsCell.m */,
+				CBA5A344248F6FE6003BA799 /* MineSettingsCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -758,6 +787,7 @@
 				CBAD626A2488F7350097BD9D /* HomeGoldCell.xib in Resources */,
 				CBAD62652488F53C0097BD9D /* HomeADCell.xib in Resources */,
 				181403112487838200CA3E92 /* CommunityVC.xib in Resources */,
+				CBA5A346248F6FE6003BA799 /* MineSettingsCell.xib in Resources */,
 				CBAD62B9248A98CA0097BD9D /* CommunityDynamicHeaderView.xib in Resources */,
 				CBAD629D2489E55C0097BD9D /* CommunityTopicCollectionCell.xib in Resources */,
 				CBAD628C248950140097BD9D /* CommunityHeaderCell.xib in Resources */,
@@ -765,6 +795,7 @@
 				18140316248783BD00CA3E92 /* MineVC.xib in Resources */,
 				CBAD625B2488E6410097BD9D /* HomeFourBtnCell.xib in Resources */,
 				CBAD62822489385C0097BD9D /* CommunityFocusVC.xib in Resources */,
+				CBA5A34E248FD5F6003BA799 /* LoginVC.xib in Resources */,
 				CBAD62562488D9C60097BD9D /* HomeBannerCell.xib in Resources */,
 				CBAD62602488F1B60097BD9D /* HomeCheckInCell.xib in Resources */,
 				CBAD6287248943320097BD9D /* HomeNewsHeaderView.xib in Resources */,
@@ -772,6 +803,7 @@
 				1814022C24876C6700CA3E92 /* Assets.xcassets in Resources */,
 				CBAD62B1248A2A320097BD9D /* CommunityDynamicCell.xib in Resources */,
 				CBAD62982489DCB50097BD9D /* CommunityTopicCell.xib in Resources */,
+				CBA5A341248F6E76003BA799 /* MineSettingsVC.xib in Resources */,
 				CBAD626F24891DCF0097BD9D /* HomeNewsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -839,6 +871,8 @@
 				CBAD62692488F7350097BD9D /* HomeGoldCell.m in Sources */,
 				181402F9248779DA00CA3E92 /* YKLineEntity.m in Sources */,
 				1814030324877DD300CA3E92 /* Reachability.m in Sources */,
+				CBA5A340248F6E76003BA799 /* MineSettingsVC.m in Sources */,
+				CBA5A349248F8013003BA799 /* YPNavigationController+Configure.m in Sources */,
 				181402E7248779DA00CA3E92 /* YKViewBase.m in Sources */,
 				181402EB248779DA00CA3E92 /* ZCManage.m in Sources */,
 				CBAD625F2488F1B60097BD9D /* HomeCheckInCell.m in Sources */,
@@ -870,6 +904,7 @@
 				181402DF248779DA00CA3E92 /* NetWork.m in Sources */,
 				181402CF248779DA00CA3E92 /* Toast.m in Sources */,
 				181402F6248779DA00CA3E92 /* TopView.m in Sources */,
+				CBA5A34D248FD5F5003BA799 /* LoginVC.m in Sources */,
 				181402CA248779DA00CA3E92 /* EGHImagePickerVCManager.m in Sources */,
 				181402D6248779DA00CA3E92 /* ENDNetWorkDELETE.m in Sources */,
 				181402FB248779DA00CA3E92 /* ListViewController.m in Sources */,
@@ -878,6 +913,7 @@
 				181402EF248779DA00CA3E92 /* BusinessProcess.m in Sources */,
 				CBAD62642488F53C0097BD9D /* HomeADCell.m in Sources */,
 				CBAD62A6248A0F5C0097BD9D /* CommunityFocusCell.m in Sources */,
+				CBA5A345248F6FE6003BA799 /* MineSettingsCell.m in Sources */,
 				CBAD6272248923B10097BD9D /* HomeNewsModel.m in Sources */,
 				181402FA248779DA00CA3E92 /* CustomTBC.m in Sources */,
 				181402E6248779DA00CA3E92 /* QHDHHeadCollectionViewCell.m in Sources */,

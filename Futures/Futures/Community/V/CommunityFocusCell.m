@@ -38,6 +38,18 @@ NSString *CommunityFocusCollectionCellID = @"CommunityFocusCollectionCell";
     [self getRecommendUsers];
 }
 
+- (IBAction)removeBtnClicked:(id)sender {
+    if([self.delegate respondsToSelector:@selector(communityFocusCellDidClickRemoveBtn:)])
+    {
+        [self.delegate communityFocusCellDidClickRemoveBtn:self];
+    }
+}
+
+- (IBAction)changeBtnClicked:(id)sender {
+    [self getRecommendUsers];
+}
+
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];

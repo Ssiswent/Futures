@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommunityFocusVC">
             <connections>
+                <outlet property="bottomView" destination="31U-ts-84x" id="M3f-fn-ZaQ"/>
                 <outlet property="focusTableView" destination="zq7-W7-oHm" id="a74-We-rQ2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,14 +35,24 @@
                     </constraints>
                     <state key="normal" image="ic_publish"/>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31U-ts-84x" userLabel="BottomView">
+                    <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                    <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="m4P-Po-AMR"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="31U-ts-84x" secondAttribute="trailing" id="4rn-M3-rAZ"/>
+                <constraint firstAttribute="bottom" secondItem="31U-ts-84x" secondAttribute="bottom" id="ENm-Q7-uFg"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Y2g-we-6zo" secondAttribute="trailing" constant="15.5" id="HkM-CN-Pni"/>
                 <constraint firstItem="zq7-W7-oHm" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="dwe-BH-uSi"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="zq7-W7-oHm" secondAttribute="bottom" id="dyZ-f9-9Q6"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="zq7-W7-oHm" secondAttribute="trailing" id="fFa-pS-xN5"/>
                 <constraint firstAttribute="bottom" secondItem="Y2g-we-6zo" secondAttribute="bottom" constant="85" id="l20-YQ-3DK"/>
+                <constraint firstItem="31U-ts-84x" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="sPK-6p-fpl"/>
                 <constraint firstItem="zq7-W7-oHm" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="ze4-vE-l2x"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>

@@ -10,7 +10,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class CommunityFocusCell;
+
+@protocol CommunityFocusCellDelegate <NSObject>
+
+@optional
+
+- (void)communityFocusCellDidClickRemoveBtn:(CommunityFocusCell *)communityFocusCell;
+
+@end
+
 @interface CommunityFocusCell : UITableViewCell
+
+@property (nonatomic, weak)id<CommunityFocusCellDelegate> delegate;
+
 
 @end
 

@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHY-75-MBy" userLabel="ADBtn">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHY-75-MBy" userLabel="ADBtn">
                         <rect key="frame" x="0.0" y="10" width="375" height="120"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="120" id="NEj-ui-iqE"/>

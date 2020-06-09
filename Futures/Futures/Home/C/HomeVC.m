@@ -19,11 +19,12 @@
 
 #import "HomeNewsModel.h"
 
-@interface HomeVC ()<UITableViewDataSource, UITableViewDelegate>
+@interface HomeVC ()<UITableViewDataSource, UITableViewDelegate,YPNavigationBarConfigureStyle>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *homeTableView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @property (strong , nonatomic) NSArray *newsArray;
 
@@ -42,11 +43,11 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
     [super viewDidLoad];
     
     [self initialSetup];
-    [self registTableView];
+    [self registerTableView];
     [self getTopics];
 }
 
-- (void)registTableView
+- (void)registerTableView
 {
     [self.homeTableView registerNib:[UINib nibWithNibName:NSStringFromClass([HomeBannerCell class]) bundle:nil] forCellReuseIdentifier:HomeBannerCellID];
     [self.homeTableView registerNib:[UINib nibWithNibName:NSStringFromClass([HomeFourBtnCell class]) bundle:nil] forCellReuseIdentifier:HomeFourBtnCellID];
@@ -58,26 +59,40 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
 
 - (void)initialSetup
 {
-    [self.navigationController setNavigationBarHidden:YES];
-    
     if(SCREEN_HEIGHT >= 812)
     {
         _topViewHeight.constant = 88;
     }
     
     [self setSearchBar];
+    
+    _bottomView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
+    _bottomView.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.15].CGColor;
+    _bottomView.layer.shadowOffset = CGSizeMake(0,0);
+    _bottomView.layer.shadowOpacity = 1;
+    _bottomView.layer.shadowRadius = 36;
 }
 
 - (void)setSearchBar
 {
     _searchBar.layer.cornerRadius = 12.5;
     _searchBar.layer.masksToBounds = YES;
-    _searchBar.searchTextField.backgroundColor = [UIColor colorWithHexString:@"#E9E9E9"];
-    _searchBar.backgroundColor = [UIColor colorWithHexString:@"#E9E9E9"];
-    _searchBar.barTintColor = [UIColor colorWithHexString:@"#E9E9E9"];
+    _searchBar.searchTextField.backgroundColor = [UIColor colorWithHexString:@"#E9E9E9" alpha:0.1];
+    _searchBar.searchTextField.font = [UIFont systemFontOfSize:14];
+    _searchBar.backgroundColor = [UIColor colorWithHexString:@"#E9E9E9" alpha:0.1];
+    _searchBar.barTintColor = [UIColor colorWithHexString:@"#E9E9E9" alpha:0.1];
     
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"搜索股票/用户/讨论" attributes:@{NSFontAttributeName: [UIFont fontWithName:@"PingFang SC" size: 14],NSForegroundColorAttributeName: [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0]}];
     _searchBar.searchTextField.attributedPlaceholder = string;
+}
+
+#pragma mark - yp_navigtionBarConfiguration
+- (YPNavigationBarConfigurations) yp_navigtionBarConfiguration {
+    return YPNavigationBarHidden;
+}
+
+- (UIColor *)yp_navigationBarTintColor{
+    return [UIColor whiteColor];
 }
 
 #pragma mark - TableViewDataSource

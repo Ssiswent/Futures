@@ -14,8 +14,6 @@
 
 @interface CommunityVC ()
 
-@property (nonatomic, strong) UIView *customizedStatusBar;
-
 @property (nonatomic, strong) JXCategoryTitleView *myCategoryView;
 
 @end
@@ -24,39 +22,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self setStatusBar];
     [self setNavBar];
-    
-}
-
-- (void)setStatusBar
-{
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    
-    if (@available(iOS 13.0, *)) {// iOS 13 不能直接获取到statusbar 手动添加个view到window上当做statusbar背景
-        if (!self.customizedStatusBar) {
-            //获取最底层Window
-            NSArray *array = [UIApplication sharedApplication].windows;
-            UIWindow *keyWindow = [array objectAtIndex:0];
-            self.customizedStatusBar = [[UIView alloc] initWithFrame:keyWindow.windowScene.statusBarManager.statusBarFrame];
-            [keyWindow addSubview:self.customizedStatusBar];
-        }
-    }
-    else {
-        self.customizedStatusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    }
-    
-    if ([self.customizedStatusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-        self.customizedStatusBar.backgroundColor = [UIColor colorWithHexString:@"#293AFF"];
-    }
 }
 
 - (void)setNavBar
 {
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithHexString:@"#293AFF"];
-    
     self.titles = @[@"热门", @"关注" ];
     
     self.myCategoryView.frame = CGRectMake(0, 0, 120, 30);
@@ -91,7 +61,6 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
     self.myCategoryView.frame = CGRectMake(0, 0, 120, 30);
 }
 
@@ -122,7 +91,6 @@
         CommunityFocusVC *focusVC = [CommunityFocusVC new];
         return focusVC;
     }
-    
 }
 
 @end

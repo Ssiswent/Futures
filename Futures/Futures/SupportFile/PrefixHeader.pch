@@ -10,6 +10,7 @@
 #import "MacroQiHuo.h"
 #import "UIColor+Hex.h"
 #import "UIImage+OriginalImage.h"
+#import "YPNavigationController+Configure.h"
 
 #define kScaleFrom_iPhone8_Width(x) (x * (SCREEN_WIDTH/375))
 #define kScaleFrom_iPhone8_Height(x) (x * (SCREEN_HEIGHT/667))

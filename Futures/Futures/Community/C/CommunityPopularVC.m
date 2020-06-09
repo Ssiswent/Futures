@@ -17,14 +17,17 @@
 
 #import "CommunityDynamicModel.h"
 
-@interface CommunityPopularVC ()<UITableViewDataSource, UITableViewDelegate>
+@interface CommunityPopularVC ()<UITableViewDataSource, UITableViewDelegate, CommunityFocusCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *publishBtn;
 @property (weak, nonatomic) IBOutlet UITableView *popularTableView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @property (strong , nonatomic) NSArray *dynamicsArray;
 
 @property (assign, nonatomic) CGRect pubOriginFrame;
+
+@property (assign, nonatomic) NSInteger numberOfSections;
 
 @end
 
@@ -37,15 +40,16 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 
 - (void)viewDidLoad {
     _pubOriginFrame = _publishBtn.frame;
-    [self registTableView];
+    [self registerTableView];
     [self getDynamics];
+    [self initialSetup];
 }
 
 -(UIView *)listView{
     return self.view;
 }
 
-- (void)registTableView
+- (void)registerTableView
 {
     [self.popularTableView registerNib:[UINib nibWithNibName:NSStringFromClass([CommunityHeaderCell class]) bundle:nil] forCellReuseIdentifier:CommunityHeaderCellID];
     [self.popularTableView registerNib:[UINib nibWithNibName:NSStringFromClass([CommunityTopicCell class]) bundle:nil] forCellReuseIdentifier:CommunityTopicCellID];
@@ -53,28 +57,62 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
     [self.popularTableView registerNib:[UINib nibWithNibName:NSStringFromClass([CommunityDynamicCell class]) bundle:nil] forCellReuseIdentifier:CommunityDynamicCellID];
 }
 
+- (void)initialSetup
+{
+    _bottomView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
+    _bottomView.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.15].CGColor;
+    _bottomView.layer.shadowOffset = CGSizeMake(0,0);
+    _bottomView.layer.shadowOpacity = 1;
+    _bottomView.layer.shadowRadius = 36;
+    
+    _numberOfSections = 4;
+}
+
+- (void)communityFocusCellDidClickRemoveBtn:(CommunityFocusCell *)communityFocusCell
+{
+    _numberOfSections = 3;
+    [self.popularTableView deleteSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
 #pragma mark - TableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return _numberOfSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    switch (section) {
-        case 0:
-            return 1;
-            break;
-        case 1:
-            return 1;
-            break;
-        case 2:
-            return 1;
-            break;
-        default:
-            return self.dynamicsArray.count;
-            break;
+    if(_numberOfSections == 4)
+    {
+        switch (section) {
+            case 0:
+                return 1;
+                break;
+            case 1:
+                return 1;
+                break;
+            case 2:
+                return 1;
+                break;
+            default:
+                return self.dynamicsArray.count;
+                break;
+        }
+    }
+    else
+    {
+        switch (section) {
+            case 0:
+                return 1;
+                break;
+            case 1:
+                return 1;
+                break;
+            default:
+                return self.dynamicsArray.count;
+                break;
+        }
     }
 }
 
@@ -85,47 +123,97 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
     CommunityFocusCell *focusCell = [tableView dequeueReusableCellWithIdentifier:CommunityFocusCellID];
     CommunityDynamicCell *dynamicCell = [tableView dequeueReusableCellWithIdentifier:CommunityDynamicCellID];
     
-    switch (indexPath.section) {
-        case 0:
-            return headerCell;
-            break;
-        case 1:
-            return topicCell;
-            break;
-        case 2:
-            return focusCell;
-            break;
-        default:
-            dynamicCell.dynamicModel = self.dynamicsArray[indexPath.row];
-            return dynamicCell;
-            break;
+    focusCell.delegate = self;
+    
+    if(_numberOfSections == 4)
+    {
+        switch (indexPath.section) {
+            case 0:
+                return headerCell;
+                break;
+            case 1:
+                return topicCell;
+                break;
+            case 2:
+                return focusCell;
+                break;
+            default:
+                dynamicCell.dynamicModel = self.dynamicsArray[indexPath.row];
+                return dynamicCell;
+                break;
+        }
     }
+    else
+    {
+        switch (indexPath.section) {
+            case 0:
+                return headerCell;
+                break;
+            case 1:
+                return topicCell;
+                break;
+            default:
+                dynamicCell.dynamicModel = self.dynamicsArray[indexPath.row];
+                return dynamicCell;
+                break;
+        }
+    }
+    
 }
 
 #pragma mark - TableViewDelegate
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if(section == 3)
+    if(_numberOfSections == 4)
     {
-        CommunityDynamicHeaderView *dynamicHeaderView = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([CommunityDynamicHeaderView class]) owner:nil options:nil].firstObject;
-        return dynamicHeaderView;
+        if(section == 3)
+        {
+            CommunityDynamicHeaderView *dynamicHeaderView = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([CommunityDynamicHeaderView class]) owner:nil options:nil].firstObject;
+            return dynamicHeaderView;
+        }
+        else
+        {
+            return nil;
+        }
     }
     else
     {
-        return nil;
+        if(section == 2)
+        {
+            CommunityDynamicHeaderView *dynamicHeaderView = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([CommunityDynamicHeaderView class]) owner:nil options:nil].firstObject;
+            return dynamicHeaderView;
+        }
+        else
+        {
+            return nil;
+        }
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if(section == 3)
+    if(_numberOfSections == 4)
     {
-        return 36;
+        if(section == 3)
+        {
+            return 36;
+        }
+        else
+        {
+            return 0.001;
+        }
     }
     else
     {
-        return 0.001;
+        if(section == 2)
+        {
+            return 36;
+        }
+        else
+        {
+            return 0.001;
+        }
     }
 }
 
