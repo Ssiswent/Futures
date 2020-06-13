@@ -10,7 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class LoginVC;
+
+@protocol LoginVCDelegate <NSObject>
+
+@optional
+
+- (void)LoginVCDidGetUser:(LoginVC *)loginVC;
+
+@end
+
 @interface LoginVC : UIViewController
+
+@property (nonatomic, weak)id<LoginVCDelegate> delegate;
 
 @end
 

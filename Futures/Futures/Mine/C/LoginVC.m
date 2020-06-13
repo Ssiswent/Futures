@@ -8,14 +8,17 @@
 
 #import "LoginVC.h"
 
+#import "RegisterVC.h"
+
 #import "MineUserModel.h"
 
-@interface LoginVC ()
+@interface LoginVC ()<RegisterVCDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *accountView;
 @property (weak, nonatomic) IBOutlet UIView *pwdView;
 @property (weak, nonatomic) IBOutlet UITextField *accountTextF;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextF;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end
 
@@ -24,6 +27,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialSetup];
+    [self.accountTextF addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
+    [self.pwdTextF addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
+}
+- (void)textChange {
+    if(self.accountTextF.text.length == 11 && self.pwdTextF.text.length != 0)
+    {
+        _loginBtn.enabled = YES;
+    }
+    else
+    {
+        _loginBtn.enabled = NO;
+    }
 }
 
 - (void)initialSetup
@@ -38,6 +53,21 @@
     [self loginWithPwd];
 }
 
+- (IBAction)registerBtnClicked:(id)sender {
+    RegisterVC *registerVC = RegisterVC.new;
+    registerVC.delegate = self;
+    [self presentViewController:registerVC animated:YES completion:nil];
+}
+
+#pragma mark - RegisterVCDelegate
+
+- (void)RegisterVCDidGetUser:(RegisterVC *)registerVC
+{
+    if([self.delegate respondsToSelector:@selector(LoginVCDidGetUser:)])
+    {
+        [self.delegate LoginVCDidGetUser:self];
+    }
+}
 
 #pragma mark - API
 
@@ -49,12 +79,15 @@
         NSError *error;
         MineUserModel *mineUser = [MineUserModel sharedMineUserModel];
         mineUser = [MTLJSONAdapter modelOfClass:[MineUserModel class] fromJSONDictionary:result[@"data"] error:&error];
-        NSLog(@"User:%@",mineUser);
         //获取用户偏好
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
         //记录userId
         [userDefault setObject:mineUser.userId forKey:@"userId"];
         [self dismissViewControllerAnimated:YES completion:nil];
+        if([self.delegate respondsToSelector:@selector(LoginVCDidGetUser:)])
+        {
+            [self.delegate LoginVCDidGetUser:self];
+        }
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"登录失败" afterHideTime:DELAYTiME];

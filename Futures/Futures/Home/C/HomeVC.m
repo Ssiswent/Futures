@@ -79,6 +79,7 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
     _searchBar.layer.masksToBounds = YES;
     _searchBar.searchTextField.backgroundColor = [UIColor colorWithHexString:@"#E9E9E9" alpha:0.1];
     _searchBar.searchTextField.font = [UIFont systemFontOfSize:14];
+    _searchBar.searchTextField.textColor = [UIColor colorWithHexString:@"#2A39FB"];
     _searchBar.backgroundColor = [UIColor colorWithHexString:@"#E9E9E9" alpha:0.1];
     _searchBar.barTintColor = [UIColor colorWithHexString:@"#E9E9E9" alpha:0.1];
     

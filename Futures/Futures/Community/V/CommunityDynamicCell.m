@@ -126,19 +126,30 @@
     NSInteger integerDistance = doubleDistance;
     NSInteger secondsInAnHour = 3600;
     NSInteger secondsInAMinitue = 60;
+    NSInteger hoursInADay = 24;
     NSInteger hoursBetweenDates = integerDistance / secondsInAnHour;
     NSInteger minutesBetweenDates = integerDistance % secondsInAnHour / secondsInAMinitue;
+    NSInteger daysBetweenDates = hoursBetweenDates / hoursInADay;
+    
+    NSLog(@"dynamic%@",dynamicModel.content);
+    NSLog(@"publishDate:%@",publishDate);
+    NSLog(@"todayDate:%@",todayDate);
     
     NSString *timeStr1 = [NSString stringWithFormat:@"%ld小时%ld分钟前更新",(long)hoursBetweenDates,(long)minutesBetweenDates];
     NSString *timeStr2 = [NSString stringWithFormat:@"%ld分钟前更新",(long)minutesBetweenDates];
+    NSString *timeStr3 = [NSString stringWithFormat:@"%ld天前更新",(long)daysBetweenDates];
     
-    if(hoursBetweenDates > 0)
+    if(hoursBetweenDates <= 0)
+    {
+        self.timeLabel.text = timeStr2;
+    }
+    else if (hoursBetweenDates > 0 && hoursBetweenDates < 24)
     {
         self.timeLabel.text = timeStr1;
     }
     else
     {
-        self.timeLabel.text = timeStr2;
+        self.timeLabel.text = timeStr3;
     }
     
     _likeCountLabel.text =  [NSString stringWithFormat:@"%ld",(long)dynamicModel.zanCount];

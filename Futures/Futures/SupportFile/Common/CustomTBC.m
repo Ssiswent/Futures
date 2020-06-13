@@ -10,6 +10,8 @@
 
 @interface CustomTBC ()
 
+@property(nonatomic,assign) NSInteger index;
+
 @end
 
 @implementation CustomTBC
@@ -17,90 +19,106 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //获取用户偏好
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    //初始化userId
-//    if([userDefault objectForKey:@"userId"] == nil)
-//    {
-        [userDefault setObject:nil forKey:@"userId"];
-//    }
-    
     //去掉原生tabbar分割线
     [self.tabBar setShadowImage:[UIImage new]];
     [self.tabBar setBackgroundImage:[UIImage new]];
     
-    self.tabBar.tintColor = UIColorWithRGBA(254, 162, 3, 1);
-    self.tabBar.unselectedItemTintColor = [UIColor blackColor];
+    self.tabBar.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
+    self.tabBar.tintColor = [UIColor colorWithHexString:@"#293AFF"];
+    self.tabBar.unselectedItemTintColor = [UIColor colorWithHexString:@"#BEC3FF"];
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    CGRect frame = self.tabBar.frame;
-    if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 667)
-    {
-        frame.size.height = 74;
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
+    NSInteger index = [self.tabBar.items indexOfObject:item];
+    if (index != _index) {
+        //执行动画
+        NSMutableArray *arry = [NSMutableArray array];
+        for (UIView *btn in self.tabBar.subviews) {
+            if ([btn isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+                [arry addObject:btn];
+                
+            }
+        }
+        if(arry == nil || arry.count == 0){
+            return;
+        }
+        // 控制器如果这么写标题 self.title = @"aaa"; 这个会同时改变 navigationController的title 和 tabBarItem的title,而且tabBarButton的对象也发生了改变(遍历的UITabBarButton顺序可能发生改变了)。所以保险起见 在此加个排序。
+        for (int i = 1; i < arry.count; i++) {
+            for (int j = 0; j < arry.count - i; j++) {
+                int x0 = [arry[j]frame].origin.x;
+                int x1 = [arry[j+1]frame].origin.x;
+                if (x0>x1) {
+                    [arry exchangeObjectAtIndex:j withObjectAtIndex:j+1];
+                }
+                
+            }
+        }
+        
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        //速度控制函数
+        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        animation.repeatCount = 1;      //次数
+        animation.duration = 0.25;       //时间
+        animation.fromValue = [NSNumber numberWithFloat:0.8];   //伸缩倍数
+        animation.toValue = [NSNumber numberWithFloat:1];     //结束伸缩倍数
+        [[arry[index] layer] addAnimation:animation forKey:nil];
+        //记录当前的显示的Tabbar的index
+        _index = index;
     }
-    else if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
-    {
-        frame.size.height = 70;
-    }
-    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 736)
-    {
-        frame.size.height = 74;
-    }
-    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)
-    {
-        frame.size.height = 80;
-    }
-    frame.origin.y = self.view.frame.size.height - frame.size.height;
-    self.tabBar.frame = frame;
+}
+
+//隐藏显示tabbar
++ (void)setTabBarHidden:(BOOL)hidden TabBarVC:(UITabBarController*)tabbarVC
+
+{
+    //打印的数据为 iPhone7 测试
     
-    NSInteger count = 0;
-    for (UITabBarItem * item in self.tabBar.items) {
-        if(count == 2)
-        {
-            if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 667)
-            {
-                item.imageInsets = UIEdgeInsetsMake(4, 0, -4, 0);
-            }
-            else if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
-            {
-                item.titlePositionAdjustment = UIOffsetMake(0, 15);
-            }
-            else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 736)
-            {
-                item.imageInsets = UIEdgeInsetsMake(-4, 0, 4, 0);
-                item.titlePositionAdjustment = UIOffsetMake(0, -5);
-            }
-            else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)
-            {
-                item.titlePositionAdjustment = UIOffsetMake(0, 13);
-                item.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-            }
-        }
-        else
-        {
-            if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 667)
-            {
-                item.imageInsets = UIEdgeInsetsMake(10, 0, -10, 0);
-            }
-            else if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
-            {
-                item.titlePositionAdjustment = UIOffsetMake(0, 15);
-                item.imageInsets = UIEdgeInsetsMake(8, 0, -8, 0);
-            }
-            else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 736)
-            {
-                item.titlePositionAdjustment = UIOffsetMake(0, -5);
-            }
-            else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)
-            {
-                item.titlePositionAdjustment = UIOffsetMake(0, 13);
-                item.imageInsets = UIEdgeInsetsMake(8, 0, -8, 0);
-            }
-        }
-        count ++;
+    UIView *tab = tabbarVC.view; //UILayoutContainerView: 0x145d10390; frame = (0 0; 375 667);
+    
+    CGRect tabRect = tabbarVC.tabBar.frame;//tabRect = (origin = (x = 0, y = 618), size = (width = 375, height = 49))
+    
+    if ([tab.subviews count] < 2) {// tab.subviews[0] = UITransitionView ;  tab.subviews[1] = UITabbar
+        
+        return;
+        
     }
+    
+    UIView *view; //UITransitionView  frame 等于 全屏
+    
+    if ([[tab.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]]) {
+        
+        view = [tab.subviews objectAtIndex:1];
+        
+    } else {
+        
+        view = [tab.subviews objectAtIndex:0];
+        
+    }
+    
+    
+    if (hidden) {
+        //隐藏
+        view.frame = tab.bounds;
+        
+        tabRect.origin.y=[[UIScreen mainScreen]bounds].size.height+tabbarVC.tabBar.frame.size.height;
+        
+    } else {
+        //显示
+        view.frame = CGRectMake(tab.bounds.origin.x, tab.bounds.origin.y, tab.bounds.size.width, tab.bounds.size.height);
+        
+        tabRect.origin.y=[[UIScreen mainScreen] bounds].size.height-tabbarVC.tabBar.frame.size.height;
+        
+    }
+    
+    
+    [UIView animateWithDuration:0.3f animations:^{
+        
+        tabbarVC.tabBar.frame=tabRect;
+        
+    }completion:^(BOOL finished) {
+        
+    }];
+    
 }
 
 @end

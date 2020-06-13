@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,10 +10,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineVC">
             <connections>
+                <outlet property="accountLabel" destination="0Lt-Ts-fZZ" id="Rjy-11-XDf"/>
+                <outlet property="accountView" destination="NzO-LB-2i2" id="9yZ-xl-7AD"/>
                 <outlet property="avatarImgView" destination="Poo-6u-n4o" id="IgZ-m6-tA3"/>
+                <outlet property="avatarImgViewHeight" destination="Ei6-wB-tjN" id="E9f-Jr-cXY"/>
+                <outlet property="avatarImgViewWidth" destination="QBV-hf-UVb" id="z02-wD-NrS"/>
                 <outlet property="avatarView" destination="PhF-TF-DcQ" id="E86-Cw-r6j"/>
                 <outlet property="bottomView" destination="L3R-o6-iCW" id="RUV-gK-ci3"/>
+                <outlet property="fansCountLabel" destination="Upp-2b-nNq" id="BMF-R5-CIL"/>
+                <outlet property="followsCountLabel" destination="JZk-q7-cPE" id="eNx-fp-i2c"/>
                 <outlet property="levelView" destination="rmK-Rp-F06" id="6Jw-RS-L81"/>
+                <outlet property="logoutView" destination="aJL-uZ-fgt" id="pDV-CZ-yPY"/>
+                <outlet property="messagesCountLabel" destination="n5Y-2o-Dr1" id="2T6-7g-jhb"/>
+                <outlet property="nameLabel" destination="BIf-ZW-Ty4" id="XlE-Fc-UXE"/>
+                <outlet property="pwdContentView" destination="BJw-OE-1KU" id="8ty-Od-lBq"/>
+                <outlet property="pwdView" destination="bh9-AD-ZT0" id="qPM-qX-t4k"/>
+                <outlet property="pwdViewWidth" destination="4up-Tj-ATt" id="Zlk-7C-zwO"/>
                 <outlet property="sexView" destination="TcG-FJ-rbg" id="Y5a-9S-IXX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,11 +47,11 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PhF-TF-DcQ" userLabel="AvatarView">
                             <rect key="frame" x="16" y="70" width="75" height="75"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" translatesAutoresizingMaskIntoConstraints="NO" id="Poo-6u-n4o" userLabel="AvatarImgView">
-                                    <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultHead" translatesAutoresizingMaskIntoConstraints="NO" id="Poo-6u-n4o" userLabel="AvatarImgView">
+                                    <rect key="frame" x="20" y="17.5" width="35" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="65" id="Ei6-wB-tjN"/>
-                                        <constraint firstAttribute="width" constant="65" id="QBV-hf-UVb"/>
+                                        <constraint firstAttribute="height" constant="40" id="Ei6-wB-tjN"/>
+                                        <constraint firstAttribute="width" constant="35" id="QBV-hf-UVb"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
@@ -137,7 +150,7 @@
                                             <color key="textColor" red="0.14902219180000001" green="0.14901494979999999" blue="0.14901983739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-q7-cPE" userLabel="FollowsCountLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-q7-cPE" userLabel="FollowsCountLabel">
                                             <rect key="frame" x="45" y="58.5" width="42" height="18.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18.5" id="P9b-Gd-bRx"/>
@@ -168,7 +181,7 @@
                                             <color key="textColor" red="0.14902219180000001" green="0.14901494979999999" blue="0.14901983739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upp-2b-nNq" userLabel="FansCountLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upp-2b-nNq" userLabel="FansCountLabel">
                                             <rect key="frame" x="45" y="58.5" width="42" height="18.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="42" id="I5x-u1-voU"/>
@@ -199,7 +212,7 @@
                                             <color key="textColor" red="0.14902219180000001" green="0.14901494979999999" blue="0.14901983739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5Y-2o-Dr1" userLabel="MessagesCountLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5Y-2o-Dr1" userLabel="MessagesCountLabel">
                                             <rect key="frame" x="45.5" y="58.5" width="42" height="18.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18.5" id="PsJ-NZ-eFs"/>
@@ -599,7 +612,7 @@
                                                 <constraint firstAttribute="height" constant="20" id="hwc-Er-KbR"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="切 换 账 号" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lt-Ts-fZZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="切 换 账 号" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lt-Ts-fZZ" userLabel="AccountLabel">
                                             <rect key="frame" x="0.0" y="29.5" width="59" height="11.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="59" id="CWL-Wg-uD7"/>
@@ -673,6 +686,7 @@
                         <constraint firstItem="NzO-LB-2i2" firstAttribute="width" secondItem="NlI-sD-s4A" secondAttribute="width" multiplier="0.25" id="F3j-Na-3ol"/>
                         <constraint firstItem="bh9-AD-ZT0" firstAttribute="leading" secondItem="NlI-sD-s4A" secondAttribute="leading" id="Hwk-5d-aFG"/>
                         <constraint firstAttribute="bottom" secondItem="aJL-uZ-fgt" secondAttribute="bottom" id="JyN-gK-I1b"/>
+                        <constraint firstItem="aJL-uZ-fgt" firstAttribute="width" secondItem="NlI-sD-s4A" secondAttribute="width" multiplier="0.25" id="KX1-CN-4TI"/>
                         <constraint firstAttribute="bottom" secondItem="cp2-9A-eHS" secondAttribute="bottom" id="M1k-Fd-ar5"/>
                         <constraint firstItem="aJL-uZ-fgt" firstAttribute="leading" secondItem="NzO-LB-2i2" secondAttribute="trailing" id="TdH-RK-VqC"/>
                         <constraint firstItem="cp2-9A-eHS" firstAttribute="width" secondItem="NlI-sD-s4A" secondAttribute="width" multiplier="0.25" id="V3m-QC-FWr"/>
@@ -680,9 +694,7 @@
                         <constraint firstAttribute="height" constant="41" id="ZBT-44-qL2"/>
                         <constraint firstAttribute="bottom" secondItem="NzO-LB-2i2" secondAttribute="bottom" id="ZHO-hV-AGa"/>
                         <constraint firstItem="cp2-9A-eHS" firstAttribute="leading" secondItem="bh9-AD-ZT0" secondAttribute="trailing" id="Zba-9j-CtX"/>
-                        <constraint firstItem="cp2-9A-eHS" firstAttribute="leading" secondItem="NlI-sD-s4A" secondAttribute="leading" priority="750" id="d1m-OA-NMl"/>
                         <constraint firstItem="bh9-AD-ZT0" firstAttribute="top" secondItem="NlI-sD-s4A" secondAttribute="top" id="dCN-pb-OQS"/>
-                        <constraint firstAttribute="trailing" secondItem="aJL-uZ-fgt" secondAttribute="trailing" id="dl2-nR-tgq"/>
                         <constraint firstItem="cp2-9A-eHS" firstAttribute="top" secondItem="NlI-sD-s4A" secondAttribute="top" id="hyJ-e4-fEB"/>
                     </constraints>
                 </view>
@@ -719,16 +731,16 @@
                 <constraint firstItem="gRI-Dl-LEY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="utl-h3-IWZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="139" y="148"/>
+            <point key="canvasLocation" x="137.68115942028987" y="147.99107142857142"/>
         </view>
     </objects>
     <resources>
         <image name="bg" width="375" height="230"/>
         <image name="checkin" width="345" height="80"/>
         <image name="countBg" width="357.5" height="102.5"/>
+        <image name="defaultHead" width="35" height="40"/>
         <image name="dynamicHeader" width="4" height="13"/>
         <image name="edit" width="100" height="30"/>
-        <image name="head" width="65" height="65"/>
         <image name="ic_settings" width="20" height="20"/>
         <image name="mine_account" width="20" height="18"/>
         <image name="mine_collect" width="60" height="60"/>

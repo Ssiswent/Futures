@@ -17,6 +17,7 @@
 - (UIColor *) yp_navigationBarTintColor {
     return [UIColor whiteColor];
 }
+
 - (UIColor *)yp_navigationBackgroundColor{
     return [UIColor colorWithHexString:@"#293AFF"];
 }

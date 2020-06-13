@@ -63,6 +63,10 @@
 		18140315248783BD00CA3E92 /* MineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18140313248783BD00CA3E92 /* MineVC.m */; };
 		18140316248783BD00CA3E92 /* MineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18140314248783BD00CA3E92 /* MineVC.xib */; };
 		2912F25113B14CAD1FAB718C /* Pods_Futures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093094F2C929266EE6142479 /* Pods_Futures.framework */; };
+		CB6DA4CC2490AF06007D5131 /* MineCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6DA4C92490AF06007D5131 /* MineCodeView.xib */; };
+		CB6DA4CD2490AF06007D5131 /* MineCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6DA4CB2490AF06007D5131 /* MineCodeView.m */; };
+		CB6DA4D12490D75E007D5131 /* MineDynamicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6DA4CF2490D75E007D5131 /* MineDynamicVC.m */; };
+		CB6DA4D22490D75E007D5131 /* MineDynamicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6DA4D02490D75E007D5131 /* MineDynamicVC.xib */; };
 		CBA5A340248F6E76003BA799 /* MineSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5A33E248F6E76003BA799 /* MineSettingsVC.m */; };
 		CBA5A341248F6E76003BA799 /* MineSettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA5A33F248F6E76003BA799 /* MineSettingsVC.xib */; };
 		CBA5A345248F6FE6003BA799 /* MineSettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5A343248F6FE6003BA799 /* MineSettingsCell.m */; };
@@ -70,6 +74,15 @@
 		CBA5A349248F8013003BA799 /* YPNavigationController+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5A348248F8013003BA799 /* YPNavigationController+Configure.m */; };
 		CBA5A34D248FD5F5003BA799 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5A34B248FD5F5003BA799 /* LoginVC.m */; };
 		CBA5A34E248FD5F6003BA799 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA5A34C248FD5F5003BA799 /* LoginVC.xib */; };
+		CBA5A3522490795E003BA799 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5A3502490795E003BA799 /* RegisterVC.m */; };
+		CBA5A3532490795E003BA799 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA5A3512490795E003BA799 /* RegisterVC.xib */; };
+		CBA74A9924921C810038CA59 /* MineDynamicHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA74A9824921C810038CA59 /* MineDynamicHeaderView.m */; };
+		CBA74A9B24921D760038CA59 /* MineDynamicHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA74A9A24921D760038CA59 /* MineDynamicHeaderView.xib */; };
+		CBA74AB32494D7C90038CA59 /* PagingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA74AB22494D7C90038CA59 /* PagingViewController.m */; };
+		CBA74AB62494D89F0038CA59 /* PagingViewTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA74AB52494D89F0038CA59 /* PagingViewTableHeaderView.m */; };
+		CBA74ABC2494D9160038CA59 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA74ABA2494D9150038CA59 /* DetailViewController.m */; };
+		CBA74ABF2494D94E0038CA59 /* UIWindow+JXSafeArea.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA74ABE2494D94E0038CA59 /* UIWindow+JXSafeArea.m */; };
+		CBA74AC22494DA140038CA59 /* ListViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA74AC12494DA140038CA59 /* ListViewController1.m */; };
 		CBAD62502488CCBA0097BD9D /* HomeBannerCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD624E2488CCBA0097BD9D /* HomeBannerCollectionCell.m */; };
 		CBAD62512488CCBA0097BD9D /* HomeBannerCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD624F2488CCBA0097BD9D /* HomeBannerCollectionCell.xib */; };
 		CBAD62552488D9C60097BD9D /* HomeBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD62532488D9C60097BD9D /* HomeBannerCell.m */; };
@@ -228,6 +241,12 @@
 		18140313248783BD00CA3E92 /* MineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
 		18140314248783BD00CA3E92 /* MineVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineVC.xib; sourceTree = "<group>"; };
 		3E49EC4B77A42CB5FF5BA89B /* Pods-Futures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Futures.release.xcconfig"; path = "Target Support Files/Pods-Futures/Pods-Futures.release.xcconfig"; sourceTree = "<group>"; };
+		CB6DA4C92490AF06007D5131 /* MineCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineCodeView.xib; sourceTree = "<group>"; };
+		CB6DA4CA2490AF06007D5131 /* MineCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCodeView.h; sourceTree = "<group>"; };
+		CB6DA4CB2490AF06007D5131 /* MineCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCodeView.m; sourceTree = "<group>"; };
+		CB6DA4CE2490D75E007D5131 /* MineDynamicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineDynamicVC.h; sourceTree = "<group>"; };
+		CB6DA4CF2490D75E007D5131 /* MineDynamicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineDynamicVC.m; sourceTree = "<group>"; };
+		CB6DA4D02490D75E007D5131 /* MineDynamicVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineDynamicVC.xib; sourceTree = "<group>"; };
 		CBA5A33D248F6E76003BA799 /* MineSettingsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineSettingsVC.h; sourceTree = "<group>"; };
 		CBA5A33E248F6E76003BA799 /* MineSettingsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineSettingsVC.m; sourceTree = "<group>"; };
 		CBA5A33F248F6E76003BA799 /* MineSettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineSettingsVC.xib; sourceTree = "<group>"; };
@@ -239,6 +258,22 @@
 		CBA5A34A248FD5F5003BA799 /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		CBA5A34B248FD5F5003BA799 /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		CBA5A34C248FD5F5003BA799 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		CBA5A34F2490795E003BA799 /* RegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
+		CBA5A3502490795E003BA799 /* RegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
+		CBA5A3512490795E003BA799 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
+		CBA74A9724921C810038CA59 /* MineDynamicHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineDynamicHeaderView.h; sourceTree = "<group>"; };
+		CBA74A9824921C810038CA59 /* MineDynamicHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineDynamicHeaderView.m; sourceTree = "<group>"; };
+		CBA74A9A24921D760038CA59 /* MineDynamicHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineDynamicHeaderView.xib; sourceTree = "<group>"; };
+		CBA74AB12494D7BC0038CA59 /* PagingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagingViewController.h; sourceTree = "<group>"; };
+		CBA74AB22494D7C90038CA59 /* PagingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagingViewController.m; sourceTree = "<group>"; };
+		CBA74AB42494D89F0038CA59 /* PagingViewTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagingViewTableHeaderView.h; sourceTree = "<group>"; };
+		CBA74AB52494D89F0038CA59 /* PagingViewTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagingViewTableHeaderView.m; sourceTree = "<group>"; };
+		CBA74ABA2494D9150038CA59 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		CBA74ABB2494D9150038CA59 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		CBA74ABD2494D94E0038CA59 /* UIWindow+JXSafeArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+JXSafeArea.h"; sourceTree = "<group>"; };
+		CBA74ABE2494D94E0038CA59 /* UIWindow+JXSafeArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+JXSafeArea.m"; sourceTree = "<group>"; };
+		CBA74AC02494DA130038CA59 /* ListViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController1.h; sourceTree = "<group>"; };
+		CBA74AC12494DA140038CA59 /* ListViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController1.m; sourceTree = "<group>"; };
 		CBAD624D2488CCBA0097BD9D /* HomeBannerCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBannerCollectionCell.h; sourceTree = "<group>"; };
 		CBAD624E2488CCBA0097BD9D /* HomeBannerCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBannerCollectionCell.m; sourceTree = "<group>"; };
 		CBAD624F2488CCBA0097BD9D /* HomeBannerCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBannerCollectionCell.xib; sourceTree = "<group>"; };
@@ -691,6 +726,20 @@
 				CBA5A34A248FD5F5003BA799 /* LoginVC.h */,
 				CBA5A34B248FD5F5003BA799 /* LoginVC.m */,
 				CBA5A34C248FD5F5003BA799 /* LoginVC.xib */,
+				CBA5A34F2490795E003BA799 /* RegisterVC.h */,
+				CBA5A3502490795E003BA799 /* RegisterVC.m */,
+				CBA5A3512490795E003BA799 /* RegisterVC.xib */,
+				CB6DA4CE2490D75E007D5131 /* MineDynamicVC.h */,
+				CB6DA4CF2490D75E007D5131 /* MineDynamicVC.m */,
+				CB6DA4D02490D75E007D5131 /* MineDynamicVC.xib */,
+				CBA74AB12494D7BC0038CA59 /* PagingViewController.h */,
+				CBA74AB22494D7C90038CA59 /* PagingViewController.m */,
+				CBA74ABB2494D9150038CA59 /* DetailViewController.h */,
+				CBA74ABA2494D9150038CA59 /* DetailViewController.m */,
+				CBA74ABD2494D94E0038CA59 /* UIWindow+JXSafeArea.h */,
+				CBA74ABE2494D94E0038CA59 /* UIWindow+JXSafeArea.m */,
+				CBA74AC02494DA130038CA59 /* ListViewController1.h */,
+				CBA74AC12494DA140038CA59 /* ListViewController1.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -698,9 +747,17 @@
 		CBEC542A248B3AE300B3D94C /* V */ = {
 			isa = PBXGroup;
 			children = (
+				CBA74AB42494D89F0038CA59 /* PagingViewTableHeaderView.h */,
+				CBA74AB52494D89F0038CA59 /* PagingViewTableHeaderView.m */,
 				CBA5A342248F6FE6003BA799 /* MineSettingsCell.h */,
 				CBA5A343248F6FE6003BA799 /* MineSettingsCell.m */,
 				CBA5A344248F6FE6003BA799 /* MineSettingsCell.xib */,
+				CB6DA4CA2490AF06007D5131 /* MineCodeView.h */,
+				CB6DA4CB2490AF06007D5131 /* MineCodeView.m */,
+				CB6DA4C92490AF06007D5131 /* MineCodeView.xib */,
+				CBA74A9724921C810038CA59 /* MineDynamicHeaderView.h */,
+				CBA74A9824921C810038CA59 /* MineDynamicHeaderView.m */,
+				CBA74A9A24921D760038CA59 /* MineDynamicHeaderView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -781,9 +838,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBAD62AC248A15560097BD9D /* CommunityFocusCollectionCell.xib in Resources */,
+				CBA5A3532490795E003BA799 /* RegisterVC.xib in Resources */,
 				CBAD62512488CCBA0097BD9D /* HomeBannerCollectionCell.xib in Resources */,
 				1814022F24876C6700CA3E92 /* LaunchScreen.storyboard in Resources */,
 				1814030C2487836D00CA3E92 /* HomeVC.xib in Resources */,
+				CB6DA4CC2490AF06007D5131 /* MineCodeView.xib in Resources */,
 				CBAD626A2488F7350097BD9D /* HomeGoldCell.xib in Resources */,
 				CBAD62652488F53C0097BD9D /* HomeADCell.xib in Resources */,
 				181403112487838200CA3E92 /* CommunityVC.xib in Resources */,
@@ -791,8 +850,10 @@
 				CBAD62B9248A98CA0097BD9D /* CommunityDynamicHeaderView.xib in Resources */,
 				CBAD629D2489E55C0097BD9D /* CommunityTopicCollectionCell.xib in Resources */,
 				CBAD628C248950140097BD9D /* CommunityHeaderCell.xib in Resources */,
+				CB6DA4D22490D75E007D5131 /* MineDynamicVC.xib in Resources */,
 				CBAD627D2489384C0097BD9D /* CommunityPopularVC.xib in Resources */,
 				18140316248783BD00CA3E92 /* MineVC.xib in Resources */,
+				CBA74A9B24921D760038CA59 /* MineDynamicHeaderView.xib in Resources */,
 				CBAD625B2488E6410097BD9D /* HomeFourBtnCell.xib in Resources */,
 				CBAD62822489385C0097BD9D /* CommunityFocusVC.xib in Resources */,
 				CBA5A34E248FD5F6003BA799 /* LoginVC.xib in Resources */,
@@ -859,13 +920,17 @@
 			files = (
 				181402F8248779DA00CA3E92 /* MVPKlineView.m in Sources */,
 				181402E8248779DA00CA3E92 /* ZCMakeTableViewCell.m in Sources */,
+				CBA74AC22494DA140038CA59 /* ListViewController1.m in Sources */,
 				181402CD248779DA00CA3E92 /* EGHViewsTool.m in Sources */,
 				CBAD6293248957E10097BD9D /* MineUserModel.m in Sources */,
 				181402E0248779DA00CA3E92 /* ZCBaseView.m in Sources */,
 				181402EA248779DA00CA3E92 /* YKLineChartView.m in Sources */,
+				CBA74AB32494D7C90038CA59 /* PagingViewController.m in Sources */,
+				CBA74AB62494D89F0038CA59 /* PagingViewTableHeaderView.m in Sources */,
 				181402E9248779DA00CA3E92 /* QHDetailViewController.m in Sources */,
 				181402D5248779DA00CA3E92 /* ENDNetWorkManager.m in Sources */,
 				CBAD627C2489384C0097BD9D /* CommunityPopularVC.m in Sources */,
+				CBA74ABC2494D9160038CA59 /* DetailViewController.m in Sources */,
 				CBAD62B0248A2A320097BD9D /* CommunityDynamicCell.m in Sources */,
 				181402D3248779DA00CA3E92 /* ENDLCPNetWorkGET.m in Sources */,
 				CBAD62692488F7350097BD9D /* HomeGoldCell.m in Sources */,
@@ -882,6 +947,7 @@
 				CBAD62972489DCB50097BD9D /* CommunityTopicCell.m in Sources */,
 				181402D7248779DA00CA3E92 /* ENDNetWorkPUT.m in Sources */,
 				181402DC248779DA00CA3E92 /* BaseViewController.m in Sources */,
+				CBA5A3522490795E003BA799 /* RegisterVC.m in Sources */,
 				181402D2248779DA00CA3E92 /* EGHCodeTool.m in Sources */,
 				CBAD6285248943230097BD9D /* HomeNewsHeaderView.m in Sources */,
 				181402DA248779DA00CA3E92 /* UIImage+Image.m in Sources */,
@@ -889,6 +955,7 @@
 				181402D9248779DA00CA3E92 /* UIColor+Hex.m in Sources */,
 				181402EE248779DA00CA3E92 /* CZ_NEWMarketVC.m in Sources */,
 				CBAD62B8248A98CA0097BD9D /* CommunityDynamicHeaderView.m in Sources */,
+				CBA74A9924921C810038CA59 /* MineDynamicHeaderView.m in Sources */,
 				181402FC248779DA00CA3E92 /* ContentBaseViewController.m in Sources */,
 				1814030B2487836D00CA3E92 /* HomeVC.m in Sources */,
 				181402FD248779DA00CA3E92 /* BaseModel.m in Sources */,
@@ -904,6 +971,7 @@
 				181402DF248779DA00CA3E92 /* NetWork.m in Sources */,
 				181402CF248779DA00CA3E92 /* Toast.m in Sources */,
 				181402F6248779DA00CA3E92 /* TopView.m in Sources */,
+				CB6DA4CD2490AF06007D5131 /* MineCodeView.m in Sources */,
 				CBA5A34D248FD5F5003BA799 /* LoginVC.m in Sources */,
 				181402CA248779DA00CA3E92 /* EGHImagePickerVCManager.m in Sources */,
 				181402D6248779DA00CA3E92 /* ENDNetWorkDELETE.m in Sources */,
@@ -914,6 +982,7 @@
 				CBAD62642488F53C0097BD9D /* HomeADCell.m in Sources */,
 				CBAD62A6248A0F5C0097BD9D /* CommunityFocusCell.m in Sources */,
 				CBA5A345248F6FE6003BA799 /* MineSettingsCell.m in Sources */,
+				CB6DA4D12490D75E007D5131 /* MineDynamicVC.m in Sources */,
 				CBAD6272248923B10097BD9D /* HomeNewsModel.m in Sources */,
 				181402FA248779DA00CA3E92 /* CustomTBC.m in Sources */,
 				181402E6248779DA00CA3E92 /* QHDHHeadCollectionViewCell.m in Sources */,
@@ -921,6 +990,7 @@
 				181402D4248779DA00CA3E92 /* ENDNetWorkPOST.m in Sources */,
 				181402CC248779DA00CA3E92 /* ENDGradientLabel.m in Sources */,
 				181402CB248779DA00CA3E92 /* TimerTool.m in Sources */,
+				CBA74ABF2494D94E0038CA59 /* UIWindow+JXSafeArea.m in Sources */,
 				181402D0248779DA00CA3E92 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				181402E1248779DA00CA3E92 /* YKTimeLineView.m in Sources */,
 				CBAD62B4248A7C970097BD9D /* CommunityDynamicModel.m in Sources */,
@@ -1069,6 +1139,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Futures/SupportFile/PrefixHeader.pch;
 				INFOPLIST_FILE = Futures/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1089,6 +1160,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Futures/SupportFile/PrefixHeader.pch;
 				INFOPLIST_FILE = Futures/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

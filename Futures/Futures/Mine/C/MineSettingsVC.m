@@ -51,6 +51,7 @@ NSString *MineSettingsCellID = @"MineSettingsCell";
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
 
@@ -142,6 +143,16 @@ NSString *MineSettingsCellID = @"MineSettingsCell";
         {
             LoginVC *loginVC = LoginVC.new;
             [self presentViewController:loginVC animated:YES completion:nil];
+        }
+    }
+    if(indexPath.section == 1)
+    {
+        if(indexPath.row == 1)
+        {
+            //清空userId
+            NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+            [userDefault setObject:nil forKey:@"userId"];
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }
 }

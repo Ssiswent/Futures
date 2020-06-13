@@ -14,9 +14,11 @@
 #import "CommunityVC.h"
 #import "MineVC.h"
 
+#import "CustomTBC.h"
+
 @interface AppDelegate ()
 
-@property(nonatomic, strong)UITabBarController *tabBarC;
+@property(nonatomic, strong)CustomTBC *tabBarC;
 
 @end
 
@@ -27,7 +29,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
+    [[UITextField appearance] setTintColor:[UIColor colorWithHexString:@"#2A39FB"]];
     [IQKeyboardManager sharedManager];
+    [IQKeyboardManager sharedManager].toolbarManageBehaviour = YES;
     //点击背景收回键盘
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     
@@ -40,14 +44,8 @@
 
 - (void)setTabBarC
 {
-    UITabBarController *tabBarC = UITabBarController.new;
-    //去掉原生tabbar分割线
-    [tabBarC.tabBar setShadowImage:[UIImage new]];
-    [tabBarC.tabBar setBackgroundImage:[UIImage new]];
+    CustomTBC *tabBarC = CustomTBC.new;
     
-    tabBarC.tabBar.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
-    tabBarC.tabBar.tintColor = [UIColor colorWithHexString:@"#293AFF"];
-    tabBarC.tabBar.unselectedItemTintColor = [UIColor colorWithHexString:@"#BEC3FF"];
     
     self.tabBarC = tabBarC;
     
