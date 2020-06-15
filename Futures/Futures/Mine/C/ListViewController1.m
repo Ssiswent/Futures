@@ -11,99 +11,84 @@
 #import <MJRefresh/MJRefresh.h>
 #import "UIWindow+JXSafeArea.h"
 
+#import "CommunityDynamicCell.h"
+
 @interface ListViewController1 () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, copy) void(^scrollCallback)(UIScrollView *scrollView);
 @end
 
 @implementation ListViewController1
 
+NSString *MineDynamicCellID1 = @"MineDynamicCell1";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.tableFooterView = [UIView new];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    //列表的contentInsetAdjustmentBehavior失效，需要自己设置底部inset
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, UIApplication.sharedApplication.keyWindow.jx_layoutInsets.bottom, 0);
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CommunityDynamicCell class]) bundle:nil]forCellReuseIdentifier:MineDynamicCellID1];
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    
     [self.view addSubview:self.tableView];
-
-    __weak typeof(self)weakSelf = self;
-    if (self.isNeedHeader) {
-        self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [weakSelf.tableView.mj_header endRefreshing];
-            });
-        }];
-    }
-    if (self.isNeedFooter) {
-        self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [weakSelf.dataSource addObject:@"加载更多成功"];
-                [weakSelf.tableView reloadData];
-                [weakSelf.tableView.mj_footer endRefreshing];
-            });
-        }];
-    }
-
-    [self beginFirstRefresh];
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-
-    self.tableView.frame = self.view.bounds;
-}
-
-- (void)beginFirstRefresh {
-    if (!self.isHeaderRefreshed) {
-        [self beginRefreshImmediately];
+    CGFloat tableViewHeight = tableViewHeight = SCREEN_HEIGHT - 54;;
+    if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 667)
+    {
+        tableViewHeight = SCREEN_HEIGHT - 54;
     }
-}
-
-- (void)beginRefreshImmediately {
-    if (self.isNeedHeader) {
-        [self.tableView.mj_header beginRefreshing];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.isHeaderRefreshed = YES;
-            [self.tableView reloadData];
-            [self.tableView.mj_header endRefreshing];
-        });
-    }else {
-        self.isHeaderRefreshed = YES;
-        [self.tableView reloadData];
+    //11 Pro
+    else if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
+    {
+        
     }
+    //8 Plus
+    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 736)
+    {
+        
+    }
+    //11 Pro Max
+    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)
+    {
+        tableViewHeight = SCREEN_HEIGHT - 74;
+    }
+    
+    self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, tableViewHeight);
 }
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (!self.isHeaderRefreshed) {
-        return 0;
-    }
     return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = self.dataSource[indexPath.row];
+    CommunityDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:MineDynamicCellID1];
+    cell.dynamicModel = self.dataSource[indexPath.row];
     return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DetailViewController *detailVC = [[DetailViewController alloc] init];
-    detailVC.infoString = self.dataSource[indexPath.row];
-    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     !self.scrollCallback ?: self.scrollCallback(scrollView);
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 5)];
+    headerView.backgroundColor = [UIColor colorWithHexString:@"#E9E9E9"];
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 5;
 }
 
 #pragma mark - JXPagingViewListViewDelegate

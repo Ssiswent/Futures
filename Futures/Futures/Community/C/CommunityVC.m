@@ -40,6 +40,7 @@
     self.myCategoryView.titleFont = [UIFont boldSystemFontOfSize:15];
     self.myCategoryView.titleColor = [UIColor whiteColor];
     self.myCategoryView.titleSelectedColor = [UIColor colorWithHexString:@"#2C3446"];
+    self.myCategoryView.titleColorGradientEnabled = YES;
     
     JXCategoryIndicatorBackgroundView *backgroundView = [[JXCategoryIndicatorBackgroundView alloc] init];
     backgroundView.indicatorHeight = 30;

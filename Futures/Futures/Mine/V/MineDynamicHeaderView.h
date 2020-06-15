@@ -10,9 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class MineUserModel;
+
 @interface MineDynamicHeaderView : UIView
 
 - (void)scrollViewDidScroll:(CGFloat)contentOffsetY;
+
+@property (strong, nonatomic) MineUserModel *mineUser;
 
 @end
 

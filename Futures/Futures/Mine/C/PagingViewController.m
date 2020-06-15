@@ -9,13 +9,26 @@
 #import "PagingViewController.h"
 #import "JXCategoryView.h"
 #import "ListViewController1.h"
-#import "UIWindow+JXSafeArea.h"
 #import "CustomTBC.h"
+
+#import "CommunityDynamicModel.h"
+
+#import "MineUserModel.h"
 
 @interface PagingViewController () <JXCategoryViewDelegate, YPNavigationBarConfigureStyle>
 
 @property (nonatomic, strong) JXCategoryTitleView *categoryView;
 @property (nonatomic, strong) NSArray <NSString *> *titles;
+
+@property (assign, nonatomic) CGFloat alpha;
+@property (strong, nonatomic) UIColor *navBgColor;
+
+@property (assign, nonatomic) CGFloat verticalOffset;
+@property (assign, nonatomic) CGFloat thresholdDistance;
+
+@property (nonatomic, strong) NSNumber *userId;
+@property (strong , nonatomic) NSArray *dynamicsArray;
+@property (strong , nonatomic) NSArray *hotDynamicsArray;
 
 @end
 
@@ -23,51 +36,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //    self.view.backgroundColor = [UIColor whiteColor];
-    self.extendedLayoutIncludesOpaqueBars = YES;
-    _titles = @[@"最热", @"最新"];
-    
-    _userHeaderView = [[PagingViewTableHeaderView alloc] init];
-    
-    _categoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, JXheightForHeaderInSection)];
-    self.categoryView.titles = self.titles;
-    self.categoryView.backgroundColor = [UIColor whiteColor];
-    self.categoryView.delegate = self;
-    self.categoryView.titleSelectedColor = [UIColor colorWithRed:105/255.0 green:144/255.0 blue:239/255.0 alpha:1];
-    self.categoryView.titleColor = [UIColor blackColor];
-    self.categoryView.titleColorGradientEnabled = YES;
-    self.categoryView.titleLabelZoomEnabled = YES;
-    self.categoryView.contentScrollViewClickTransitionAnimationEnabled = NO;
-    
-    JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
-    lineView.indicatorColor = [UIColor colorWithRed:105/255.0 green:144/255.0 blue:239/255.0 alpha:1];
-    lineView.indicatorWidth = 30;
-    self.categoryView.indicators = @[lineView];
-    
-    _pagerView = [self preferredPagingView];
-    self.pagerView.mainTableView.gestureDelegate = self;
-    [self.view addSubview:self.pagerView];
-    
-    self.categoryView.listContainer = (id<JXCategoryViewListContainer>)self.pagerView.listContainerView;
-    
-    //导航栏隐藏的情况，处理扣边返回，下面的代码要加上
-    //    [self.pagerView.listContainerView.scrollView.panGestureRecognizer requireGestureRecognizerToFail:self.navigationController.interactivePopGestureRecognizer];
-    //    [self.pagerView.mainTableView.panGestureRecognizer requireGestureRecognizerToFail:self.navigationController.interactivePopGestureRecognizer];
-    
-    //调整pagingView的位置
-    self.pagerView.pinSectionHeaderVerticalOffset = 64;
+    [self initialSetup];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
+    [self getUserDefault];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    //右滑返回
     self.navigationController.interactivePopGestureRecognizer.enabled = (self.categoryView.selectedIndex == 0);
 }
 
@@ -85,6 +66,99 @@
     [super viewDidLayoutSubviews];
     
     self.pagerView.frame = self.view.bounds;
+}
+
+- (void)initialSetup
+{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"ic_return"] style:0 target:self action:@selector(backBtnClicked)];
+    
+    [self screenAdapter];
+    
+    _alpha = 0;
+    UIColor *color = [UIColor colorWithHexString:@"#293AFF" alpha:_alpha];
+    _navBgColor = color;
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    
+    _titles = @[@"最热", @"最新"];
+    
+    _userHeaderView = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([MineDynamicHeaderView class]) owner:nil options:nil].firstObject;
+    
+    _categoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, JXheightForHeaderInSection)];
+    self.categoryView.titles = self.titles;
+    self.categoryView.backgroundColor = [UIColor whiteColor];
+    self.categoryView.delegate = self;
+    self.categoryView.titleFont = [UIFont systemFontOfSize:12 weight:UIFontWeightBold];
+    self.categoryView.titleSelectedColor = [UIColor colorWithHexString:@"#293AFF"];
+    self.categoryView.titleColor = [UIColor colorWithHexString:@"#272727"];
+    self.categoryView.titleColorGradientEnabled = YES;
+    self.categoryView.titleLabelZoomEnabled = YES;
+    self.categoryView.contentScrollViewClickTransitionAnimationEnabled = NO;
+    self.categoryView.cellWidth = 24;
+    self.categoryView.contentEdgeInsetLeft = 14.5;
+    self.categoryView.contentEdgeInsetRight = kScaleFrom_iPhone8_Width(238);
+    self.categoryView.cellSpacing = 74.5;
+    
+    JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
+    lineView.indicatorColor = [UIColor colorWithRed:105/255.0 green:144/255.0 blue:239/255.0 alpha:1];
+    lineView.indicatorWidth = 7.5;
+    lineView.indicatorHeight = 3;
+    lineView.verticalMargin = 5;
+    self.categoryView.indicators = @[lineView];
+    
+    _pagerView = [self preferredPagingView];
+    self.pagerView.mainTableView.gestureDelegate = self;
+    //隐藏右侧指示器
+    self.pagerView.automaticallyDisplayListVerticalScrollIndicator = NO;
+    
+    [self.view addSubview:self.pagerView];
+    
+    self.categoryView.listContainer = (id<JXCategoryViewListContainer>)self.pagerView.listContainerView;
+    
+    //调整pagingView的位置
+    self.pagerView.pinSectionHeaderVerticalOffset = _verticalOffset;
+}
+
+- (void)screenAdapter
+{
+    //8(SE2)
+    if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 667)
+    {
+        _verticalOffset = 64;
+        _thresholdDistance = 86;
+    }
+    //11 Pro
+    else if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
+    {
+        
+    }
+    //8 Plus
+    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 736)
+    {
+        
+    }
+    //11 Pro Max
+    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)
+    {
+        _verticalOffset = 84;
+        _thresholdDistance = 64;
+    }
+}
+
+- (void)backBtnClicked
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)getUserDefault
+{
+    //获取用户偏好
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    //读取userId
+    NSNumber *userId = [userDefault objectForKey:@"userId"];
+    _userId = userId;
+    [self getDynamics];
+    [self getHotDynamics];
+    [self getUser];
 }
 
 #pragma mark - JXPagerViewDelegate
@@ -113,14 +187,12 @@
 - (id<JXPagerViewListViewDelegate>)pagerView:(JXPagerView *)pagerView initListAtIndex:(NSInteger)index {
     ListViewController1 *list = [[ListViewController1 alloc] init];
     list.title = self.titles[index];
-    list.isNeedHeader = self.isNeedHeader;
-    list.isNeedFooter = self.isNeedFooter;
     if (index == 0) {
-        list.dataSource = @[@"橡胶火箭", @"橡胶火箭炮", @"橡胶机关枪", @"橡胶子弹", @"橡胶攻城炮", @"橡胶象枪", @"橡胶象枪乱打", @"橡胶灰熊铳", @"橡胶雷神象枪", @"橡胶猿王枪", @"橡胶犀·榴弹炮", @"橡胶大蛇炮", @"橡胶火箭", @"橡胶火箭炮", @"橡胶机关枪", @"橡胶子弹", @"橡胶攻城炮", @"橡胶象枪", @"橡胶象枪乱打", @"橡胶灰熊铳", @"橡胶雷神象枪", @"橡胶猿王枪", @"橡胶犀·榴弹炮", @"橡胶大蛇炮"].mutableCopy;
+        list.dataSource = self.hotDynamicsArray.mutableCopy;
     }
     else
     {
-        list.dataSource = @[@"吃烤肉", @"吃鸡腿肉", @"吃牛肉", @"各种肉"].mutableCopy;
+        list.dataSource = self.dynamicsArray.mutableCopy;
     }
     return list;
 }
@@ -143,20 +215,73 @@
 
 - (void)mainTableViewDidScroll:(UIScrollView *)scrollView {
     [self.userHeaderView scrollViewDidScroll:scrollView.contentOffset.y];
+    CGFloat thresholdDistance = _thresholdDistance;
+    CGFloat percent = scrollView.contentOffset.y/thresholdDistance;
+    percent = MAX(0, MIN(1, percent));
+    _alpha = percent;
+    [self yp_refreshNavigationBarStyle];
+    UIColor *color = [UIColor colorWithHexString:@"#293AFF" alpha:percent];
+    _navBgColor = color;
 }
 
 #pragma mark - yp_navigtionBarConfiguration
 
 - (YPNavigationBarConfigurations) yp_navigtionBarConfiguration {
+    if(_alpha == 1)
+    {
+        return YPNavigationBarBackgroundStyleOpaque | YPNavigationBarBackgroundStyleColor ;
+    }
     return YPNavigationBarBackgroundStyleColor;
 }
 
 - (UIColor *) yp_navigationBarTintColor {
-    return [UIColor whiteColor];
+    return [UIColor colorWithWhite:1 alpha:_alpha];
 }
 
 - (UIColor *)yp_navigationBackgroundColor{
-    return [UIColor colorWithHexString:@"#293AFF" alpha:0.1];
+    return _navBgColor;
+}
+
+#pragma mark - API
+
+- (void)getDynamics{
+    WEAKSELF
+    NSDictionary *dic = @{@"_orderByDesc":@"publishTime",@"userId":@155};
+    [ENDNetWorkManager postWithPathUrl:@"/user/talk/getTalkList/155" parameters:dic queryParams:nil Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.dynamicsArray = [MTLJSONAdapter modelsOfClass:[CommunityDynamicModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
+        [self.pagerView reloadData];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"请求用户说说失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)getHotDynamics{
+    WEAKSELF
+    NSDictionary *dic = @{@"_orderBy":@"publishTime",@"userId":@155};
+    [ENDNetWorkManager postWithPathUrl:@"/user/talk/getTalkList/155" parameters:dic queryParams:nil Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.hotDynamicsArray = [MTLJSONAdapter modelsOfClass:[CommunityDynamicModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
+        [self.pagerView reloadData];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"请求用户说说失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)getUser{
+    WEAKSELF
+    NSDictionary *dic = @{@"userId":_userId};
+    [ENDNetWorkManager postWithPathUrl:@"/user/personal/queryUser" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        MineUserModel *mineUser = [MineUserModel sharedMineUserModel];
+        mineUser = [MTLJSONAdapter modelOfClass:[MineUserModel class] fromJSONDictionary:result[@"data"] error:&error];
+        weakSelf.userHeaderView.mineUser = mineUser;
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"请求用户数据失败" afterHideTime:DELAYTiME];
+    }];
 }
 
 @end

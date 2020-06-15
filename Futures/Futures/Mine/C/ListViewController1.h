@@ -11,12 +11,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class CommunityDynamicModel;
+
 @interface ListViewController1 : UIViewController <JXPagerViewListViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray <NSString *> *dataSource;
+@property (nonatomic, strong) NSMutableArray <CommunityDynamicModel *> *dataSource;
 @property (nonatomic, assign) BOOL isNeedFooter;
 @property (nonatomic, assign) BOOL isNeedHeader;
-@property (nonatomic, assign) BOOL isHeaderRefreshed;   //默认为YES
+//@property (nonatomic, assign) BOOL isHeaderRefreshed;   //默认为YES
 @end
 
 NS_ASSUME_NONNULL_END
