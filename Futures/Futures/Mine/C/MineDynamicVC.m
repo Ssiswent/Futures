@@ -1,63 +1,151 @@
 //
-//  MineDynamicVC.m
-//  Futures
+//  OCExampleViewController.m
+//  JXPagerView
 //
-//  Created by Ssiswent on 2020/6/10.
-//  Copyright © 2020 Ssiswent. All rights reserved.
+//  Created by jiaxin on 2018/8/27.
+//  Copyright © 2018年 jiaxin. All rights reserved.
 //
 
 #import "MineDynamicVC.h"
+#import "JXCategoryView.h"
+#import "CustomTBC.h"
 
-#import "CommunityDynamicCell.h"
 #import "CommunityDynamicModel.h"
 
 #import "MineUserModel.h"
 
-#import "CustomTBC.h"
+@interface MineDynamicVC () <JXCategoryViewDelegate, YPNavigationBarConfigureStyle>
 
-
-#define oriOffsetY -150
-#define oriH 150
-
-@interface MineDynamicVC ()<UITableViewDataSource, UITableViewDelegate, YPNavigationBarConfigureStyle, UIGestureRecognizerDelegate>
-
-@property (weak, nonatomic) IBOutlet UIView *avatarView;
-@property (weak, nonatomic) IBOutlet UIImageView *avatarImgView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UITableView *dynamicTableView;
-@property (weak, nonatomic) IBOutlet UILabel *followsCountLabel;
-@property (weak, nonatomic) IBOutlet UILabel *fansCountLabel;
-
-@property (nonatomic, strong)NSNumber *userId;
-
-@property (strong , nonatomic) NSArray *dynamicsArray;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerViewHeight;
-
-@property (strong, nonatomic) UIColor *navBgColor;
+@property (nonatomic, strong) JXCategoryTitleView *categoryView;
+@property (nonatomic, strong) NSArray <NSString *> *titles;
 
 @property (assign, nonatomic) CGFloat alpha;
+@property (strong, nonatomic) UIColor *navBgColor;
+
+@property (assign, nonatomic) CGFloat verticalOffset;
+@property (assign, nonatomic) CGFloat thresholdDistance;
+
+@property (nonatomic, strong) NSNumber *userId;
+@property (strong , nonatomic) NSArray *dynamicsArray;
+@property (strong , nonatomic) NSArray *hotDynamicsArray;
 
 @end
 
 @implementation MineDynamicVC
 
-NSString *MineDynamicCellID = @"MineDynamicCell";
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialSetup];
-    [self.dynamicTableView registerNib:[UINib nibWithNibName:NSStringFromClass([CommunityDynamicCell class]) bundle:nil]forCellReuseIdentifier:MineDynamicCellID];
-    
-    [self setContentInset];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-    [self getUserDefault];
     [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
+    [self getUserDefault];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //右滑返回
+    self.navigationController.interactivePopGestureRecognizer.enabled = (self.categoryView.selectedIndex == 0);
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+}
+
+- (JXPagerView *)preferredPagingView {
+    return [[JXPagerView alloc] initWithDelegate:self];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    self.pagerView.frame = self.view.bounds;
+}
+
+- (void)initialSetup
+{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"ic_return"] style:0 target:self action:@selector(backBtnClicked)];
+    
+    [self screenAdapter];
+    
+    _alpha = 0;
+    UIColor *color = [UIColor colorWithHexString:@"#293AFF" alpha:_alpha];
+    _navBgColor = color;
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    
+    _titles = @[@"最热", @"最新"];
+    
+    _userHeaderView = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([MineDynamicHeaderView class]) owner:nil options:nil].firstObject;
+    
+    _categoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, JXheightForHeaderInSection)];
+    self.categoryView.titles = self.titles;
+    self.categoryView.backgroundColor = [UIColor whiteColor];
+    self.categoryView.delegate = self;
+    self.categoryView.titleFont = [UIFont systemFontOfSize:12 weight:UIFontWeightBold];
+    self.categoryView.titleSelectedColor = [UIColor colorWithHexString:@"#293AFF"];
+    self.categoryView.titleColor = [UIColor colorWithHexString:@"#272727"];
+    self.categoryView.titleColorGradientEnabled = YES;
+    self.categoryView.titleLabelZoomEnabled = YES;
+    self.categoryView.contentScrollViewClickTransitionAnimationEnabled = NO;
+    self.categoryView.cellWidth = 24;
+    self.categoryView.contentEdgeInsetLeft = 14.5;
+    self.categoryView.contentEdgeInsetRight = kScaleFrom_iPhone8_Width(238);
+    self.categoryView.cellSpacing = 74.5;
+    
+    JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
+    lineView.indicatorColor = [UIColor colorWithRed:105/255.0 green:144/255.0 blue:239/255.0 alpha:1];
+    lineView.indicatorWidth = 7.5;
+    lineView.indicatorHeight = 3;
+    lineView.verticalMargin = 5;
+    self.categoryView.indicators = @[lineView];
+    
+    _pagerView = [self preferredPagingView];
+    self.pagerView.mainTableView.gestureDelegate = self;
+    //隐藏右侧指示器
+    self.pagerView.automaticallyDisplayListVerticalScrollIndicator = NO;
+    
+    [self.view addSubview:self.pagerView];
+    
+    self.categoryView.listContainer = (id<JXCategoryViewListContainer>)self.pagerView.listContainerView;
+    
+    //调整pagingView的位置
+    self.pagerView.pinSectionHeaderVerticalOffset = _verticalOffset;
+}
+
+- (void)screenAdapter
+{
+    //8(SE2)
+    if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 667)
+    {
+        _verticalOffset = 64;
+        _thresholdDistance = 86;
+    }
+    //11 Pro
+    else if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
+    {
+        
+    }
+    //8 Plus
+    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 736)
+    {
+        
+    }
+    //11 Pro Max
+    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)
+    {
+        _verticalOffset = 84;
+        _thresholdDistance = 64;
+    }
+}
+
+- (void)backBtnClicked
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)getUserDefault
@@ -68,69 +156,76 @@ NSString *MineDynamicCellID = @"MineDynamicCell";
     NSNumber *userId = [userDefault objectForKey:@"userId"];
     _userId = userId;
     [self getDynamics];
+    [self getHotDynamics];
     [self getUser];
 }
 
-- (void)initialSetup
-{
-    _avatarView.layer.cornerRadius = 37.5;
-    _avatarView.layer.masksToBounds = YES;
-    _avatarImgView.layer.cornerRadius = 32.5;
-    _avatarImgView.layer.masksToBounds = YES;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"ic_return"] style:0 target:self action:@selector(backBtnClicked)];
-    
-    //启用右滑返回手势
-    self.navigationController.interactivePopGestureRecognizer.delegate = self;
-    
-    //不设置为YES的话，导航栏设置为Opaque则控制器的View会下移
-    self.extendedLayoutIncludesOpaqueBars = YES;
+#pragma mark - JXPagerViewDelegate
+
+- (UIView *)tableHeaderViewInPagerView:(JXPagerView *)pagerView {
+    return self.userHeaderView;
 }
 
-- (void)backBtnClicked
-{
-    [self.navigationController popViewControllerAnimated:YES];
+- (NSUInteger)tableHeaderViewHeightInPagerView:(JXPagerView *)pagerView {
+    return JXTableHeaderViewHeight;
 }
 
-#pragma mark - setNavFade
+- (NSUInteger)heightForPinSectionHeaderInPagerView:(JXPagerView *)pagerView {
+    return JXheightForHeaderInSection;
+}
 
-- (void)setContentInset
-{
-    if (@available(iOS 11.0, *)) {
-        self.dynamicTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+- (UIView *)viewForPinSectionHeaderInPagerView:(JXPagerView *)pagerView {
+    return self.categoryView;
+}
+
+- (NSInteger)numberOfListsInPagerView:(JXPagerView *)pagerView {
+    //和categoryView的item数量一致
+    return self.categoryView.titles.count;
+}
+
+- (id<JXPagerViewListViewDelegate>)pagerView:(JXPagerView *)pagerView initListAtIndex:(NSInteger)index {
+    DynamicListVC *list = [[DynamicListVC alloc] init];
+    list.title = self.titles[index];
+    if (index == 0) {
+        list.dataSource = self.hotDynamicsArray.mutableCopy;
     }
     else
     {
-        self.automaticallyAdjustsScrollViewInsets = NO;
+        list.dataSource = self.dynamicsArray.mutableCopy;
     }
-    self.dynamicTableView.contentInset = UIEdgeInsetsMake(150, 0, 0, 0);
+    return list;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    CGFloat offset = scrollView.contentOffset.y - oriOffsetY;
-    CGFloat h = oriH - offset;
-    if (h <= 64) {
-        h = 64;
+#pragma mark - JXCategoryViewDelegate
+
+- (void)categoryView:(JXCategoryBaseView *)categoryView didSelectedItemAtIndex:(NSInteger)index {
+    self.navigationController.interactivePopGestureRecognizer.enabled = (index == 0);
+}
+
+#pragma mark - JXPagerMainTableViewGestureDelegate
+
+- (BOOL)mainTableViewGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    //禁止categoryView左右滑动的时候，上下和左右都可以滚动
+    if (otherGestureRecognizer == self.categoryView.collectionView.panGestureRecognizer) {
+        return NO;
     }
-    self.headerViewHeight.constant = h;
-    
-    CGFloat alpha = offset * 1 / 86.0;
-    if (alpha >= 1) {
-        alpha = 1;
-    }
-    _alpha = alpha;
-    if (alpha <= 1) {
-        [self yp_refreshNavigationBarStyle];
-    }
-    
-    UIColor *color = [UIColor colorWithHexString:@"#293AFF" alpha:alpha];
+    return [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] && [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]];
+}
+
+- (void)mainTableViewDidScroll:(UIScrollView *)scrollView {
+    [self.userHeaderView scrollViewDidScroll:scrollView.contentOffset.y];
+    CGFloat thresholdDistance = _thresholdDistance;
+    CGFloat percent = scrollView.contentOffset.y/thresholdDistance;
+    percent = MAX(0, MIN(1, percent));
+    _alpha = percent;
+    [self yp_refreshNavigationBarStyle];
+    UIColor *color = [UIColor colorWithHexString:@"#293AFF" alpha:percent];
     _navBgColor = color;
 }
 
 #pragma mark - yp_navigtionBarConfiguration
 
 - (YPNavigationBarConfigurations) yp_navigtionBarConfiguration {
-
     if(_alpha == 1)
     {
         return YPNavigationBarBackgroundStyleOpaque | YPNavigationBarBackgroundStyleColor ;
@@ -146,21 +241,6 @@ NSString *MineDynamicCellID = @"MineDynamicCell";
     return _navBgColor;
 }
 
-#pragma mark - TableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.dynamicsArray.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    CommunityDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:MineDynamicCellID];
-    cell.dynamicModel = self.dynamicsArray[indexPath.row];
-    return cell;
-}
-
-
 #pragma mark - API
 
 - (void)getDynamics{
@@ -169,7 +249,20 @@ NSString *MineDynamicCellID = @"MineDynamicCell";
     [ENDNetWorkManager postWithPathUrl:@"/user/talk/getTalkList/155" parameters:dic queryParams:nil Header:nil success:^(BOOL success, id result) {
         NSError *error;
         weakSelf.dynamicsArray = [MTLJSONAdapter modelsOfClass:[CommunityDynamicModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
-        [weakSelf.dynamicTableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.pagerView reloadData];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"请求用户说说失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)getHotDynamics{
+    WEAKSELF
+    NSDictionary *dic = @{@"_orderBy":@"publishTime",@"userId":@155};
+    [ENDNetWorkManager postWithPathUrl:@"/user/talk/getTalkList/155" parameters:dic queryParams:nil Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.hotDynamicsArray = [MTLJSONAdapter modelsOfClass:[CommunityDynamicModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
+        [self.pagerView reloadData];
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求用户说说失败" afterHideTime:DELAYTiME];
@@ -183,11 +276,7 @@ NSString *MineDynamicCellID = @"MineDynamicCell";
         NSError *error;
         MineUserModel *mineUser = [MineUserModel sharedMineUserModel];
         mineUser = [MTLJSONAdapter modelOfClass:[MineUserModel class] fromJSONDictionary:result[@"data"] error:&error];
-        weakSelf.followsCountLabel.text = [NSString stringWithFormat:@"%d",mineUser.followCount.intValue];
-        weakSelf.fansCountLabel.text = [NSString stringWithFormat:@"%d",mineUser.fansCount.intValue];
-        [weakSelf.avatarImgView sd_setImageWithURL:[NSURL URLWithString:mineUser.head]
-                                  placeholderImage:[UIImage imageNamed:@"head"]];
-        weakSelf.nameLabel.text = mineUser.nickName;
+        weakSelf.userHeaderView.mineUser = mineUser;
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求用户数据失败" afterHideTime:DELAYTiME];

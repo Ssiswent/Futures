@@ -16,9 +16,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *focusTableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
+@property (weak, nonatomic) IBOutlet UIButton *publishBtn;
 
 @property (strong , nonatomic) NSArray *dynamicsArray;
-
 
 @end
 
@@ -61,6 +61,55 @@ NSString *CommunityDynamicCellID1 = @"CommunityDynamicCell1";
     dynamicCell.dynamicModel = self.dynamicsArray[indexPath.row];
     return dynamicCell;
     
+}
+
+#pragma mark - TableViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGPoint translation = [scrollView.panGestureRecognizer translationInView:scrollView.superview];
+    CGRect showFrame = _publishBtn.frame;
+    CGFloat showY = 468;
+    //8(SE2)
+    if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 667)
+    {
+        showY = 468;
+    }
+    //11 Pro
+    else if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
+    {
+        
+    }
+    //8 Plus
+    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 736)
+    {
+        
+    }
+    //11 Pro Max
+    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)
+    {
+        showY = 639;
+    }
+    showFrame.origin.y = showY;
+    
+    CGRect hideFrame = _publishBtn.frame;
+    hideFrame.origin.y = SCREEN_HEIGHT;
+    //下滑
+    if (translation.y>0)
+    {
+        [UIView animateWithDuration:0.5 animations:^{
+            WEAKSELF
+            weakSelf.publishBtn.frame = showFrame;
+        }];
+    }
+    //上滑
+    else if(translation.y<0)
+    {
+        [UIView animateWithDuration:0.5 animations:^{
+            WEAKSELF
+            weakSelf.publishBtn.frame = hideFrame;
+        }];
+    }
 }
 
 #pragma mark - API

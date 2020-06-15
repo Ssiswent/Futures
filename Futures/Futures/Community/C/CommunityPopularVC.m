@@ -25,8 +25,6 @@
 
 @property (strong , nonatomic) NSArray *dynamicsArray;
 
-@property (assign, nonatomic) CGRect pubOriginFrame;
-
 @property (assign, nonatomic) NSInteger numberOfSections;
 
 @end
@@ -39,7 +37,6 @@ NSString *CommunityFocusCellID = @"CommunityFocusCell";
 NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 
 - (void)viewDidLoad {
-    _pubOriginFrame = _publishBtn.frame;
     [self registerTableView];
     [self getDynamics];
     [self initialSetup];
@@ -220,10 +217,32 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGPoint translation = [scrollView.panGestureRecognizer translationInView:scrollView.superview];
-    CGRect showFrame = _pubOriginFrame;
-    showFrame.origin.y = kScaleFrom_iPhone8_Height(532);
-    CGRect hideFrame = _pubOriginFrame;
-    hideFrame.origin.y = kScaleFrom_iPhone8_Height(667);
+    CGRect showFrame = _publishBtn.frame;
+    CGFloat showY = 468;
+    //8(SE2)
+    if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 667)
+    {
+        showY = 468;
+    }
+    //11 Pro
+    else if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
+    {
+        
+    }
+    //8 Plus
+    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 736)
+    {
+        
+    }
+    //11 Pro Max
+    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)
+    {
+        showY = 639;
+    }
+    showFrame.origin.y = showY;
+    
+    CGRect hideFrame = _publishBtn.frame;
+    hideFrame.origin.y = SCREEN_HEIGHT;
     //下滑
     if (translation.y>0)
     {

@@ -6,18 +6,15 @@
 //  Copyright © 2019 jiaxin. All rights reserved.
 //
 
-#import "ListViewController1.h"
-#import "DetailViewController.h"
-#import <MJRefresh/MJRefresh.h>
-#import "UIWindow+JXSafeArea.h"
+#import "DynamicListVC.h"
 
 #import "CommunityDynamicCell.h"
 
-@interface ListViewController1 () <UITableViewDataSource, UITableViewDelegate>
+@interface DynamicListVC () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, copy) void(^scrollCallback)(UIScrollView *scrollView);
 @end
 
-@implementation ListViewController1
+@implementation DynamicListVC
 
 NSString *MineDynamicCellID1 = @"MineDynamicCell1";
 
@@ -39,7 +36,8 @@ NSString *MineDynamicCellID1 = @"MineDynamicCell1";
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    CGFloat tableViewHeight = tableViewHeight = SCREEN_HEIGHT - 54;;
+    CGFloat tableViewHeight = tableViewHeight = SCREEN_HEIGHT - 54;
+    //8(SE2)
     if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 667)
     {
         tableViewHeight = SCREEN_HEIGHT - 54;

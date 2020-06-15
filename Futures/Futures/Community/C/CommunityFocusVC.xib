@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,7 @@
             <connections>
                 <outlet property="bottomView" destination="31U-ts-84x" id="M3f-fn-ZaQ"/>
                 <outlet property="focusTableView" destination="zq7-W7-oHm" id="a74-We-rQ2"/>
+                <outlet property="publishBtn" destination="Y2g-we-6zo" id="hWb-oC-McY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,7 +30,7 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2g-we-6zo" userLabel="PublishBtn">
-                    <rect key="frame" x="348.5" y="761" width="50" height="50"/>
+                    <rect key="frame" x="348.5" y="776" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="E20-5N-OIm"/>
                         <constraint firstAttribute="width" constant="50" id="s2p-z2-XR7"/>
@@ -51,7 +53,7 @@
                 <constraint firstItem="zq7-W7-oHm" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="dwe-BH-uSi"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="zq7-W7-oHm" secondAttribute="bottom" id="dyZ-f9-9Q6"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="zq7-W7-oHm" secondAttribute="trailing" id="fFa-pS-xN5"/>
-                <constraint firstAttribute="bottom" secondItem="Y2g-we-6zo" secondAttribute="bottom" constant="85" id="l20-YQ-3DK"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Y2g-we-6zo" secondAttribute="bottom" constant="36" id="l20-YQ-3DK"/>
                 <constraint firstItem="31U-ts-84x" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="sPK-6p-fpl"/>
                 <constraint firstItem="zq7-W7-oHm" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="ze4-vE-l2x"/>
             </constraints>

@@ -30,7 +30,7 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZV4-af-8P0" userLabel="PublishBtn">
-                    <rect key="frame" x="309.66666666666669" y="677" width="50" height="50"/>
+                    <rect key="frame" x="309.66666666666669" y="692" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="aQF-kL-R3A"/>
                         <constraint firstAttribute="height" constant="50" id="f2e-sG-H2S"/>
@@ -51,7 +51,7 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ZV4-af-8P0" secondAttribute="trailing" constant="15.5" id="61f-Up-EVp"/>
                 <constraint firstItem="rL9-tY-iAn" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="8Jg-YA-k02"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="rL9-tY-iAn" secondAttribute="trailing" id="Ddy-K6-Jmi"/>
-                <constraint firstAttribute="bottom" secondItem="ZV4-af-8P0" secondAttribute="bottom" constant="85" id="GO4-uD-z5L"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="ZV4-af-8P0" secondAttribute="bottom" constant="36" id="GO4-uD-z5L"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="mXY-il-xNr" secondAttribute="trailing" id="GRy-sw-m0W"/>
                 <constraint firstItem="mXY-il-xNr" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="XB0-UQ-MF2"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="rL9-tY-iAn" secondAttribute="bottom" id="bw0-G2-ieF"/>

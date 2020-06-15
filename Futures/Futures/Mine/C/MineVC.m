@@ -15,7 +15,7 @@
 
 #import "CustomTBC.h"
 
-#import "PagingViewController.h"
+#import "MineDynamicVC.h"
 
 @interface MineVC ()<YPNavigationBarConfigureStyle, LoginVCDelegate>
 
@@ -156,7 +156,7 @@
     {
 //        MineDynamicVC *mineDynamicVC = MineDynamicVC.new;
 //        [self.navigationController pushViewController:mineDynamicVC animated:YES];
-        PagingViewController *pageVC = PagingViewController.new;
+        MineDynamicVC *pageVC = MineDynamicVC.new;
         [self.navigationController pushViewController:pageVC animated:YES];
     }
     else
