@@ -59,7 +59,6 @@
 		1814030B2487836D00CA3E92 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 181403092487836D00CA3E92 /* HomeVC.m */; };
 		1814030C2487836D00CA3E92 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1814030A2487836D00CA3E92 /* HomeVC.xib */; };
 		181403102487838200CA3E92 /* CommunityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1814030E2487838200CA3E92 /* CommunityVC.m */; };
-		181403112487838200CA3E92 /* CommunityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1814030F2487838200CA3E92 /* CommunityVC.xib */; };
 		18140315248783BD00CA3E92 /* MineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18140313248783BD00CA3E92 /* MineVC.m */; };
 		18140316248783BD00CA3E92 /* MineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18140314248783BD00CA3E92 /* MineVC.xib */; };
 		2912F25113B14CAD1FAB718C /* Pods_Futures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093094F2C929266EE6142479 /* Pods_Futures.framework */; };
@@ -116,6 +115,15 @@
 		CBAD62B4248A7C970097BD9D /* CommunityDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD62B3248A7C970097BD9D /* CommunityDynamicModel.m */; };
 		CBAD62B8248A98CA0097BD9D /* CommunityDynamicHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD62B6248A98CA0097BD9D /* CommunityDynamicHeaderView.m */; };
 		CBAD62B9248A98CA0097BD9D /* CommunityDynamicHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD62B7248A98CA0097BD9D /* CommunityDynamicHeaderView.xib */; };
+		CBEFF5BE2497579F0029AE26 /* HomeFourBtnVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */; };
+		CBEFF5C2249758310029AE26 /* HomeCalendarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5C0249758310029AE26 /* HomeCalendarVC.m */; };
+		CBEFF5C3249758310029AE26 /* HomeCalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF5C1249758310029AE26 /* HomeCalendarVC.xib */; };
+		CBEFF5C7249758520029AE26 /* HomeBusinessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5C5249758520029AE26 /* HomeBusinessVC.m */; };
+		CBEFF5C8249758520029AE26 /* HomeBusinessVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF5C6249758520029AE26 /* HomeBusinessVC.xib */; };
+		CBEFF5CC249758650029AE26 /* HomeNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5CA249758650029AE26 /* HomeNewsVC.m */; };
+		CBEFF5CD249758650029AE26 /* HomeNewsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF5CB249758650029AE26 /* HomeNewsVC.xib */; };
+		CBEFF5D1249779DD0029AE26 /* HomeCalendarColletionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5CF249779DD0029AE26 /* HomeCalendarColletionCell.m */; };
+		CBEFF5D2249779DD0029AE26 /* HomeCalendarColletionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF5D0249779DD0029AE26 /* HomeCalendarColletionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -231,7 +239,6 @@
 		1814030A2487836D00CA3E92 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		1814030D2487838200CA3E92 /* CommunityVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityVC.h; sourceTree = "<group>"; };
 		1814030E2487838200CA3E92 /* CommunityVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityVC.m; sourceTree = "<group>"; };
-		1814030F2487838200CA3E92 /* CommunityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityVC.xib; sourceTree = "<group>"; };
 		18140312248783BD00CA3E92 /* MineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineVC.h; sourceTree = "<group>"; };
 		18140313248783BD00CA3E92 /* MineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
 		18140314248783BD00CA3E92 /* MineVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineVC.xib; sourceTree = "<group>"; };
@@ -319,6 +326,20 @@
 		CBAD62B5248A98CA0097BD9D /* CommunityDynamicHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDynamicHeaderView.h; sourceTree = "<group>"; };
 		CBAD62B6248A98CA0097BD9D /* CommunityDynamicHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDynamicHeaderView.m; sourceTree = "<group>"; };
 		CBAD62B7248A98CA0097BD9D /* CommunityDynamicHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDynamicHeaderView.xib; sourceTree = "<group>"; };
+		CBEFF5BC2497579F0029AE26 /* HomeFourBtnVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFourBtnVC.h; sourceTree = "<group>"; };
+		CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFourBtnVC.m; sourceTree = "<group>"; };
+		CBEFF5BF249758310029AE26 /* HomeCalendarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCalendarVC.h; sourceTree = "<group>"; };
+		CBEFF5C0249758310029AE26 /* HomeCalendarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCalendarVC.m; sourceTree = "<group>"; };
+		CBEFF5C1249758310029AE26 /* HomeCalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCalendarVC.xib; sourceTree = "<group>"; };
+		CBEFF5C4249758520029AE26 /* HomeBusinessVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBusinessVC.h; sourceTree = "<group>"; };
+		CBEFF5C5249758520029AE26 /* HomeBusinessVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBusinessVC.m; sourceTree = "<group>"; };
+		CBEFF5C6249758520029AE26 /* HomeBusinessVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBusinessVC.xib; sourceTree = "<group>"; };
+		CBEFF5C9249758650029AE26 /* HomeNewsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeNewsVC.h; sourceTree = "<group>"; };
+		CBEFF5CA249758650029AE26 /* HomeNewsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeNewsVC.m; sourceTree = "<group>"; };
+		CBEFF5CB249758650029AE26 /* HomeNewsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNewsVC.xib; sourceTree = "<group>"; };
+		CBEFF5CE249779DD0029AE26 /* HomeCalendarColletionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCalendarColletionCell.h; sourceTree = "<group>"; };
+		CBEFF5CF249779DD0029AE26 /* HomeCalendarColletionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCalendarColletionCell.m; sourceTree = "<group>"; };
+		CBEFF5D0249779DD0029AE26 /* HomeCalendarColletionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCalendarColletionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,9 +467,9 @@
 		1814026C248779D900CA3E92 /* ThirdControl */ = {
 			isa = PBXGroup;
 			children = (
+				181402B5248779D900CA3E92 /* BaseViewController.h */,
 				1814026D248779D900CA3E92 /* BaseViewController.m */,
 				1814026E248779D900CA3E92 /* QIHUO */,
-				181402B5248779D900CA3E92 /* BaseViewController.h */,
 			);
 			path = ThirdControl;
 			sourceTree = "<group>";
@@ -584,6 +605,17 @@
 				181403082487836D00CA3E92 /* HomeVC.h */,
 				181403092487836D00CA3E92 /* HomeVC.m */,
 				1814030A2487836D00CA3E92 /* HomeVC.xib */,
+				CBEFF5BC2497579F0029AE26 /* HomeFourBtnVC.h */,
+				CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */,
+				CBEFF5BF249758310029AE26 /* HomeCalendarVC.h */,
+				CBEFF5C0249758310029AE26 /* HomeCalendarVC.m */,
+				CBEFF5C1249758310029AE26 /* HomeCalendarVC.xib */,
+				CBEFF5C4249758520029AE26 /* HomeBusinessVC.h */,
+				CBEFF5C5249758520029AE26 /* HomeBusinessVC.m */,
+				CBEFF5C6249758520029AE26 /* HomeBusinessVC.xib */,
+				CBEFF5C9249758650029AE26 /* HomeNewsVC.h */,
+				CBEFF5CA249758650029AE26 /* HomeNewsVC.m */,
+				CBEFF5CB249758650029AE26 /* HomeNewsVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -615,6 +647,9 @@
 				CBAD6283248943230097BD9D /* HomeNewsHeaderView.h */,
 				CBAD6284248943230097BD9D /* HomeNewsHeaderView.m */,
 				CBAD6286248943320097BD9D /* HomeNewsHeaderView.xib */,
+				CBEFF5CE249779DD0029AE26 /* HomeCalendarColletionCell.h */,
+				CBEFF5CF249779DD0029AE26 /* HomeCalendarColletionCell.m */,
+				CBEFF5D0249779DD0029AE26 /* HomeCalendarColletionCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -641,7 +676,6 @@
 			children = (
 				1814030D2487838200CA3E92 /* CommunityVC.h */,
 				1814030E2487838200CA3E92 /* CommunityVC.m */,
-				1814030F2487838200CA3E92 /* CommunityVC.xib */,
 				CBAD62792489384C0097BD9D /* CommunityPopularVC.h */,
 				CBAD627A2489384C0097BD9D /* CommunityPopularVC.m */,
 				CBAD627B2489384C0097BD9D /* CommunityPopularVC.xib */,
@@ -817,12 +851,13 @@
 				CBAD62AC248A15560097BD9D /* CommunityFocusCollectionCell.xib in Resources */,
 				CBA5A3532490795E003BA799 /* RegisterVC.xib in Resources */,
 				CBAD62512488CCBA0097BD9D /* HomeBannerCollectionCell.xib in Resources */,
+				CBEFF5C3249758310029AE26 /* HomeCalendarVC.xib in Resources */,
 				1814022F24876C6700CA3E92 /* LaunchScreen.storyboard in Resources */,
 				1814030C2487836D00CA3E92 /* HomeVC.xib in Resources */,
 				CB6DA4CC2490AF06007D5131 /* MineCodeView.xib in Resources */,
+				CBEFF5D2249779DD0029AE26 /* HomeCalendarColletionCell.xib in Resources */,
 				CBAD626A2488F7350097BD9D /* HomeGoldCell.xib in Resources */,
 				CBAD62652488F53C0097BD9D /* HomeADCell.xib in Resources */,
-				181403112487838200CA3E92 /* CommunityVC.xib in Resources */,
 				CBA5A346248F6FE6003BA799 /* MineSettingsCell.xib in Resources */,
 				CBAD62B9248A98CA0097BD9D /* CommunityDynamicHeaderView.xib in Resources */,
 				CBAD629D2489E55C0097BD9D /* CommunityTopicCollectionCell.xib in Resources */,
@@ -837,10 +872,12 @@
 				CBAD62602488F1B60097BD9D /* HomeCheckInCell.xib in Resources */,
 				CBAD6287248943320097BD9D /* HomeNewsHeaderView.xib in Resources */,
 				CBAD62A7248A0F5C0097BD9D /* CommunityFocusCell.xib in Resources */,
+				CBEFF5C8249758520029AE26 /* HomeBusinessVC.xib in Resources */,
 				1814022C24876C6700CA3E92 /* Assets.xcassets in Resources */,
 				CBAD62B1248A2A320097BD9D /* CommunityDynamicCell.xib in Resources */,
 				CBAD62982489DCB50097BD9D /* CommunityTopicCell.xib in Resources */,
 				CBA5A341248F6E76003BA799 /* MineSettingsVC.xib in Resources */,
+				CBEFF5CD249758650029AE26 /* HomeNewsVC.xib in Resources */,
 				CBAD626F24891DCF0097BD9D /* HomeNewsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -900,12 +937,15 @@
 				181402CD248779DA00CA3E92 /* EGHViewsTool.m in Sources */,
 				CBAD6293248957E10097BD9D /* MineUserModel.m in Sources */,
 				181402E0248779DA00CA3E92 /* ZCBaseView.m in Sources */,
+				CBEFF5CC249758650029AE26 /* HomeNewsVC.m in Sources */,
+				CBEFF5D1249779DD0029AE26 /* HomeCalendarColletionCell.m in Sources */,
 				181402EA248779DA00CA3E92 /* YKLineChartView.m in Sources */,
 				CBA74AB32494D7C90038CA59 /* MineDynamicVC.m in Sources */,
 				181402E9248779DA00CA3E92 /* QHDetailViewController.m in Sources */,
 				181402D5248779DA00CA3E92 /* ENDNetWorkManager.m in Sources */,
 				CBAD627C2489384C0097BD9D /* CommunityPopularVC.m in Sources */,
 				CBAD62B0248A2A320097BD9D /* CommunityDynamicCell.m in Sources */,
+				CBEFF5C7249758520029AE26 /* HomeBusinessVC.m in Sources */,
 				181402D3248779DA00CA3E92 /* ENDLCPNetWorkGET.m in Sources */,
 				CBAD62692488F7350097BD9D /* HomeGoldCell.m in Sources */,
 				181402F9248779DA00CA3E92 /* YKLineEntity.m in Sources */,
@@ -953,9 +993,11 @@
 				CBAD6290248957AF0097BD9D /* UserModel.m in Sources */,
 				181403102487838200CA3E92 /* CommunityVC.m in Sources */,
 				181402EF248779DA00CA3E92 /* BusinessProcess.m in Sources */,
+				CBEFF5C2249758310029AE26 /* HomeCalendarVC.m in Sources */,
 				CBAD62642488F53C0097BD9D /* HomeADCell.m in Sources */,
 				CBAD62A6248A0F5C0097BD9D /* CommunityFocusCell.m in Sources */,
 				CBA5A345248F6FE6003BA799 /* MineSettingsCell.m in Sources */,
+				CBEFF5BE2497579F0029AE26 /* HomeFourBtnVC.m in Sources */,
 				CBAD6272248923B10097BD9D /* HomeNewsModel.m in Sources */,
 				181402FA248779DA00CA3E92 /* CustomTBC.m in Sources */,
 				181402E6248779DA00CA3E92 /* QHDHHeadCollectionViewCell.m in Sources */,

@@ -10,7 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class HomeFourBtnCell;
+
+@protocol HomeFourBtnCellDelegate <NSObject>
+
+@optional
+
+- (void)HomeFourBtnCellDidClickBtnView:(HomeFourBtnCell *)homeFourBtnCell Tag:(NSInteger)tag;
+
+@end
+
 @interface HomeFourBtnCell : UITableViewCell
+
+@property (nonatomic, weak)id<HomeFourBtnCellDelegate> delegate;
 
 @end
 

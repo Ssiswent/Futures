@@ -47,8 +47,8 @@ NSString *HomeBannerCollectionCellID = @"HomeBannerCollectionCell";
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    _homePagerView.frame =  CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
-    _pageControl.frame = CGRectMake(0, CGRectGetHeight(_homePagerView.frame) - 35, CGRectGetWidth(_homePagerView.frame), 10);
+    _homePagerView.frame =  CGRectMake(0, 21, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame) - 21);
+    _pageControl.frame = CGRectMake(0, CGRectGetHeight(_homePagerView.frame) - 10.5, CGRectGetWidth(_homePagerView.frame), 5);
 }
 
 - (void)addPagerView {
@@ -86,7 +86,7 @@ NSString *HomeBannerCollectionCellID = @"HomeBannerCollectionCell";
 
 - (TYCyclePagerViewLayout *)layoutForPagerView:(TYCyclePagerView *)pageView {
     TYCyclePagerViewLayout *layout = [[TYCyclePagerViewLayout alloc]init];
-    layout.itemSize = CGSizeMake(kScaleFrom_iPhone8_Width(345), kScaleFrom_iPhone8_Height(140));
+    layout.itemSize = CGSizeMake(345, 140);
     layout.itemSpacing = 30;
     layout.layoutType = normal;
     layout.itemHorizontalCenter = YES;

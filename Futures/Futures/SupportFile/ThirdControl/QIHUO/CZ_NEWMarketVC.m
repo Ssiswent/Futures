@@ -16,6 +16,8 @@
 #import "NetWork.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
+#import "CustomTBC.h"
+
 #define ColorBlue [UIColor colorWithRed:113/255.0 green:103/255.0 blue:252/255.0 alpha:1/1.0]
 @interface CZ_NEWMarketVC ()<UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate>{
     QHLoctionModel *loM;
@@ -39,7 +41,7 @@ static NSString *cellid = @"cellID";
         _makeTbv = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _makeTbv.delegate = self;
         _makeTbv.dataSource = self;
-        _makeTbv.backgroundColor = [UIColor colorWithHexString:@"#FEF7E7"];
+        _makeTbv.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
 //        _makeTbv.backgroundColor = TNColor.main_bg_color;
 //        _makeTbv.backgroundColor = RGB(0, 0, 0);
         //隐藏垂直滚动条
@@ -84,7 +86,7 @@ static NSString *cellid = @"cellID";
 //    self.navigationController.navigationBar.hidden = YES;
     
     self.title = _navTitle;
-    self.view.backgroundColor = [UIColor colorWithHexString:@"#FEF7E7"];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
     pageIndex = 2;
 
     [self.view addSubview:self.makeTbv];
@@ -133,10 +135,8 @@ static NSString *cellid = @"cellID";
     [super viewWillAppear:YES];
 //    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.whiteColor}];
     self.tabBarController.delegate = self;
-
-
 //    [self navigationSetUp];
-
+    [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
 }
 
 #pragma mark - 数据请求
@@ -257,7 +257,7 @@ static NSString *cellid = @"cellID";
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];//创建一个视图
     
-    headerView.backgroundColor = [UIColor colorWithHexString:@"#FEF7E7"];
+    headerView.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
     
 //    [super setBorderWithView:headerView top:NO left:NO bottom:YES right:NO borderColor:RGB(230, 230, 230) borderWidth:0.5];
     
@@ -314,6 +314,7 @@ static NSString *cellid = @"cellID";
         [self getBackView:view];
     }
 }
+
 - (UIView *)listView{
     return self.view;
 }

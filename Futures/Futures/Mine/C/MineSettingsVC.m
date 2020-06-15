@@ -12,6 +12,8 @@
 
 #import "MineSettingsCell.h"
 
+#import "CustomTBC.h"
+
 @interface MineSettingsVC ()<UITableViewDataSource,UITableViewDelegate, UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
 
@@ -53,6 +55,7 @@ NSString *MineSettingsCellID = @"MineSettingsCell";
 {
     [super viewWillAppear:animated];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
 }
 
 #pragma mark - TableViewDataSource

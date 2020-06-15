@@ -80,7 +80,7 @@ NSString *CommunityTopicCollectionCellID = @"CommunityTopicCollectionCell";
 
 - (TYCyclePagerViewLayout *)layoutForPagerView:(TYCyclePagerView *)pageView {
     TYCyclePagerViewLayout *layout = [[TYCyclePagerViewLayout alloc]init];
-    layout.itemSize = CGSizeMake(kScaleFrom_iPhone8_Width(183), kScaleFrom_iPhone8_Height(140.5));
+    layout.itemSize = CGSizeMake(183, 140.5);
     layout.itemSpacing = 0;
     layout.layoutType = normal;
 //    layout.itemHorizontalCenter = YES;

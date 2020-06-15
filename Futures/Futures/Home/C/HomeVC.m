@@ -19,7 +19,11 @@
 
 #import "HomeNewsModel.h"
 
-@interface HomeVC ()<UITableViewDataSource, UITableViewDelegate,YPNavigationBarConfigureStyle>
+#import "HomeFourBtnVC.h"
+
+#import "CustomTBC.h"
+
+@interface HomeVC ()<UITableViewDataSource, UITableViewDelegate,YPNavigationBarConfigureStyle, HomeFourBtnCellDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -45,6 +49,12 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
     [self initialSetup];
     [self registerTableView];
     [self getTopics];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [CustomTBC setTabBarHidden:NO TabBarVC:self.tabBarController];
 }
 
 - (void)registerTableView
@@ -131,6 +141,7 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
 {
     HomeBannerCell *bannerCell = [tableView dequeueReusableCellWithIdentifier:HomeBannerCellID];
     HomeFourBtnCell *fourBtnCell = [tableView dequeueReusableCellWithIdentifier:HomeFourBtnCellID];
+    fourBtnCell.delegate = self;
     HomeCheckInCell *checkInCell = [tableView dequeueReusableCellWithIdentifier:HomeCheckInCellID];
     HomeADCell *adCell = [tableView dequeueReusableCellWithIdentifier:HomeADCellID];
     HomeGoldCell *goldCell = [tableView dequeueReusableCellWithIdentifier:HomeGoldCellID];
@@ -184,6 +195,15 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
     {
         return 0.001;
     }
+}
+
+#pragma mark - HomeFourBtnCellDelegate
+
+- (void)HomeFourBtnCellDidClickBtnView:(HomeFourBtnCell *)homeFourBtnCell Tag:(NSInteger)tag
+{
+    HomeFourBtnVC *fourBtnVC = HomeFourBtnVC.new;
+    fourBtnVC.index = tag;
+    [self.navigationController pushViewController:fourBtnVC animated:YES];
 }
 
 #pragma mark - API

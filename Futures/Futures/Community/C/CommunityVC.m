@@ -27,7 +27,7 @@
 
 - (void)setNavBar
 {
-    self.titles = @[@"热门", @"关注" ];
+    self.titles = @[@"热门", @"关注"];
     
     self.myCategoryView.frame = CGRectMake(0, 0, 120, 30);
     self.myCategoryView.layer.cornerRadius = 7;

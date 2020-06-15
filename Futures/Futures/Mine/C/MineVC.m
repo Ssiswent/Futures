@@ -154,8 +154,6 @@
 {
     if(_hasUserId)
     {
-//        MineDynamicVC *mineDynamicVC = MineDynamicVC.new;
-//        [self.navigationController pushViewController:mineDynamicVC animated:YES];
         MineDynamicVC *pageVC = MineDynamicVC.new;
         [self.navigationController pushViewController:pageVC animated:YES];
     }

@@ -16,7 +16,7 @@
 
 @implementation DynamicListVC
 
-NSString *MineDynamicCellID1 = @"MineDynamicCell1";
+NSString *MineDynamicCellID = @"MineDynamicCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +26,7 @@ NSString *MineDynamicCellID1 = @"MineDynamicCell1";
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CommunityDynamicCell class]) bundle:nil]forCellReuseIdentifier:MineDynamicCellID1];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CommunityDynamicCell class]) bundle:nil]forCellReuseIdentifier:MineDynamicCellID];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
@@ -68,7 +68,7 @@ NSString *MineDynamicCellID1 = @"MineDynamicCell1";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CommunityDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:MineDynamicCellID1];
+    CommunityDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:MineDynamicCellID];
     cell.dynamicModel = self.dataSource[indexPath.row];
     return cell;
 }

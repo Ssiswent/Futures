@@ -8,11 +8,14 @@
 
 #import "HomeBannerCollectionCell.h"
 
+@interface HomeBannerCollectionCell()
+
+@end
+
 @implementation HomeBannerCollectionCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 @end
