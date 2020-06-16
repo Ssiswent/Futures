@@ -18,10 +18,13 @@
                 <outlet property="avatarView" destination="PhF-TF-DcQ" id="E86-Cw-r6j"/>
                 <outlet property="bottomView" destination="L3R-o6-iCW" id="RUV-gK-ci3"/>
                 <outlet property="fansCountLabel" destination="Upp-2b-nNq" id="BMF-R5-CIL"/>
+                <outlet property="fansView" destination="RP5-93-spN" id="uOf-yR-Qga"/>
+                <outlet property="focusView" destination="xOQ-Mb-9eV" id="nzQ-dZ-Z0V"/>
                 <outlet property="followsCountLabel" destination="JZk-q7-cPE" id="eNx-fp-i2c"/>
                 <outlet property="levelView" destination="rmK-Rp-F06" id="6Jw-RS-L81"/>
                 <outlet property="logoutView" destination="aJL-uZ-fgt" id="pDV-CZ-yPY"/>
                 <outlet property="messagesCountLabel" destination="n5Y-2o-Dr1" id="2T6-7g-jhb"/>
+                <outlet property="messagesView" destination="YXW-wB-dDN" id="tIE-WG-3z7"/>
                 <outlet property="nameLabel" destination="BIf-ZW-Ty4" id="XlE-Fc-UXE"/>
                 <outlet property="pwdContentView" destination="BJw-OE-1KU" id="8ty-Od-lBq"/>
                 <outlet property="pwdView" destination="bh9-AD-ZT0" id="qPM-qX-t4k"/>

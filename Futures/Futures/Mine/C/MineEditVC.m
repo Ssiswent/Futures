@@ -69,6 +69,16 @@ NSString *MineInformationCellID = @"MineInformationCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"编辑资料";
+    
+    UILabel *titleLabel = UILabel.new;
+    titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.text = self.title;
+    [titleLabel sizeToFit];
+    self.navigationItem.titleView = titleLabel;
+    
     [self.mineEditTableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineInformationCell class]) bundle:nil] forCellReuseIdentifier:MineInformationCellID];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage originalImageWithName:@"ic_back"] style:0 target:self action:@selector(backBtnClicked)];
@@ -93,7 +103,7 @@ NSString *MineInformationCellID = @"MineInformationCell";
 - (void)setAvatarImg
 {
     [_avatarImgView sd_setImageWithURL:[NSURL URLWithString:_user.head]
-                      placeholderImage:[UIImage imageNamed:@"wallhaven-oxv6gl"]];
+                      placeholderImage:[UIImage imageNamed:@"head"]];
 }
 
 - (void)setLayer

@@ -29,6 +29,8 @@
 @property (strong , nonatomic) NSArray *dynamicsArray;
 @property (strong , nonatomic) NSArray *hotDynamicsArray;
 
+@property (weak, nonatomic) UILabel *titleLabel;
+
 @end
 
 @implementation MineDynamicVC
@@ -69,6 +71,18 @@
 
 - (void)initialSetup
 {
+    
+    self.title = @"我的动态";
+    
+    UILabel *titleLabel = UILabel.new;
+    titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = [UIColor colorWithWhite:1 alpha:0];
+    titleLabel.text = self.title;
+    [titleLabel sizeToFit];
+    _titleLabel = titleLabel;
+    self.navigationItem.titleView = _titleLabel;
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"ic_return"] style:0 target:self action:@selector(backBtnClicked)];
     
     [self screenAdapter];
@@ -221,6 +235,8 @@
     [self yp_refreshNavigationBarStyle];
     UIColor *color = [UIColor colorWithHexString:@"#293AFF" alpha:percent];
     _navBgColor = color;
+    
+    _titleLabel.textColor = [UIColor colorWithWhite:1 alpha:percent];
 }
 
 #pragma mark - yp_navigtionBarConfiguration

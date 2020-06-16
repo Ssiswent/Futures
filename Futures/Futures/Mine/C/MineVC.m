@@ -22,6 +22,8 @@
 
 #import "MineEditVC.h"
 
+#import "MineFocusAndFansVC.h"
+
 @interface MineVC ()<YPNavigationBarConfigureStyle, LoginVCDelegate, AccountSwitchVCDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *avatarView;
@@ -44,6 +46,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *accountLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *focusView;
+@property (weak, nonatomic) IBOutlet UIView *fansView;
+@property (weak, nonatomic) IBOutlet UIView *messagesView;
+
 
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 
@@ -58,10 +64,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialSetup];
-    
-    MineUserModel *user1 = [MineUserModel sharedMineUserModel];
-    MineUserModel *user2 = [MineUserModel sharedMineUserModel];
-    MineUserModel *user3 = [MineUserModel sharedMineUserModel];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -94,6 +96,8 @@
     [self addClickAvatarGes];
     [self addClickLogoutViewGes];
     [self addClickAccountViewGes];
+    [self addClickFocusViewGes];
+    [self addClickFansViewGes];
 }
 
 - (void)getUserDefault
@@ -233,6 +237,56 @@
         AccountSwitchVC *accountSwitchVC = AccountSwitchVC.new;
         accountSwitchVC.delegate = self;
         [self presentViewController:accountSwitchVC animated:YES completion:nil];
+    }
+}
+
+- (void)addClickFocusViewGes
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(focusViewClicked)];
+    [_focusView addGestureRecognizer:tap];
+}
+
+- (void)focusViewClicked
+{
+    if(_hasUserId)
+    {
+        MineFocusAndFansVC *focusAndFansVC = [[MineFocusAndFansVC alloc] init];
+        focusAndFansVC.titleStr = @"关注";
+        focusAndFansVC.focusOrFans = @"focus";
+        MineUserModel *user = [MineUserModel sharedMineUserModel];
+        focusAndFansVC.user = user;
+        [self.navigationController pushViewController:focusAndFansVC animated:YES];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        [self.navigationController pushViewController:loginVC animated:YES];
+        [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
+    }
+}
+
+- (void)addClickFansViewGes
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(fansViewClicked)];
+    [_fansView addGestureRecognizer:tap];
+}
+
+- (void)fansViewClicked
+{
+    if(_hasUserId)
+    {
+        MineFocusAndFansVC *focusAndFansVC = [[MineFocusAndFansVC alloc] init];
+        focusAndFansVC.titleStr = @"粉丝";
+        focusAndFansVC.focusOrFans = @"Fans";
+        MineUserModel *user = [MineUserModel sharedMineUserModel];
+        focusAndFansVC.user = user;
+        [self.navigationController pushViewController:focusAndFansVC animated:YES];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        [self.navigationController pushViewController:loginVC animated:YES];
+        [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
     }
 }
 

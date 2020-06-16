@@ -23,7 +23,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kew-0l-E7t" userLabel="HeaderView">
                     <rect key="frame" x="0.0" y="61.5" width="414" height="198"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallhaven-oxv6gl" translatesAutoresizingMaskIntoConstraints="NO" id="0gV-NU-mGu" userLabel="AvatarImgView">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" translatesAutoresizingMaskIntoConstraints="NO" id="0gV-NU-mGu" userLabel="AvatarImgView">
                             <rect key="frame" x="152.5" y="44.5" width="109.5" height="109.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="109.5" id="KEU-Rb-6FR"/>
@@ -76,6 +76,6 @@
     </objects>
     <resources>
         <image name="camera_btn" width="40" height="40"/>
-        <image name="wallhaven-oxv6gl" width="3840" height="2160"/>
+        <image name="head" width="65" height="65"/>
     </resources>
 </document>

@@ -73,6 +73,12 @@
 		CB0338822498B91E008060A0 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0338812498B91E008060A0 /* NetworkTool.swift */; };
 		CB0338862498BE25008060A0 /* MineInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0338842498BE25008060A0 /* MineInformationCell.m */; };
 		CB0338872498BE25008060A0 /* MineInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0338852498BE25008060A0 /* MineInformationCell.xib */; };
+		CB03389024990244008060A0 /* MineFocusAndFansVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03388E24990244008060A0 /* MineFocusAndFansVC.m */; };
+		CB03389124990244008060A0 /* MineFocusAndFansVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB03388F24990244008060A0 /* MineFocusAndFansVC.xib */; };
+		CB03389524990496008060A0 /* HomeFocusAndFansCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03389324990496008060A0 /* HomeFocusAndFansCell.m */; };
+		CB03389624990496008060A0 /* HomeFocusAndFansCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB03389424990496008060A0 /* HomeFocusAndFansCell.xib */; };
+		CB03389924991473008060A0 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03389824991473008060A0 /* EmptyView.m */; };
+		CB03389B24991492008060A0 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB03389A24991492008060A0 /* EmptyView.xib */; };
 		CB3B994A24985C1E006F3256 /* HomeBusinessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3B994824985C1E006F3256 /* HomeBusinessCell.m */; };
 		CB3B994B24985C1E006F3256 /* HomeBusinessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB3B994924985C1E006F3256 /* HomeBusinessCell.xib */; };
 		CB3B994F249873E7006F3256 /* HomeBusinessHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3B994D249873E7006F3256 /* HomeBusinessHeaderCell.m */; };
@@ -281,6 +287,15 @@
 		CB0338832498BE25008060A0 /* MineInformationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineInformationCell.h; sourceTree = "<group>"; };
 		CB0338842498BE25008060A0 /* MineInformationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineInformationCell.m; sourceTree = "<group>"; };
 		CB0338852498BE25008060A0 /* MineInformationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineInformationCell.xib; sourceTree = "<group>"; };
+		CB03388D24990243008060A0 /* MineFocusAndFansVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineFocusAndFansVC.h; sourceTree = "<group>"; };
+		CB03388E24990244008060A0 /* MineFocusAndFansVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineFocusAndFansVC.m; sourceTree = "<group>"; };
+		CB03388F24990244008060A0 /* MineFocusAndFansVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineFocusAndFansVC.xib; sourceTree = "<group>"; };
+		CB03389224990496008060A0 /* HomeFocusAndFansCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFocusAndFansCell.h; sourceTree = "<group>"; };
+		CB03389324990496008060A0 /* HomeFocusAndFansCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFocusAndFansCell.m; sourceTree = "<group>"; };
+		CB03389424990496008060A0 /* HomeFocusAndFansCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFocusAndFansCell.xib; sourceTree = "<group>"; };
+		CB03389724991473008060A0 /* EmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
+		CB03389824991473008060A0 /* EmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
+		CB03389A24991492008060A0 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		CB3B994724985C1E006F3256 /* HomeBusinessCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBusinessCell.h; sourceTree = "<group>"; };
 		CB3B994824985C1E006F3256 /* HomeBusinessCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBusinessCell.m; sourceTree = "<group>"; };
 		CB3B994924985C1E006F3256 /* HomeBusinessCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBusinessCell.xib; sourceTree = "<group>"; };
@@ -829,6 +844,9 @@
 				CB03386D2498B346008060A0 /* MineEditVC.h */,
 				CB03386C2498B345008060A0 /* MineEditVC.m */,
 				CB03386B2498B345008060A0 /* MineEditVC.xib */,
+				CB03388D24990243008060A0 /* MineFocusAndFansVC.h */,
+				CB03388E24990244008060A0 /* MineFocusAndFansVC.m */,
+				CB03388F24990244008060A0 /* MineFocusAndFansVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -854,6 +872,12 @@
 				CB0338832498BE25008060A0 /* MineInformationCell.h */,
 				CB0338842498BE25008060A0 /* MineInformationCell.m */,
 				CB0338852498BE25008060A0 /* MineInformationCell.xib */,
+				CB03389224990496008060A0 /* HomeFocusAndFansCell.h */,
+				CB03389324990496008060A0 /* HomeFocusAndFansCell.m */,
+				CB03389424990496008060A0 /* HomeFocusAndFansCell.xib */,
+				CB03389724991473008060A0 /* EmptyView.h */,
+				CB03389824991473008060A0 /* EmptyView.m */,
+				CB03389A24991492008060A0 /* EmptyView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -934,6 +958,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB03389B24991492008060A0 /* EmptyView.xib in Resources */,
 				CB3B9950249873E7006F3256 /* HomeBusinessHeaderCell.xib in Resources */,
 				CBAD62AC248A15560097BD9D /* CommunityFocusCollectionCell.xib in Resources */,
 				CBA5A3532490795E003BA799 /* RegisterVC.xib in Resources */,
@@ -951,6 +976,7 @@
 				CBAD62652488F53C0097BD9D /* HomeADCell.xib in Resources */,
 				CBA5A346248F6FE6003BA799 /* MineSettingsCell.xib in Resources */,
 				CBAD62B9248A98CA0097BD9D /* CommunityDynamicHeaderView.xib in Resources */,
+				CB03389624990496008060A0 /* HomeFocusAndFansCell.xib in Resources */,
 				CB0338732498B3D9008060A0 /* MineInformationSignatureView.xib in Resources */,
 				CB3B995524987933006F3256 /* HomeNewsBannerCell.xib in Resources */,
 				CBAD629D2489E55C0097BD9D /* CommunityTopicCollectionCell.xib in Resources */,
@@ -958,6 +984,7 @@
 				CBAD627D2489384C0097BD9D /* CommunityPopularVC.xib in Resources */,
 				18140316248783BD00CA3E92 /* MineVC.xib in Resources */,
 				CBA74A9B24921D760038CA59 /* MineDynamicHeaderView.xib in Resources */,
+				CB03389124990244008060A0 /* MineFocusAndFansVC.xib in Resources */,
 				CBAD625B2488E6410097BD9D /* HomeFourBtnCell.xib in Resources */,
 				CBAD62822489385C0097BD9D /* CommunityFocusVC.xib in Resources */,
 				CBA5A34E248FD5F6003BA799 /* LoginVC.xib in Resources */,
@@ -1036,6 +1063,7 @@
 				CBEFF5CC249758650029AE26 /* HomeNewsVC.m in Sources */,
 				CBEFF5D1249779DD0029AE26 /* HomeCalendarColletionCell.m in Sources */,
 				181402EA248779DA00CA3E92 /* YKLineChartView.m in Sources */,
+				CB03389524990496008060A0 /* HomeFocusAndFansCell.m in Sources */,
 				CBA74AB32494D7C90038CA59 /* MineDynamicVC.m in Sources */,
 				181402E9248779DA00CA3E92 /* QHDetailViewController.m in Sources */,
 				CB03386F2498B346008060A0 /* MineEditVC.m in Sources */,
@@ -1044,6 +1072,7 @@
 				CBAD62B0248A2A320097BD9D /* CommunityDynamicCell.m in Sources */,
 				CBEFF5C7249758520029AE26 /* HomeBusinessVC.m in Sources */,
 				181402D3248779DA00CA3E92 /* ENDLCPNetWorkGET.m in Sources */,
+				CB03389024990244008060A0 /* MineFocusAndFansVC.m in Sources */,
 				CBAD62692488F7350097BD9D /* HomeGoldCell.m in Sources */,
 				CB0338742498B3D9008060A0 /* MineInformationSignatureView.m in Sources */,
 				181402F9248779DA00CA3E92 /* YKLineEntity.m in Sources */,
@@ -1072,6 +1101,7 @@
 				CBAD62B8248A98CA0097BD9D /* CommunityDynamicHeaderView.m in Sources */,
 				CBA74A9924921C810038CA59 /* MineDynamicHeaderView.m in Sources */,
 				181402FC248779DA00CA3E92 /* ContentBaseViewController.m in Sources */,
+				CB03389924991473008060A0 /* EmptyView.m in Sources */,
 				1814030B2487836D00CA3E92 /* HomeVC.m in Sources */,
 				181402FD248779DA00CA3E92 /* BaseModel.m in Sources */,
 				181402D1248779DA00CA3E92 /* NSString+DealError.m in Sources */,

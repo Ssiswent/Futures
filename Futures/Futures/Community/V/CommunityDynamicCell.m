@@ -46,7 +46,7 @@
 {
     UIColor *btnBgNormalColor = [UIColor colorWithHexString:@"#293AFF"];
     UIImage *btnBgNormalImg = [UIImage imageWithColor:btnBgNormalColor];
-    UIColor *btnBgSelectedColor = [UIColor systemGray4Color];
+    UIColor *btnBgSelectedColor = [UIColor colorWithHexString:@"#E9E9E9"];
     UIImage *btnBgSelectedImg = [UIImage imageWithColor:btnBgSelectedColor];
     [self.focusBtn setBackgroundImage:btnBgNormalImg forState:UIControlStateNormal];
     [self.focusBtn setBackgroundImage:btnBgSelectedImg forState:UIControlStateSelected];
