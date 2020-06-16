@@ -24,6 +24,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    _newsImgView.layer.cornerRadius = 5;
+    _newsImgView.layer.masksToBounds = YES;
 }
 
 - (void)setNewsModel:(HomeNewsModel *)newsModel

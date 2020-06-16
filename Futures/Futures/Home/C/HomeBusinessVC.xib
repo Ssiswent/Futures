@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeBusinessVC">
             <connections>
+                <outlet property="businessTableView" destination="svF-AP-clr" id="TNT-pk-JAn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,7 +18,23 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="svF-AP-clr" userLabel="BusinessTableView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Phx-eZ-m4i"/>
+                        <outlet property="delegate" destination="-1" id="oTy-fh-6Hd"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="svF-AP-clr" secondAttribute="trailing" id="TaT-i1-Uft"/>
+                <constraint firstItem="svF-AP-clr" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="dGO-dS-gSY"/>
+                <constraint firstItem="svF-AP-clr" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="oJ2-qX-tit"/>
+                <constraint firstAttribute="bottom" secondItem="svF-AP-clr" secondAttribute="bottom" id="r8Z-UW-d8f"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="139" y="153"/>
         </view>

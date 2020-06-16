@@ -12,12 +12,17 @@
 #import "MineDynamicVC.h"
 
 #import "MineUserModel.h"
+#import "UserModel.h"
 
 #import "CustomTBC.h"
 
 #import "MineDynamicVC.h"
 
-@interface MineVC ()<YPNavigationBarConfigureStyle, LoginVCDelegate>
+#import "AccountSwitchVC.h"
+
+#import "MineEditVC.h"
+
+@interface MineVC ()<YPNavigationBarConfigureStyle, LoginVCDelegate, AccountSwitchVCDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *avatarView;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImgView;
@@ -53,6 +58,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialSetup];
+    
+    MineUserModel *user1 = [MineUserModel sharedMineUserModel];
+    MineUserModel *user2 = [MineUserModel sharedMineUserModel];
+    MineUserModel *user3 = [MineUserModel sharedMineUserModel];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -142,6 +151,25 @@
     [self.navigationController pushViewController:settingsVC animated:YES];
 }
 
+- (IBAction)editBtnClicked:(id)sender {
+    if(_hasUserId)
+    {
+        MineEditVC *mineEditVC = MineEditVC.new;
+        MineUserModel *user = [MineUserModel sharedMineUserModel];
+        mineEditVC.user = user;
+        [self.navigationController pushViewController:mineEditVC animated:YES];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        loginVC.delegate = self;
+        //        loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:loginVC animated:YES completion:nil];
+        [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
+    }
+}
+
+
 #pragma mark - Gestures
 
 - (void)addClickAvatarGes
@@ -161,7 +189,7 @@
     {
         LoginVC *loginVC = [LoginVC new];
         loginVC.delegate = self;
-//        loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        //        loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:loginVC animated:YES completion:nil];
         [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
     }
@@ -189,15 +217,35 @@
 
 - (void)accountViewClicked
 {
-    LoginVC *loginVC = [LoginVC new];
-    loginVC.delegate = self;
-//    loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:loginVC animated:YES completion:nil];
+    //获取用户偏好
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    //读取userId
+    NSNumber *userId = [userDefault objectForKey:@"userId"];
+    if(userId == nil)
+    {
+        LoginVC *loginVC = [LoginVC new];
+        loginVC.delegate = self;
+        //    loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:loginVC animated:YES completion:nil];
+    }
+    else
+    {
+        AccountSwitchVC *accountSwitchVC = AccountSwitchVC.new;
+        accountSwitchVC.delegate = self;
+        [self presentViewController:accountSwitchVC animated:YES completion:nil];
+    }
 }
 
 #pragma mark - LoginVCDelegate
 
 - (void)LoginVCDidGetUser:(LoginVC *)loginVC
+{
+    [self getUserDefault];
+}
+
+#pragma mark - AccountSwitchVCDelegate
+
+- (void)accountSwitchVCDidGetUser:(AccountSwitchVC *)accountSwitchVC
 {
     [self getUserDefault];
 }
@@ -219,7 +267,13 @@
     [ENDNetWorkManager postWithPathUrl:@"/user/personal/queryUser" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
         NSError *error;
         MineUserModel *mineUser = [MineUserModel sharedMineUserModel];
-        mineUser = [MTLJSONAdapter modelOfClass:[MineUserModel class] fromJSONDictionary:result[@"data"] error:&error];
+        UserModel *user = [MTLJSONAdapter modelOfClass:[UserModel class] fromJSONDictionary:result[@"data"] error:&error];
+        mineUser.userId = user.userId;
+        mineUser.nickName = user.nickName;
+        mineUser.followCount = user.followCount;
+        mineUser.fansCount = user.fansCount;
+        mineUser.head = user.head;
+        mineUser.signature = user.signature;
         weakSelf.followsCountLabel.text = [NSString stringWithFormat:@"%d",mineUser.followCount.intValue];
         weakSelf.fansCountLabel.text = [NSString stringWithFormat:@"%d",mineUser.fansCount.intValue];
         [weakSelf.avatarImgView sd_setImageWithURL:[NSURL URLWithString:mineUser.head]

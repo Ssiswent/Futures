@@ -59,6 +59,14 @@
     [self presentViewController:registerVC animated:YES completion:nil];
 }
 
+- (void)dismissToRootViewController  {
+    UIViewController *vc = self;
+    while (vc.presentingViewController) {
+        vc = vc.presentingViewController;
+    }
+    [vc dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - RegisterVCDelegate
 
 - (void)RegisterVCDidGetUser:(RegisterVC *)registerVC
@@ -83,7 +91,8 @@
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
         //记录userId
         [userDefault setObject:mineUser.userId forKey:@"userId"];
-        [self dismissViewControllerAnimated:YES completion:nil];
+//        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissToRootViewController];
         if([self.delegate respondsToSelector:@selector(LoginVCDidGetUser:)])
         {
             [self.delegate LoginVCDidGetUser:self];

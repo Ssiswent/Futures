@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeBusinessHeaderCell">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="81.5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="345" height="81.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rgj-6y-g9r" userLabel="HeaderView">
+                        <rect key="frame" x="0.0" y="14.5" width="345" height="57.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJr-IU-3J4" userLabel="LeftView">
+                                <rect key="frame" x="0.0" y="0.0" width="60.5" height="57.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_img" translatesAutoresizingMaskIntoConstraints="NO" id="iio-KG-anJ" userLabel="LeftImgView">
+                                        <rect key="frame" x="9.5" y="8" width="42" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="9uh-61-lN1"/>
+                                            <constraint firstAttribute="height" constant="42" id="cO7-NL-xoE"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60.5" id="iv9-4a-45V"/>
+                                    <constraint firstItem="iio-KG-anJ" firstAttribute="centerX" secondItem="OJr-IU-3J4" secondAttribute="centerX" id="ngS-ND-1mh"/>
+                                    <constraint firstItem="iio-KG-anJ" firstAttribute="centerY" secondItem="OJr-IU-3J4" secondAttribute="centerY" id="zMn-dn-Dw7"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzg-Tg-m2Z" userLabel="TagView">
+                                <rect key="frame" x="60.5" y="0.0" width="284.5" height="57.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ank-jk-9dG" userLabel="View1">
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="57.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waP-YF-0F5" userLabel="Tag1Btn">
+                                                <rect key="frame" x="-4.5" y="2" width="80.5" height="57.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80.5" id="a4c-3Y-tIp"/>
+                                                    <constraint firstAttribute="height" constant="57.5" id="bdW-jl-sxe"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <state key="normal" title="#黄金" backgroundImage="tag_1"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="waP-YF-0F5" firstAttribute="centerY" secondItem="ank-jk-9dG" secondAttribute="centerY" constant="2" id="MXE-pg-Wjk"/>
+                                            <constraint firstItem="waP-YF-0F5" firstAttribute="centerX" secondItem="ank-jk-9dG" secondAttribute="centerX" id="cLW-co-3RU"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejJ-rH-XDl" userLabel="View2">
+                                        <rect key="frame" x="71" y="0.0" width="71.5" height="57.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxu-PQ-b3n" userLabel="Tag2Btn">
+                                                <rect key="frame" x="-4.5" y="2" width="80.5" height="57.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="57.5" id="Fxu-Jy-Avf"/>
+                                                    <constraint firstAttribute="width" constant="80.5" id="YVB-dN-0ue"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <state key="normal" title="#黄金" backgroundImage="tag_2"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Jxu-PQ-b3n" firstAttribute="centerY" secondItem="ejJ-rH-XDl" secondAttribute="centerY" constant="2" id="rOE-o0-Q4b"/>
+                                            <constraint firstItem="Jxu-PQ-b3n" firstAttribute="centerX" secondItem="ejJ-rH-XDl" secondAttribute="centerX" id="vgD-ow-kUy"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRE-Cy-3gT" userLabel="View3">
+                                        <rect key="frame" x="142.5" y="0.0" width="71" height="57.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NL-UV-Og9" userLabel="Tag3Btn">
+                                                <rect key="frame" x="-5" y="2" width="80.5" height="57.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80.5" id="XA6-2w-vFy"/>
+                                                    <constraint firstAttribute="height" constant="57.5" id="kMx-7f-h2g"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <state key="normal" title="#黄金" backgroundImage="tag_3"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="4NL-UV-Og9" firstAttribute="centerY" secondItem="QRE-Cy-3gT" secondAttribute="centerY" constant="2" id="Fmy-VB-oY4"/>
+                                            <constraint firstItem="4NL-UV-Og9" firstAttribute="centerX" secondItem="QRE-Cy-3gT" secondAttribute="centerX" id="ZjG-SG-54X"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tkJ-yx-643" userLabel="View4">
+                                        <rect key="frame" x="213.5" y="0.0" width="71" height="57.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mve-Al-gaZ" userLabel="Tag4Btn">
+                                                <rect key="frame" x="-5" y="2" width="80.5" height="57.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="57.5" id="2Tt-Re-a5o"/>
+                                                    <constraint firstAttribute="width" constant="80.5" id="RvI-Cm-B6z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <state key="normal" title="#黄金" backgroundImage="tag_4"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="mve-Al-gaZ" firstAttribute="centerX" secondItem="tkJ-yx-643" secondAttribute="centerX" id="al5-q9-aYD"/>
+                                            <constraint firstItem="mve-Al-gaZ" firstAttribute="centerY" secondItem="tkJ-yx-643" secondAttribute="centerY" constant="2" id="oIh-R7-ttB"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tkJ-yx-643" firstAttribute="leading" secondItem="QRE-Cy-3gT" secondAttribute="trailing" id="8ge-Go-mw6"/>
+                                    <constraint firstAttribute="trailing" secondItem="tkJ-yx-643" secondAttribute="trailing" id="9ne-ue-4kK"/>
+                                    <constraint firstAttribute="bottom" secondItem="ank-jk-9dG" secondAttribute="bottom" id="9wa-72-i9j"/>
+                                    <constraint firstItem="ank-jk-9dG" firstAttribute="width" secondItem="yzg-Tg-m2Z" secondAttribute="width" multiplier="0.25" id="D7a-eI-7RK"/>
+                                    <constraint firstItem="QRE-Cy-3gT" firstAttribute="leading" secondItem="ejJ-rH-XDl" secondAttribute="trailing" id="DdG-dh-Sql"/>
+                                    <constraint firstItem="ejJ-rH-XDl" firstAttribute="leading" secondItem="ank-jk-9dG" secondAttribute="trailing" id="Ql5-UA-WeN"/>
+                                    <constraint firstItem="ank-jk-9dG" firstAttribute="leading" secondItem="yzg-Tg-m2Z" secondAttribute="leading" id="UQa-fU-8Vo"/>
+                                    <constraint firstItem="QRE-Cy-3gT" firstAttribute="top" secondItem="yzg-Tg-m2Z" secondAttribute="top" id="VWl-at-c0r"/>
+                                    <constraint firstItem="ejJ-rH-XDl" firstAttribute="width" secondItem="yzg-Tg-m2Z" secondAttribute="width" multiplier="0.25" id="Xev-xg-n7q"/>
+                                    <constraint firstAttribute="bottom" secondItem="ejJ-rH-XDl" secondAttribute="bottom" id="Yt6-zE-M9s"/>
+                                    <constraint firstAttribute="bottom" secondItem="tkJ-yx-643" secondAttribute="bottom" id="c5B-SK-c3V"/>
+                                    <constraint firstItem="tkJ-yx-643" firstAttribute="top" secondItem="yzg-Tg-m2Z" secondAttribute="top" id="doW-jg-AQg"/>
+                                    <constraint firstItem="ejJ-rH-XDl" firstAttribute="top" secondItem="yzg-Tg-m2Z" secondAttribute="top" id="g5K-Jy-mUE"/>
+                                    <constraint firstItem="QRE-Cy-3gT" firstAttribute="width" secondItem="yzg-Tg-m2Z" secondAttribute="width" multiplier="0.25" id="qCw-tT-VOt"/>
+                                    <constraint firstAttribute="bottom" secondItem="QRE-Cy-3gT" secondAttribute="bottom" id="sBy-0V-Wr9"/>
+                                    <constraint firstItem="ank-jk-9dG" firstAttribute="top" secondItem="yzg-Tg-m2Z" secondAttribute="top" id="wJh-za-R3A"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yzg-Tg-m2Z" secondAttribute="trailing" id="CoK-Wb-ccb"/>
+                            <constraint firstAttribute="bottom" secondItem="OJr-IU-3J4" secondAttribute="bottom" id="GXv-OD-aAV"/>
+                            <constraint firstItem="OJr-IU-3J4" firstAttribute="top" secondItem="Rgj-6y-g9r" secondAttribute="top" id="HlJ-sr-6gy"/>
+                            <constraint firstItem="OJr-IU-3J4" firstAttribute="leading" secondItem="Rgj-6y-g9r" secondAttribute="leading" id="SGz-kK-4px"/>
+                            <constraint firstAttribute="bottom" secondItem="yzg-Tg-m2Z" secondAttribute="bottom" id="VfD-JG-BSG"/>
+                            <constraint firstAttribute="height" constant="57.5" id="Yag-IH-c0O"/>
+                            <constraint firstItem="yzg-Tg-m2Z" firstAttribute="top" secondItem="Rgj-6y-g9r" secondAttribute="top" id="d6F-9Z-AyZ"/>
+                            <constraint firstItem="yzg-Tg-m2Z" firstAttribute="leading" secondItem="OJr-IU-3J4" secondAttribute="trailing" id="q9R-8K-kf5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Rgj-6y-g9r" secondAttribute="bottom" constant="9.5" id="2go-Dw-joa"/>
+                    <constraint firstAttribute="trailing" secondItem="Rgj-6y-g9r" secondAttribute="trailing" id="Fub-Gv-ign"/>
+                    <constraint firstItem="Rgj-6y-g9r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14.5" id="gIW-k8-oyS"/>
+                    <constraint firstItem="Rgj-6y-g9r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gk5-Q3-mm4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="left_img" width="42" height="42"/>
+        <image name="tag_1" width="80.5" height="57.5"/>
+        <image name="tag_2" width="80.5" height="57.5"/>
+        <image name="tag_3" width="80.5" height="57.5"/>
+        <image name="tag_4" width="80.5" height="57.5"/>
+    </resources>
+</document>

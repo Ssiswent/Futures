@@ -21,4 +21,5 @@
     return _sharedMineUserModel;
 }
 
+
 @end

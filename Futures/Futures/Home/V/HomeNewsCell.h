@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HomeNewsCell : UITableViewCell
 
 @property (strong, nonatomic) HomeNewsModel *newsModel;
+@property (weak, nonatomic) IBOutlet UIImageView *newsImgView;
 
 @end
 

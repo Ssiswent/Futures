@@ -29,6 +29,13 @@ NSString *MineSettingsCellID = @"MineSettingsCell";
     [self.settingsTableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineSettingsCell class]) bundle:nil] forCellReuseIdentifier:MineSettingsCellID];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
+}
+
 - (void)initialSetup
 {
     self.title = @"设置";
@@ -49,13 +56,6 @@ NSString *MineSettingsCellID = @"MineSettingsCell";
 - (void)backBtnClicked
 {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-    [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
 }
 
 #pragma mark - TableViewDataSource

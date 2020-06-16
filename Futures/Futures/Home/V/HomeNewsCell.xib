@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,10 +33,10 @@
                         <color key="textColor" red="0.15294379" green="0.152936399" blue="0.15294143560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美国" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BA0-PL-wUE" userLabel="CountryLabel">
-                        <rect key="frame" x="15.5" y="56.5" width="35" height="8.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="澳大利亚" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BA0-PL-wUE" userLabel="CountryLabel">
+                        <rect key="frame" x="15.5" y="56.5" width="41" height="8.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="35" id="EaU-fa-ieI"/>
+                            <constraint firstAttribute="width" constant="41" id="EaU-fa-ieI"/>
                             <constraint firstAttribute="height" constant="8.5" id="YUO-Lt-2y4"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
@@ -43,7 +44,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:27" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dO6-1j-aXa" userLabel="TimeLabel">
-                        <rect key="frame" x="60.5" y="56.5" width="35" height="8.5"/>
+                        <rect key="frame" x="66.5" y="56.5" width="35" height="8.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="35" id="94R-Dg-ZIS"/>
                         </constraints>
@@ -80,6 +81,7 @@
             <connections>
                 <outlet property="contentLabel" destination="UlP-mo-Fih" id="In6-ab-0r7"/>
                 <outlet property="countryLabel" destination="BA0-PL-wUE" id="V5K-dN-7QZ"/>
+                <outlet property="newsImgView" destination="p5s-Zd-VWY" id="NU5-rn-RJ3"/>
                 <outlet property="timeLabel" destination="dO6-1j-aXa" id="7EG-NK-zMB"/>
             </connections>
             <point key="canvasLocation" x="138.40579710144928" y="128.90625"/>

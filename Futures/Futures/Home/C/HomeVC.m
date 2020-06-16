@@ -164,6 +164,23 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
             return goldCell;
             break;
         default:
+            switch (indexPath.row % 5) {
+                case 0:
+                    newsCell.newsImgView.image = [UIImage imageNamed:@"news_1"];
+                    break;
+                case 1:
+                    newsCell.newsImgView.image = [UIImage imageNamed:@"news_2"];
+                    break;
+                case 2:
+                    newsCell.newsImgView.image = [UIImage imageNamed:@"news_3"];
+                    break;
+                case 3:
+                    newsCell.newsImgView.image = [UIImage imageNamed:@"news_4"];
+                    break;
+                default:
+                    newsCell.newsImgView.image = [UIImage imageNamed:@"news_5"];
+                    break;
+            }
             newsCell.newsModel = self.newsArray[indexPath.row];
             return newsCell;
             break;

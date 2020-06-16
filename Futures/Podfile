@@ -20,5 +20,7 @@ pod 'ZXCountDownView'
 pod 'IQKeyboardManager'
 pod 'YPNavigationBarTransition'
 pod 'JXPagingView/Pager'
+pod 'TZImagePickerController'
+pod 'Alamofire', '~> 4.9.1'
 
 end

@@ -34,7 +34,7 @@
                             <color key="backgroundColor" red="0.67710500959999997" green="0.69598865509999996" blue="0.97650283579999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="小松鼠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzH-Ba-RK1" userLabel="NameLabel">
-                            <rect key="frame" x="100" y="83" width="69" height="15"/>
+                            <rect key="frame" x="100" y="78" width="69" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
