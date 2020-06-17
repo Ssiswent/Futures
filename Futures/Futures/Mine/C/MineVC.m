@@ -23,6 +23,10 @@
 #import "MineEditVC.h"
 
 #import "MineFocusAndFansVC.h"
+#import "MineMessagesVC.h"
+#import "MineCollectionVC.h"
+#import "MineLikeVC.h"
+#import "LoadDataListCustomViewController.h"
 
 @interface MineVC ()<YPNavigationBarConfigureStyle, LoginVCDelegate, AccountSwitchVCDelegate>
 
@@ -49,6 +53,10 @@
 @property (weak, nonatomic) IBOutlet UIView *focusView;
 @property (weak, nonatomic) IBOutlet UIView *fansView;
 @property (weak, nonatomic) IBOutlet UIView *messagesView;
+@property (weak, nonatomic) IBOutlet UIView *dynamicView;
+@property (weak, nonatomic) IBOutlet UIView *likeView;
+@property (weak, nonatomic) IBOutlet UIView *commentView;
+@property (weak, nonatomic) IBOutlet UIView *collectView;
 
 
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
@@ -93,11 +101,21 @@
     _bottomView.layer.shadowOpacity = 1;
     _bottomView.layer.shadowRadius = 37;
     
+    [self addGestures];
+}
+
+- (void)addGestures
+{
     [self addClickAvatarGes];
     [self addClickLogoutViewGes];
     [self addClickAccountViewGes];
     [self addClickFocusViewGes];
     [self addClickFansViewGes];
+    [self addClickMessagesViewGes];
+    [self addClickDynamicViewGes];
+    [self addClickCommentViewGes];
+    [self addClickCollectViewGes];
+    [self addClickLikeViewGes];
 }
 
 - (void)getUserDefault
@@ -281,6 +299,99 @@
         MineUserModel *user = [MineUserModel sharedMineUserModel];
         focusAndFansVC.user = user;
         [self.navigationController pushViewController:focusAndFansVC animated:YES];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        [self.navigationController pushViewController:loginVC animated:YES];
+        [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
+    }
+}
+
+- (void)addClickMessagesViewGes
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(messagesViewClicked)];
+    [_messagesView addGestureRecognizer:tap];
+}
+
+- (void)messagesViewClicked
+{
+    if(_hasUserId)
+    {
+        MineMessagesVC *messagesVC = [[MineMessagesVC alloc] init];
+        messagesVC.titleStr = @"消息";
+        [self.navigationController pushViewController:messagesVC animated:YES];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        [self.navigationController pushViewController:loginVC animated:YES];
+        [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
+    }
+}
+
+- (void)addClickDynamicViewGes
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(avatarViewClicked)];
+    [_dynamicView addGestureRecognizer:tap];
+}
+
+- (void)addClickCommentViewGes
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(commentViewClicked)];
+    [_commentView addGestureRecognizer:tap];
+}
+
+- (void)commentViewClicked
+{
+    if(_hasUserId)
+    {
+        MineMessagesVC *messagesVC = [[MineMessagesVC alloc] init];
+        messagesVC.titleStr = @"评论";
+        [self.navigationController pushViewController:messagesVC animated:YES];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        [self.navigationController pushViewController:loginVC animated:YES];
+        [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
+    }
+}
+
+- (void)addClickCollectViewGes
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(collectViewClicked)];
+    [_collectView addGestureRecognizer:tap];
+}
+
+- (void)collectViewClicked
+{
+    if(_hasUserId)
+    {
+        MineCollectionVC *collectionVC = [[MineCollectionVC alloc] init];
+        [self.navigationController pushViewController:collectionVC animated:YES];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        [self.navigationController pushViewController:loginVC animated:YES];
+        [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
+    }
+}
+
+- (void)addClickLikeViewGes
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(likeViewClicked)];
+    [_likeView addGestureRecognizer:tap];
+}
+
+- (void)likeViewClicked
+{
+    if(_hasUserId)
+    {
+        MineLikeVC *likeVC = [[MineLikeVC alloc] init];
+        likeVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:likeVC animated:YES];
     }
     else
     {

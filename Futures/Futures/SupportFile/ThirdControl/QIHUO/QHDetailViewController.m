@@ -106,8 +106,18 @@ CG_INLINE void dispatch_queue_after_S(CGFloat time ,dispatch_block_t block) {
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage originalImageWithName:@"ic_back "] style:0 target:self action:@selector(backBtnClicked)];
+    
+    self.title = @"实时行情";
+    
+    UILabel *titleLabel = UILabel.new;
+    titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.text = self.title;
+    [titleLabel sizeToFit];
+    self.navigationItem.titleView = titleLabel;
+//    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage originalImageWithName:@"ic_back"] style:0 target:self action:@selector(backBtnClicked)];
    // [self.navigationController setNavigationBarHidden:NO];
     //    saveB = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
     //    [saveB setBackgroundImage:UIImageWithName(@"J") forState:UIControlStateNormal];

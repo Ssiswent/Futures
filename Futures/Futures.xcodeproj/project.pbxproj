@@ -75,8 +75,8 @@
 		CB0338872498BE25008060A0 /* MineInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0338852498BE25008060A0 /* MineInformationCell.xib */; };
 		CB03389024990244008060A0 /* MineFocusAndFansVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03388E24990244008060A0 /* MineFocusAndFansVC.m */; };
 		CB03389124990244008060A0 /* MineFocusAndFansVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB03388F24990244008060A0 /* MineFocusAndFansVC.xib */; };
-		CB03389524990496008060A0 /* HomeFocusAndFansCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03389324990496008060A0 /* HomeFocusAndFansCell.m */; };
-		CB03389624990496008060A0 /* HomeFocusAndFansCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB03389424990496008060A0 /* HomeFocusAndFansCell.xib */; };
+		CB03389524990496008060A0 /* MineFocusAndFansCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03389324990496008060A0 /* MineFocusAndFansCell.m */; };
+		CB03389624990496008060A0 /* MineFocusAndFansCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB03389424990496008060A0 /* MineFocusAndFansCell.xib */; };
 		CB03389924991473008060A0 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03389824991473008060A0 /* EmptyView.m */; };
 		CB03389B24991492008060A0 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB03389A24991492008060A0 /* EmptyView.xib */; };
 		CB3B994A24985C1E006F3256 /* HomeBusinessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3B994824985C1E006F3256 /* HomeBusinessCell.m */; };
@@ -142,6 +142,16 @@
 		CBAD62B4248A7C970097BD9D /* CommunityDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD62B3248A7C970097BD9D /* CommunityDynamicModel.m */; };
 		CBAD62B8248A98CA0097BD9D /* CommunityDynamicHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD62B6248A98CA0097BD9D /* CommunityDynamicHeaderView.m */; };
 		CBAD62B9248A98CA0097BD9D /* CommunityDynamicHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD62B7248A98CA0097BD9D /* CommunityDynamicHeaderView.xib */; };
+		CBBC0D802499C0DB005CDC7D /* MineLikeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0D7F2499C0DB005CDC7D /* MineLikeVC.m */; };
+		CBBC0D842499C217005CDC7D /* MineLikeChildAVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0D822499C217005CDC7D /* MineLikeChildAVC.m */; };
+		CBBC0D852499C217005CDC7D /* MineLikeChildAVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC0D832499C217005CDC7D /* MineLikeChildAVC.xib */; };
+		CBBC0D892499C225005CDC7D /* MineLikeChildBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0D872499C225005CDC7D /* MineLikeChildBVC.m */; };
+		CBBC0D8A2499C225005CDC7D /* MineLikeChildBVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC0D882499C225005CDC7D /* MineLikeChildBVC.xib */; };
+		CBBC0D8E2499C678005CDC7D /* MineLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0D8C2499C678005CDC7D /* MineLikeCell.m */; };
+		CBBC0D8F2499C678005CDC7D /* MineLikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC0D8D2499C678005CDC7D /* MineLikeCell.xib */; };
+		CBBC0D9A249A1407005CDC7D /* LoadDataBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0D98249A1407005CDC7D /* LoadDataBaseViewController.m */; };
+		CBBC0D9B249A1407005CDC7D /* LoadDataListCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0D99249A1407005CDC7D /* LoadDataListCustomViewController.m */; };
+		CBBC0D9E249A1428005CDC7D /* LoadDataListBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0D9C249A1428005CDC7D /* LoadDataListBaseViewController.m */; };
 		CBEFF5BE2497579F0029AE26 /* HomeFourBtnVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */; };
 		CBEFF5C2249758310029AE26 /* HomeCalendarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5C0249758310029AE26 /* HomeCalendarVC.m */; };
 		CBEFF5C3249758310029AE26 /* HomeCalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF5C1249758310029AE26 /* HomeCalendarVC.xib */; };
@@ -151,6 +161,12 @@
 		CBEFF5CD249758650029AE26 /* HomeNewsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF5CB249758650029AE26 /* HomeNewsVC.xib */; };
 		CBEFF5D1249779DD0029AE26 /* HomeCalendarColletionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5CF249779DD0029AE26 /* HomeCalendarColletionCell.m */; };
 		CBEFF5D2249779DD0029AE26 /* HomeCalendarColletionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF5D0249779DD0029AE26 /* HomeCalendarColletionCell.xib */; };
+		CBF7D4722499ACAF00A7761A /* MineMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF7D4702499ACAF00A7761A /* MineMessageCell.m */; };
+		CBF7D4732499ACAF00A7761A /* MineMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF7D4712499ACAF00A7761A /* MineMessageCell.xib */; };
+		CBF7D4772499AF7000A7761A /* MineMessagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF7D4752499AF7000A7761A /* MineMessagesVC.m */; };
+		CBF7D4782499AF7000A7761A /* MineMessagesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF7D4762499AF7000A7761A /* MineMessagesVC.xib */; };
+		CBF7D47C2499B9EA00A7761A /* MineCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF7D47A2499B9EA00A7761A /* MineCollectionVC.m */; };
+		CBF7D47D2499B9EA00A7761A /* MineCollectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF7D47B2499B9EA00A7761A /* MineCollectionVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -290,9 +306,9 @@
 		CB03388D24990243008060A0 /* MineFocusAndFansVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineFocusAndFansVC.h; sourceTree = "<group>"; };
 		CB03388E24990244008060A0 /* MineFocusAndFansVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineFocusAndFansVC.m; sourceTree = "<group>"; };
 		CB03388F24990244008060A0 /* MineFocusAndFansVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineFocusAndFansVC.xib; sourceTree = "<group>"; };
-		CB03389224990496008060A0 /* HomeFocusAndFansCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFocusAndFansCell.h; sourceTree = "<group>"; };
-		CB03389324990496008060A0 /* HomeFocusAndFansCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFocusAndFansCell.m; sourceTree = "<group>"; };
-		CB03389424990496008060A0 /* HomeFocusAndFansCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFocusAndFansCell.xib; sourceTree = "<group>"; };
+		CB03389224990496008060A0 /* MineFocusAndFansCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineFocusAndFansCell.h; sourceTree = "<group>"; };
+		CB03389324990496008060A0 /* MineFocusAndFansCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineFocusAndFansCell.m; sourceTree = "<group>"; };
+		CB03389424990496008060A0 /* MineFocusAndFansCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineFocusAndFansCell.xib; sourceTree = "<group>"; };
 		CB03389724991473008060A0 /* EmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		CB03389824991473008060A0 /* EmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
 		CB03389A24991492008060A0 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
@@ -394,6 +410,23 @@
 		CBAD62B5248A98CA0097BD9D /* CommunityDynamicHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDynamicHeaderView.h; sourceTree = "<group>"; };
 		CBAD62B6248A98CA0097BD9D /* CommunityDynamicHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDynamicHeaderView.m; sourceTree = "<group>"; };
 		CBAD62B7248A98CA0097BD9D /* CommunityDynamicHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityDynamicHeaderView.xib; sourceTree = "<group>"; };
+		CBBC0D7E2499C0DB005CDC7D /* MineLikeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineLikeVC.h; sourceTree = "<group>"; };
+		CBBC0D7F2499C0DB005CDC7D /* MineLikeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineLikeVC.m; sourceTree = "<group>"; };
+		CBBC0D812499C217005CDC7D /* MineLikeChildAVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineLikeChildAVC.h; sourceTree = "<group>"; };
+		CBBC0D822499C217005CDC7D /* MineLikeChildAVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineLikeChildAVC.m; sourceTree = "<group>"; };
+		CBBC0D832499C217005CDC7D /* MineLikeChildAVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineLikeChildAVC.xib; sourceTree = "<group>"; };
+		CBBC0D862499C225005CDC7D /* MineLikeChildBVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineLikeChildBVC.h; sourceTree = "<group>"; };
+		CBBC0D872499C225005CDC7D /* MineLikeChildBVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineLikeChildBVC.m; sourceTree = "<group>"; };
+		CBBC0D882499C225005CDC7D /* MineLikeChildBVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineLikeChildBVC.xib; sourceTree = "<group>"; };
+		CBBC0D8B2499C678005CDC7D /* MineLikeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineLikeCell.h; sourceTree = "<group>"; };
+		CBBC0D8C2499C678005CDC7D /* MineLikeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineLikeCell.m; sourceTree = "<group>"; };
+		CBBC0D8D2499C678005CDC7D /* MineLikeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineLikeCell.xib; sourceTree = "<group>"; };
+		CBBC0D96249A1406005CDC7D /* LoadDataListCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadDataListCustomViewController.h; sourceTree = "<group>"; };
+		CBBC0D97249A1406005CDC7D /* LoadDataBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadDataBaseViewController.h; sourceTree = "<group>"; };
+		CBBC0D98249A1407005CDC7D /* LoadDataBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadDataBaseViewController.m; sourceTree = "<group>"; };
+		CBBC0D99249A1407005CDC7D /* LoadDataListCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadDataListCustomViewController.m; sourceTree = "<group>"; };
+		CBBC0D9C249A1428005CDC7D /* LoadDataListBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadDataListBaseViewController.m; sourceTree = "<group>"; };
+		CBBC0D9D249A1428005CDC7D /* LoadDataListBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadDataListBaseViewController.h; sourceTree = "<group>"; };
 		CBEFF5BC2497579F0029AE26 /* HomeFourBtnVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFourBtnVC.h; sourceTree = "<group>"; };
 		CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFourBtnVC.m; sourceTree = "<group>"; };
 		CBEFF5BF249758310029AE26 /* HomeCalendarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCalendarVC.h; sourceTree = "<group>"; };
@@ -408,6 +441,15 @@
 		CBEFF5CE249779DD0029AE26 /* HomeCalendarColletionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCalendarColletionCell.h; sourceTree = "<group>"; };
 		CBEFF5CF249779DD0029AE26 /* HomeCalendarColletionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCalendarColletionCell.m; sourceTree = "<group>"; };
 		CBEFF5D0249779DD0029AE26 /* HomeCalendarColletionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCalendarColletionCell.xib; sourceTree = "<group>"; };
+		CBF7D46F2499ACAF00A7761A /* MineMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineMessageCell.h; sourceTree = "<group>"; };
+		CBF7D4702499ACAF00A7761A /* MineMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineMessageCell.m; sourceTree = "<group>"; };
+		CBF7D4712499ACAF00A7761A /* MineMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineMessageCell.xib; sourceTree = "<group>"; };
+		CBF7D4742499AF7000A7761A /* MineMessagesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineMessagesVC.h; sourceTree = "<group>"; };
+		CBF7D4752499AF7000A7761A /* MineMessagesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineMessagesVC.m; sourceTree = "<group>"; };
+		CBF7D4762499AF7000A7761A /* MineMessagesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineMessagesVC.xib; sourceTree = "<group>"; };
+		CBF7D4792499B9E900A7761A /* MineCollectionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCollectionVC.h; sourceTree = "<group>"; };
+		CBF7D47A2499B9EA00A7761A /* MineCollectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineCollectionVC.m; sourceTree = "<group>"; };
+		CBF7D47B2499B9EA00A7761A /* MineCollectionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCollectionVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +491,12 @@
 				181403072487828200CA3E92 /* Mine */,
 				1814021F24876C6200CA3E92 /* AppDelegate.h */,
 				1814022024876C6200CA3E92 /* AppDelegate.m */,
+				CBBC0D97249A1406005CDC7D /* LoadDataBaseViewController.h */,
+				CBBC0D98249A1407005CDC7D /* LoadDataBaseViewController.m */,
+				CBBC0D96249A1406005CDC7D /* LoadDataListCustomViewController.h */,
+				CBBC0D99249A1407005CDC7D /* LoadDataListCustomViewController.m */,
+				CBBC0D9D249A1428005CDC7D /* LoadDataListBaseViewController.h */,
+				CBBC0D9C249A1428005CDC7D /* LoadDataListBaseViewController.m */,
 				1814022B24876C6700CA3E92 /* Assets.xcassets */,
 				1814022D24876C6700CA3E92 /* LaunchScreen.storyboard */,
 				1814023024876C6700CA3E92 /* Info.plist */,
@@ -847,6 +895,20 @@
 				CB03388D24990243008060A0 /* MineFocusAndFansVC.h */,
 				CB03388E24990244008060A0 /* MineFocusAndFansVC.m */,
 				CB03388F24990244008060A0 /* MineFocusAndFansVC.xib */,
+				CBF7D4742499AF7000A7761A /* MineMessagesVC.h */,
+				CBF7D4752499AF7000A7761A /* MineMessagesVC.m */,
+				CBF7D4762499AF7000A7761A /* MineMessagesVC.xib */,
+				CBF7D4792499B9E900A7761A /* MineCollectionVC.h */,
+				CBF7D47A2499B9EA00A7761A /* MineCollectionVC.m */,
+				CBF7D47B2499B9EA00A7761A /* MineCollectionVC.xib */,
+				CBBC0D7E2499C0DB005CDC7D /* MineLikeVC.h */,
+				CBBC0D7F2499C0DB005CDC7D /* MineLikeVC.m */,
+				CBBC0D812499C217005CDC7D /* MineLikeChildAVC.h */,
+				CBBC0D822499C217005CDC7D /* MineLikeChildAVC.m */,
+				CBBC0D832499C217005CDC7D /* MineLikeChildAVC.xib */,
+				CBBC0D862499C225005CDC7D /* MineLikeChildBVC.h */,
+				CBBC0D872499C225005CDC7D /* MineLikeChildBVC.m */,
+				CBBC0D882499C225005CDC7D /* MineLikeChildBVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -872,12 +934,18 @@
 				CB0338832498BE25008060A0 /* MineInformationCell.h */,
 				CB0338842498BE25008060A0 /* MineInformationCell.m */,
 				CB0338852498BE25008060A0 /* MineInformationCell.xib */,
-				CB03389224990496008060A0 /* HomeFocusAndFansCell.h */,
-				CB03389324990496008060A0 /* HomeFocusAndFansCell.m */,
-				CB03389424990496008060A0 /* HomeFocusAndFansCell.xib */,
+				CB03389224990496008060A0 /* MineFocusAndFansCell.h */,
+				CB03389324990496008060A0 /* MineFocusAndFansCell.m */,
+				CB03389424990496008060A0 /* MineFocusAndFansCell.xib */,
 				CB03389724991473008060A0 /* EmptyView.h */,
 				CB03389824991473008060A0 /* EmptyView.m */,
 				CB03389A24991492008060A0 /* EmptyView.xib */,
+				CBF7D46F2499ACAF00A7761A /* MineMessageCell.h */,
+				CBF7D4702499ACAF00A7761A /* MineMessageCell.m */,
+				CBF7D4712499ACAF00A7761A /* MineMessageCell.xib */,
+				CBBC0D8B2499C678005CDC7D /* MineLikeCell.h */,
+				CBBC0D8C2499C678005CDC7D /* MineLikeCell.m */,
+				CBBC0D8D2499C678005CDC7D /* MineLikeCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -959,24 +1027,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB03389B24991492008060A0 /* EmptyView.xib in Resources */,
+				CBBC0D8A2499C225005CDC7D /* MineLikeChildBVC.xib in Resources */,
+				CBBC0D852499C217005CDC7D /* MineLikeChildAVC.xib in Resources */,
 				CB3B9950249873E7006F3256 /* HomeBusinessHeaderCell.xib in Resources */,
 				CBAD62AC248A15560097BD9D /* CommunityFocusCollectionCell.xib in Resources */,
 				CBA5A3532490795E003BA799 /* RegisterVC.xib in Resources */,
 				CBAD62512488CCBA0097BD9D /* HomeBannerCollectionCell.xib in Resources */,
 				CBEFF5C3249758310029AE26 /* HomeCalendarVC.xib in Resources */,
 				1814022F24876C6700CA3E92 /* LaunchScreen.storyboard in Resources */,
+				CBF7D4782499AF7000A7761A /* MineMessagesVC.xib in Resources */,
 				CB3B995A24988E7A006F3256 /* HomeFastNewsCell.xib in Resources */,
 				CB03387C2498B5DE008060A0 /* MineInformationNameView.xib in Resources */,
+				CBF7D47D2499B9EA00A7761A /* MineCollectionVC.xib in Resources */,
 				1814030C2487836D00CA3E92 /* HomeVC.xib in Resources */,
 				CB6DA4CC2490AF06007D5131 /* MineCodeView.xib in Resources */,
 				CBEFF5D2249779DD0029AE26 /* HomeCalendarColletionCell.xib in Resources */,
 				CBAD626A2488F7350097BD9D /* HomeGoldCell.xib in Resources */,
 				CB0338872498BE25008060A0 /* MineInformationCell.xib in Resources */,
 				CB03386E2498B346008060A0 /* MineEditVC.xib in Resources */,
+				CBBC0D8F2499C678005CDC7D /* MineLikeCell.xib in Resources */,
 				CBAD62652488F53C0097BD9D /* HomeADCell.xib in Resources */,
 				CBA5A346248F6FE6003BA799 /* MineSettingsCell.xib in Resources */,
 				CBAD62B9248A98CA0097BD9D /* CommunityDynamicHeaderView.xib in Resources */,
-				CB03389624990496008060A0 /* HomeFocusAndFansCell.xib in Resources */,
+				CB03389624990496008060A0 /* MineFocusAndFansCell.xib in Resources */,
 				CB0338732498B3D9008060A0 /* MineInformationSignatureView.xib in Resources */,
 				CB3B995524987933006F3256 /* HomeNewsBannerCell.xib in Resources */,
 				CBAD629D2489E55C0097BD9D /* CommunityTopicCollectionCell.xib in Resources */,
@@ -993,6 +1066,7 @@
 				CBAD6287248943320097BD9D /* HomeNewsHeaderView.xib in Resources */,
 				CB03386A2498A57F008060A0 /* AccountSwitchVC.xib in Resources */,
 				CBAD62A7248A0F5C0097BD9D /* CommunityFocusCell.xib in Resources */,
+				CBF7D4732499ACAF00A7761A /* MineMessageCell.xib in Resources */,
 				CBEFF5C8249758520029AE26 /* HomeBusinessVC.xib in Resources */,
 				1814022C24876C6700CA3E92 /* Assets.xcassets in Resources */,
 				CB3B994B24985C1E006F3256 /* HomeBusinessCell.xib in Resources */,
@@ -1063,7 +1137,7 @@
 				CBEFF5CC249758650029AE26 /* HomeNewsVC.m in Sources */,
 				CBEFF5D1249779DD0029AE26 /* HomeCalendarColletionCell.m in Sources */,
 				181402EA248779DA00CA3E92 /* YKLineChartView.m in Sources */,
-				CB03389524990496008060A0 /* HomeFocusAndFansCell.m in Sources */,
+				CB03389524990496008060A0 /* MineFocusAndFansCell.m in Sources */,
 				CBA74AB32494D7C90038CA59 /* MineDynamicVC.m in Sources */,
 				181402E9248779DA00CA3E92 /* QHDetailViewController.m in Sources */,
 				CB03386F2498B346008060A0 /* MineEditVC.m in Sources */,
@@ -1071,6 +1145,7 @@
 				CBAD627C2489384C0097BD9D /* CommunityPopularVC.m in Sources */,
 				CBAD62B0248A2A320097BD9D /* CommunityDynamicCell.m in Sources */,
 				CBEFF5C7249758520029AE26 /* HomeBusinessVC.m in Sources */,
+				CBBC0D9A249A1407005CDC7D /* LoadDataBaseViewController.m in Sources */,
 				181402D3248779DA00CA3E92 /* ENDLCPNetWorkGET.m in Sources */,
 				CB03389024990244008060A0 /* MineFocusAndFansVC.m in Sources */,
 				CBAD62692488F7350097BD9D /* HomeGoldCell.m in Sources */,
@@ -1096,6 +1171,7 @@
 				CBAD6285248943230097BD9D /* HomeNewsHeaderView.m in Sources */,
 				181402DA248779DA00CA3E92 /* UIImage+Image.m in Sources */,
 				181402E2248779DA00CA3E92 /* QHLoctionModel.m in Sources */,
+				CBF7D4722499ACAF00A7761A /* MineMessageCell.m in Sources */,
 				181402D9248779DA00CA3E92 /* UIColor+Hex.m in Sources */,
 				181402EE248779DA00CA3E92 /* CZ_NEWMarketVC.m in Sources */,
 				CBAD62B8248A98CA0097BD9D /* CommunityDynamicHeaderView.m in Sources */,
@@ -1109,17 +1185,23 @@
 				181402CE248779DA00CA3E92 /* StringAndLabelDealTool.m in Sources */,
 				CBAD628B248950140097BD9D /* CommunityHeaderCell.m in Sources */,
 				181402F7248779DA00CA3E92 /* ZCBaseViewController.m in Sources */,
+				CBBC0D9B249A1407005CDC7D /* LoadDataListCustomViewController.m in Sources */,
 				CBAD625A2488E6410097BD9D /* HomeFourBtnCell.m in Sources */,
+				CBF7D47C2499B9EA00A7761A /* MineCollectionVC.m in Sources */,
 				1814022124876C6200CA3E92 /* AppDelegate.m in Sources */,
+				CBF7D4772499AF7000A7761A /* MineMessagesVC.m in Sources */,
 				181402EC248779DA00CA3E92 /* UIButton+LXMImagePosition.m in Sources */,
 				CBAD62812489385C0097BD9D /* CommunityFocusVC.m in Sources */,
 				181402DF248779DA00CA3E92 /* NetWork.m in Sources */,
 				181402CF248779DA00CA3E92 /* Toast.m in Sources */,
 				CB0338692498A57F008060A0 /* AccountSwitchVC.m in Sources */,
+				CBBC0D842499C217005CDC7D /* MineLikeChildAVC.m in Sources */,
 				181402F6248779DA00CA3E92 /* TopView.m in Sources */,
 				CB6DA4CD2490AF06007D5131 /* MineCodeView.m in Sources */,
 				CBA5A34D248FD5F5003BA799 /* LoginVC.m in Sources */,
 				CB3B994F249873E7006F3256 /* HomeBusinessHeaderCell.m in Sources */,
+				CBBC0D9E249A1428005CDC7D /* LoadDataListBaseViewController.m in Sources */,
+				CBBC0D892499C225005CDC7D /* MineLikeChildBVC.m in Sources */,
 				CB3B995E24988EEC006F3256 /* HomeNewsTimeCell.m in Sources */,
 				181402CA248779DA00CA3E92 /* EGHImagePickerVCManager.m in Sources */,
 				CB3B995424987933006F3256 /* HomeNewsBannerCell.m in Sources */,
@@ -1138,6 +1220,7 @@
 				181402E6248779DA00CA3E92 /* QHDHHeadCollectionViewCell.m in Sources */,
 				CBAD626E24891DCF0097BD9D /* HomeNewsCell.m in Sources */,
 				181402D4248779DA00CA3E92 /* ENDNetWorkPOST.m in Sources */,
+				CBBC0D802499C0DB005CDC7D /* MineLikeVC.m in Sources */,
 				CB03387B2498B5DE008060A0 /* MineInformationNameView.m in Sources */,
 				181402CC248779DA00CA3E92 /* ENDGradientLabel.m in Sources */,
 				181402CB248779DA00CA3E92 /* TimerTool.m in Sources */,
@@ -1151,6 +1234,7 @@
 				1814030424877DD300CA3E92 /* LCPReachability.m in Sources */,
 				181402DE248779DA00CA3E92 /* YKLineDataSet.m in Sources */,
 				181402DD248779DA00CA3E92 /* YKLineChartViewBase.m in Sources */,
+				CBBC0D8E2499C678005CDC7D /* MineLikeCell.m in Sources */,
 				CBAD62AB248A15560097BD9D /* CommunityFocusCollectionCell.m in Sources */,
 				1814023224876C6700CA3E92 /* main.m in Sources */,
 			);

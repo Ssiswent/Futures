@@ -15,7 +15,7 @@
 
 #import <JXCategoryTitleView.h>
 
-@interface HomeFourBtnVC ()
+@interface HomeFourBtnVC ()<JXCategoryViewDelegate>
 
 @property (nonatomic, strong) JXCategoryTitleView *myCategoryView;
 
@@ -49,9 +49,20 @@
     self.myCategoryView.defaultSelectedIndex = self.index;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+}
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     self.myCategoryView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 30);
+}
+
+- (void)categoryView:(JXCategoryBaseView *)categoryView didSelectedItemAtIndex:(NSInteger)index {
+    //侧滑手势处理
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 - (JXCategoryTitleView *)myCategoryView {

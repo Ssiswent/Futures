@@ -53,7 +53,6 @@
     YPNavigationController *homeNav = [[YPNavigationController alloc] initWithRootViewController:homeVC];
     [homeNav setNavigationBarHidden:true animated:false];
     homeNav.tabBarItem.titlePositionAdjustment = UIOffsetMake(kScaleFrom_iPhone8_Width(20), 0);
-    
     [self addChildVC:homeNav title:@"首页" imgName:@"ic_shouye_del" selectedImgName:@"ic_shouye_sel"];
     
     CommunityVC *communityVC = [[CommunityVC alloc]init];

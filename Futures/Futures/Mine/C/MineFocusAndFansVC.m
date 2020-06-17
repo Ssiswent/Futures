@@ -8,7 +8,7 @@
 
 #import "MineFocusAndFansVC.h"
 
-#import "HomeFocusAndFansCell.h"
+#import "MineFocusAndFansCell.h"
 #import "UIImage+OriginalImage.h"
 
 #import "UserModel.h"
@@ -37,7 +37,13 @@ NSString *HomeFocusAndFansCellID = @"HomeFocusAndFansCell";
     [super viewDidLoad];
     [self getUserDefault];
     [self initialSetUp];
-    [self.focusAndFansTableView registerNib:[UINib nibWithNibName:NSStringFromClass([HomeFocusAndFansCell class]) bundle:nil] forCellReuseIdentifier:HomeFocusAndFansCellID];
+    [self.focusAndFansTableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineFocusAndFansCell class]) bundle:nil] forCellReuseIdentifier:HomeFocusAndFansCellID];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
 }
 
 - (void)initialSetUp
@@ -59,7 +65,7 @@ NSString *HomeFocusAndFansCellID = @"HomeFocusAndFansCell";
         [self getFollows];
         if([_user.followCount isEqualToNumber:@0])
         {
-            EmptyView *emptyView = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([EmptyView class]) owner:nil options:nil].firstObject;
+            EmptyView *emptyView = [EmptyView emptyView];
             [self.focusAndFansTableView removeFromSuperview];
             [self.view addSubview:emptyView];
             [emptyView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -73,7 +79,7 @@ NSString *HomeFocusAndFansCellID = @"HomeFocusAndFansCell";
         [self getFans];
         if([_user.fansCount isEqualToNumber:@0])
         {
-            EmptyView *emptyView = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([EmptyView class]) owner:nil options:nil].firstObject;
+            EmptyView *emptyView = [EmptyView emptyView];
             [self.focusAndFansTableView removeFromSuperview];
             [self.view addSubview:emptyView];
             [emptyView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -84,12 +90,6 @@ NSString *HomeFocusAndFansCellID = @"HomeFocusAndFansCell";
     }
     //启用右滑返回手势
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-    [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
 }
 
 - (void)getUserDefault
@@ -115,7 +115,7 @@ NSString *HomeFocusAndFansCellID = @"HomeFocusAndFansCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HomeFocusAndFansCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeFocusAndFansCellID];
+    MineFocusAndFansCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeFocusAndFansCellID];
     if([_focusOrFans isEqualToString:@"focus"])
     {
         cell.focusBtn.selected = YES;

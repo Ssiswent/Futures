@@ -9,12 +9,16 @@
 #import "MineSettingsVC.h"
 
 #import "LoginVC.h"
+#import "AccountSwitchVC.h"
+#import "MineEditVC.h"
 
 #import "MineSettingsCell.h"
 
+#import "MineUserModel.h"
+
 #import "CustomTBC.h"
 
-@interface MineSettingsVC ()<UITableViewDataSource,UITableViewDelegate, UIGestureRecognizerDelegate>
+@interface MineSettingsVC ()<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, LoginVCDelegate, AccountSwitchVCDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
 
 @end
@@ -83,11 +87,24 @@ NSString *MineSettingsCellID = @"MineSettingsCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MineSettingsCell *settingsCell = [tableView dequeueReusableCellWithIdentifier:MineSettingsCellID];
+    //获取用户偏好
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    //读取userId
+    NSNumber *userId = [userDefault objectForKey:@"userId"];
+    NSString *accountText;
+    if(userId == nil)
+    {
+        accountText = @"登录账号";
+    }
+    else
+    {
+        accountText = @"切换账号";
+    }
     switch (indexPath.section) {
         case 0:
             switch (indexPath.row) {
                 case 0:
-                    settingsCell.leftTitle.text = @"切换账号";
+                    settingsCell.leftTitle.text = accountText;
                     return settingsCell;
                     break;
                 case 1:
@@ -140,12 +157,46 @@ NSString *MineSettingsCellID = @"MineSettingsCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //获取用户偏好
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    //读取userId
+    NSNumber *userId = [userDefault objectForKey:@"userId"];
     if(indexPath.section == 0)
     {
         if(indexPath.row == 0)
         {
-            LoginVC *loginVC = LoginVC.new;
-            [self presentViewController:loginVC animated:YES completion:nil];
+            
+            if(userId == nil)
+            {
+                LoginVC *loginVC = [LoginVC new];
+                loginVC.delegate = self;
+                //    loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+                [self presentViewController:loginVC animated:YES completion:nil];
+            }
+            else
+            {
+                AccountSwitchVC *accountSwitchVC = AccountSwitchVC.new;
+                accountSwitchVC.delegate = self;
+                [self presentViewController:accountSwitchVC animated:YES completion:nil];
+            }
+        }
+        if(indexPath.row == 1)
+        {
+            if(userId != nil)
+            {
+                MineEditVC *mineEditVC = MineEditVC.new;
+                MineUserModel *user = [MineUserModel sharedMineUserModel];
+                mineEditVC.user = user;
+                [self.navigationController pushViewController:mineEditVC animated:YES];
+            }
+            else
+            {
+                LoginVC *loginVC = [LoginVC new];
+                loginVC.delegate = self;
+                //        loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+                [self presentViewController:loginVC animated:YES completion:nil];
+                [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
+            }
         }
     }
     if(indexPath.section == 1)
@@ -158,6 +209,20 @@ NSString *MineSettingsCellID = @"MineSettingsCell";
             [self.navigationController popViewControllerAnimated:YES];
         }
     }
+}
+
+#pragma mark - LoginVCDelegate
+
+- (void)LoginVCDidGetUser:(LoginVC *)loginVC
+{
+    [self.settingsTableView reloadData];
+}
+
+#pragma mark - AccountSwitchVCDelegate
+
+- (void)accountSwitchVCDidGetUser:(AccountSwitchVC *)accountSwitchVC
+{
+    [self.settingsTableView reloadData];
 }
 
 @end

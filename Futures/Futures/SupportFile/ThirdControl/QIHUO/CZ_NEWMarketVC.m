@@ -86,6 +86,7 @@ static NSString *cellid = @"cellID";
 //    self.navigationController.navigationBar.hidden = YES;
     
     self.title = _navTitle;
+    
     self.view.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
     pageIndex = 2;
 

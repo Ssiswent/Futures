@@ -1,8 +1,8 @@
 //
-//  EmptyView.h
+//  HomeMessagesVC.h
 //  Futures
 //
-//  Created by Ssiswent on 2020/6/16.
+//  Created by Ssiswent on 2020/6/17.
 //  Copyright © 2020 Ssiswent. All rights reserved.
 //
 
@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EmptyView : UIView
+@interface MineMessagesVC : UIViewController
 
-+ (instancetype)emptyView;
+@property (nonatomic, copy)NSString *titleStr;
 
 @end
 

@@ -10,4 +10,9 @@
 
 @implementation EmptyView
 
++ (instancetype)emptyView
+{
+    return [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass([EmptyView class]) owner:nil options:nil] firstObject];
+}
+
 @end

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class UserModel;
 
-@interface HomeFocusAndFansCell : UITableViewCell
+@interface MineFocusAndFansCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIButton *focusBtn;
 @property (nonatomic, strong)UserModel *model;

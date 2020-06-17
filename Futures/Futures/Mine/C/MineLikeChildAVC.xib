@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineLikeChildAVC">
+            <connections>
+                <outlet property="likeTableView" destination="Tz7-VS-UMP" id="k4q-xl-fxq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVz-BQ-sjf" userLabel="TopLineView">
+                    <rect key="frame" x="0.0" y="102" width="414" height="5"/>
+                    <color key="backgroundColor" red="0.91471153500000002" green="0.91467708349999999" blue="0.91470044849999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="M9x-UE-PpX"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tz7-VS-UMP" userLabel="LikeTableView">
+                    <rect key="frame" x="0.0" y="107" width="414" height="789"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="0dK-Jr-Ffg"/>
+                        <outlet property="delegate" destination="-1" id="5Ge-s4-6Gv"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Tz7-VS-UMP" secondAttribute="bottom" id="5Cz-pF-mDV"/>
+                <constraint firstItem="Tz7-VS-UMP" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="5XF-aQ-lRU"/>
+                <constraint firstItem="LVz-BQ-sjf" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Bxk-Cw-Eir"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="LVz-BQ-sjf" secondAttribute="trailing" id="CK7-ZO-wot"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Tz7-VS-UMP" secondAttribute="trailing" id="Ja4-bD-Spy"/>
+                <constraint firstItem="LVz-BQ-sjf" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="58" id="RZK-kY-OIt"/>
+                <constraint firstItem="Tz7-VS-UMP" firstAttribute="top" secondItem="LVz-BQ-sjf" secondAttribute="bottom" id="kBH-Eu-pzk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+</document>

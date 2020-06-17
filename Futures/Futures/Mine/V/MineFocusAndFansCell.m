@@ -6,13 +6,13 @@
 //  Copyright © 2020 Ssiswent. All rights reserved.
 //
 
-#import "HomeFocusAndFansCell.h"
+#import "MineFocusAndFansCell.h"
 
 #import "UIImage+Image.h"
 
 #import "UserModel.h"
 
-@interface HomeFocusAndFansCell()
+@interface MineFocusAndFansCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImgView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation HomeFocusAndFansCell
+@implementation MineFocusAndFansCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
