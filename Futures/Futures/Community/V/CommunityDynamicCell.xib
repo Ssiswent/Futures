@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -67,7 +68,7 @@
                         <color key="textColor" red="0.15323174000000001" green="0.15322431919999999" blue="0.15322935579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0IZ-MN-2tT" userLabel="ContentImgView">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contentImg" translatesAutoresizingMaskIntoConstraints="NO" id="0IZ-MN-2tT" userLabel="ContentImgView">
                         <rect key="frame" x="15" y="94.5" width="345" height="200"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="345" id="pRm-Ll-eK1"/>
@@ -252,6 +253,7 @@
     <resources>
         <image name="avatar" width="30" height="30"/>
         <image name="commit" width="10" height="10"/>
+        <image name="contentImg" width="345" height="200"/>
         <image name="like_nor" width="11" height="11"/>
         <image name="share" width="11" height="11"/>
     </resources>

@@ -26,7 +26,6 @@
 #import "MineMessagesVC.h"
 #import "MineCollectionVC.h"
 #import "MineLikeVC.h"
-#import "LoadDataListCustomViewController.h"
 
 @interface MineVC ()<YPNavigationBarConfigureStyle, LoginVCDelegate, AccountSwitchVCDelegate>
 

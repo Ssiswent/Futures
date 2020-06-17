@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JXPagerView.h"
+#import <JXPagerView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "JXPagerView.h"
 #import "DynamicListVC.h"
-#import "JXCategoryTitleView.h"
+#import <JXCategoryTitleView.h>
 
 #import "MineDynamicHeaderView.h"
 

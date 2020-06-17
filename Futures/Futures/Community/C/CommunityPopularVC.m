@@ -17,6 +17,8 @@
 
 #import "CommunityDynamicModel.h"
 
+#import "DynamicDetaiVC.h"
+
 @interface CommunityPopularVC ()<UITableViewDataSource, UITableViewDelegate, CommunityFocusCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *publishBtn;
@@ -258,6 +260,16 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
             WEAKSELF
             weakSelf.publishBtn.frame = hideFrame;
         }];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 3)
+    {
+        DynamicDetaiVC *dynamicDetaiVC = DynamicDetaiVC.new;
+        dynamicDetaiVC.dynamicModel = self.dynamicsArray[indexPath.row];
+        [self.navigationController pushViewController:dynamicDetaiVC animated:YES];
     }
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "MineDynamicVC.h"
-#import "JXCategoryView.h"
+#import <JXCategoryView.h>
 #import "CustomTBC.h"
 
 #import "CommunityDynamicModel.h"

@@ -12,6 +12,8 @@
 
 #import <JXCategoryTitleView.h>
 
+#import "CustomTBC.h"
+
 @interface CommunityVC ()
 
 @property (nonatomic, strong) JXCategoryTitleView *myCategoryView;
@@ -23,6 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavBar];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [CustomTBC setTabBarHidden:NO TabBarVC:self.tabBarController];
 }
 
 - (void)setNavBar
