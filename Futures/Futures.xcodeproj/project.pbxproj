@@ -79,6 +79,7 @@
 		CB03389624990496008060A0 /* MineFocusAndFansCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB03389424990496008060A0 /* MineFocusAndFansCell.xib */; };
 		CB03389924991473008060A0 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03389824991473008060A0 /* EmptyView.m */; };
 		CB03389B24991492008060A0 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB03389A24991492008060A0 /* EmptyView.xib */; };
+		CB076F49249BBA0500B49D44 /* UIView+CornerAndBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = CB076F48249BBA0500B49D44 /* UIView+CornerAndBorder.m */; };
 		CB3B994A24985C1E006F3256 /* HomeBusinessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3B994824985C1E006F3256 /* HomeBusinessCell.m */; };
 		CB3B994B24985C1E006F3256 /* HomeBusinessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB3B994924985C1E006F3256 /* HomeBusinessCell.xib */; };
 		CB3B994F249873E7006F3256 /* HomeBusinessHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3B994D249873E7006F3256 /* HomeBusinessHeaderCell.m */; };
@@ -321,6 +322,8 @@
 		CB03389724991473008060A0 /* EmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		CB03389824991473008060A0 /* EmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
 		CB03389A24991492008060A0 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		CB076F47249BBA0500B49D44 /* UIView+CornerAndBorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CornerAndBorder.h"; sourceTree = "<group>"; };
+		CB076F48249BBA0500B49D44 /* UIView+CornerAndBorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CornerAndBorder.m"; sourceTree = "<group>"; };
 		CB3B994724985C1E006F3256 /* HomeBusinessCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBusinessCell.h; sourceTree = "<group>"; };
 		CB3B994824985C1E006F3256 /* HomeBusinessCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBusinessCell.m; sourceTree = "<group>"; };
 		CB3B994924985C1E006F3256 /* HomeBusinessCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBusinessCell.xib; sourceTree = "<group>"; };
@@ -597,6 +600,8 @@
 				CBA5A348248F8013003BA799 /* YPNavigationController+Configure.m */,
 				CBBC0DC9249B4392005CDC7D /* UITextView+WZB.h */,
 				CBBC0DCA249B4392005CDC7D /* UITextView+WZB.m */,
+				CB076F47249BBA0500B49D44 /* UIView+CornerAndBorder.h */,
+				CB076F48249BBA0500B49D44 /* UIView+CornerAndBorder.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1207,6 +1212,7 @@
 				CBAD62502488CCBA0097BD9D /* HomeBannerCollectionCell.m in Sources */,
 				18140315248783BD00CA3E92 /* MineVC.m in Sources */,
 				CBAD62972489DCB50097BD9D /* CommunityTopicCell.m in Sources */,
+				CB076F49249BBA0500B49D44 /* UIView+CornerAndBorder.m in Sources */,
 				181402D7248779DA00CA3E92 /* ENDNetWorkPUT.m in Sources */,
 				181402DC248779DA00CA3E92 /* BaseViewController.m in Sources */,
 				CBA5A3522490795E003BA799 /* RegisterVC.m in Sources */,

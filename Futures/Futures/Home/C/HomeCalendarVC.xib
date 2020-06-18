@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeCalendarVC">
             <connections>
+                <outlet property="calendar" destination="WbD-0F-A3U" id="hcZ-CP-ove"/>
+                <outlet property="calendarBgView" destination="7w3-Ys-qux" id="ymg-Vv-VdF"/>
                 <outlet property="calendarCollectionView" destination="rva-R3-vKx" id="Gb3-Z1-5di"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,8 +21,50 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7w3-Ys-qux" userLabel="CalendarBgView">
+                    <rect key="frame" x="0.0" y="29" width="414" height="130"/>
+                    <color key="backgroundColor" red="0.97648364310000002" green="0.97644716499999995" blue="0.97647196049999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbD-0F-A3U" customClass="FSCalendar">
+                    <rect key="frame" x="19.5" y="44" width="375" height="300"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="375" id="4Mm-mM-mfw"/>
+                        <constraint firstAttribute="height" constant="300" id="W8G-SO-sRg"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="useVeryShortWeekdaySymbols" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="headerDateFormat" value="YYYY年M月d日"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                            <color key="value" red="0.37647601959999999" green="0.37646073099999999" blue="0.37647110220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="titleSelectionColor">
+                            <color key="value" red="0.17617937920000001" green="0.22527292369999999" blue="0.9608399272" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="titleTodayColor">
+                            <color key="value" red="0.37647601959999999" green="0.37646073099999999" blue="0.37647110220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="eventSelectionColor">
+                            <color key="value" red="0.17617937920000001" green="0.22527292369999999" blue="0.9608399272" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="aT5-h1-yLu"/>
+                        <outlet property="delegate" destination="-1" id="R1y-jF-Rl2"/>
+                    </connections>
+                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rva-R3-vKx" userLabel="CalendarCollectionView">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <rect key="frame" x="0.0" y="164" width="414" height="732"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wqF-7V-1Eb">
                         <size key="itemSize" width="128" height="128"/>
@@ -36,13 +80,19 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="WbD-0F-A3U" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Ok-XH-epV"/>
                 <constraint firstItem="rva-R3-vKx" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="45R-iR-i7D"/>
-                <constraint firstItem="rva-R3-vKx" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="RNe-0p-2WI"/>
+                <constraint firstItem="WbD-0F-A3U" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="Ivq-bP-4yW"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="7w3-Ys-qux" secondAttribute="trailing" id="SWn-aP-TTL"/>
+                <constraint firstItem="rva-R3-vKx" firstAttribute="top" secondItem="7w3-Ys-qux" secondAttribute="bottom" constant="5" id="WD8-Um-1O3"/>
                 <constraint firstAttribute="bottom" secondItem="rva-R3-vKx" secondAttribute="bottom" id="bvv-Ps-AdG"/>
+                <constraint firstItem="7w3-Ys-qux" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="jOG-Q8-yce"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="rva-R3-vKx" secondAttribute="trailing" id="lsW-bo-xaf"/>
+                <constraint firstItem="7w3-Ys-qux" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="-15" id="m10-UC-asm"/>
+                <constraint firstItem="rva-R3-vKx" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="120" id="r6Z-9d-LAi"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
 </document>
