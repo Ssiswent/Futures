@@ -10,9 +10,8 @@
 #import <JXCategoryView.h>
 #import "CustomTBC.h"
 
-#import "CommunityDynamicModel.h"
-
 #import "MineUserModel.h"
+#import "CommunityDynamicModel.h"
 
 @interface MineDynamicVC () <JXCategoryViewDelegate, YPNavigationBarConfigureStyle>
 
@@ -28,6 +27,8 @@
 @property (nonatomic, strong) NSNumber *userId;
 @property (strong , nonatomic) NSArray *dynamicsArray;
 @property (strong , nonatomic) NSArray *hotDynamicsArray;
+
+
 
 @property (weak, nonatomic) UILabel *titleLabel;
 

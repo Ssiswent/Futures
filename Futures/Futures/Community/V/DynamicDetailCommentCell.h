@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class CommentModel;
+
 @interface DynamicDetailCommentCell : UITableViewCell
+
+@property (strong, nonatomic) CommentModel *commentModel;
 
 @end
 

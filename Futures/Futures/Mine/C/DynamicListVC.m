@@ -10,8 +10,16 @@
 
 #import "CommunityDynamicCell.h"
 
+#import "CommunityDynamicModel.h"
+#import "CommentModel.h"
+
+#import "DynamicDetaiVC.h"
+
 @interface DynamicListVC () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, copy) void(^scrollCallback)(UIScrollView *scrollView);
+
+@property (strong , nonatomic) NSArray *allCommentsArray;
+
 @end
 
 @implementation DynamicListVC
@@ -20,7 +28,9 @@ NSString *MineDynamicCellID = @"MineDynamicCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    [self getComments];
+    
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.dataSource = self;
@@ -89,6 +99,27 @@ NSString *MineDynamicCellID = @"MineDynamicCell";
     return 5;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger count = self.allCommentsArray.count;
+    if(count % 2 != 0)
+    {
+        count --;
+    }
+    NSInteger commentsNum1 = indexPath.row % (count / 2) * 2;
+    NSInteger commentsNum2 = commentsNum1 + 1;
+    NSMutableArray *temp = NSMutableArray.new;
+    [temp addObject: self.allCommentsArray[commentsNum1]];
+    [temp addObject: self.allCommentsArray[commentsNum2]];
+    
+    CommunityDynamicModel *dynamicModel = self.dataSource[indexPath.row];
+    dynamicModel.commentArray = temp;
+    
+    DynamicDetaiVC *dynamicDetaiVC = DynamicDetaiVC.new;
+    dynamicDetaiVC.dynamicModel = dynamicModel;
+    [self.navigationController pushViewController:dynamicDetaiVC animated:YES];
+}
+
 #pragma mark - JXPagingViewListViewDelegate
 
 - (UIView *)listView {
@@ -117,6 +148,20 @@ NSString *MineDynamicCellID = @"MineDynamicCell";
 
 - (void)listDidDisappear {
     NSLog(@"%@:%@", self.title, NSStringFromSelector(_cmd));
+}
+
+#pragma mark - API
+
+- (void)getComments{
+    WEAKSELF
+    NSDictionary *dic = @{@"userId":@4161};
+    [ENDNetWorkManager getWithPathUrl:@"/user/talk/getDiscussByUserId" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.allCommentsArray = [MTLJSONAdapter modelsOfClass:[CommentModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"请求评论失败" afterHideTime:DELAYTiME];
+    }];
 }
 
 @end

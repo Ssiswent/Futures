@@ -81,6 +81,29 @@
         self.contentImgViewHeight.constant = 0;
         self.contentImgViewTop.constant = 0;
     }
+    
+    _timeLabel.text = [self getTimeToTimeStr:dynamicModel.publishTime];
+    _dateLabel.text = [self getTimeToDateStr:dynamicModel.publishTime];
+}
+
+- (NSString *)getTimeToTimeStr:(double)time{
+    NSDate *publishDate = [NSDate dateWithTimeIntervalSince1970:time / 1000];
+    //实例化一个NSDateFormatter对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    [dateFormatter setDateFormat:@"HH:mm"];
+    NSString *timeStr = [dateFormatter stringFromDate:publishDate];
+    return timeStr;
+}
+
+- (NSString *)getTimeToDateStr:(double)time{
+    NSDate *publishDate = [NSDate dateWithTimeIntervalSince1970:time / 1000];
+    //实例化一个NSDateFormatter对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    [dateFormatter setDateFormat:@"MM-dd"];
+    NSString *dateStr = [dateFormatter stringFromDate:publishDate];
+    return dateStr;
 }
 
 @end

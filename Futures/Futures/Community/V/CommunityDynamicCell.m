@@ -131,9 +131,9 @@
     NSInteger minutesBetweenDates = integerDistance % secondsInAnHour / secondsInAMinitue;
     NSInteger daysBetweenDates = hoursBetweenDates / hoursInADay;
     
-    NSLog(@"dynamic%@",dynamicModel.content);
-    NSLog(@"publishDate:%@",publishDate);
-    NSLog(@"todayDate:%@",todayDate);
+//    NSLog(@"dynamic%@",dynamicModel.content);
+//    NSLog(@"publishDate:%@",publishDate);
+//    NSLog(@"todayDate:%@",todayDate);
     
     NSString *timeStr1 = [NSString stringWithFormat:@"%ld小时%ld分钟前更新",(long)hoursBetweenDates,(long)minutesBetweenDates];
     NSString *timeStr2 = [NSString stringWithFormat:@"%ld分钟前更新",(long)minutesBetweenDates];

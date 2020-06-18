@@ -16,6 +16,7 @@
 #import "CommunityDynamicHeaderView.h"
 
 #import "CommunityDynamicModel.h"
+#import "CommentModel.h"
 
 #import "DynamicDetaiVC.h"
 
@@ -26,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @property (strong , nonatomic) NSArray *dynamicsArray;
+@property (strong , nonatomic) NSArray *allCommentsArray;
 
 @property (assign, nonatomic) NSInteger numberOfSections;
 
@@ -41,6 +43,7 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 - (void)viewDidLoad {
     [self registerTableView];
     [self getDynamics];
+    [self getComments];
     [self initialSetup];
 }
 
@@ -267,8 +270,22 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 {
     if(indexPath.section == 3)
     {
+        NSInteger count = self.allCommentsArray.count;
+        if(count % 2 != 0)
+        {
+            count --;
+        }
+        NSInteger commentsNum1 = indexPath.row % (count / 2) * 2;
+        NSInteger commentsNum2 = commentsNum1 + 1;
+        NSMutableArray *temp = NSMutableArray.new;
+        [temp addObject: self.allCommentsArray[commentsNum1]];
+        [temp addObject: self.allCommentsArray[commentsNum2]];
+        
+        CommunityDynamicModel *dynamicModel = self.dynamicsArray[indexPath.row];
+        dynamicModel.commentArray = temp;
+        
         DynamicDetaiVC *dynamicDetaiVC = DynamicDetaiVC.new;
-        dynamicDetaiVC.dynamicModel = self.dynamicsArray[indexPath.row];
+        dynamicDetaiVC.dynamicModel = dynamicModel;
         [self.navigationController pushViewController:dynamicDetaiVC animated:YES];
     }
 }
@@ -284,6 +301,18 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求热门动态失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)getComments{
+    WEAKSELF
+    NSDictionary *dic = @{@"userId":@4161};
+    [ENDNetWorkManager getWithPathUrl:@"/user/talk/getDiscussByUserId" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.allCommentsArray = [MTLJSONAdapter modelsOfClass:[CommentModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"请求评论失败" afterHideTime:DELAYTiME];
     }];
 }
 

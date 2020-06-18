@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class UserModel;
+@class UserModel,CommentModel;
 
 @interface CommunityDynamicModel : BaseModel
 
@@ -21,7 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign)NSInteger commentCount;
 @property (nonatomic, strong)UserModel *user;
 
-@property (nonatomic, assign, getter=isDynamicLiked)BOOL dynamicLiked;
+@property (nonatomic, assign, getter=isDynamicLiked) BOOL dynamicLiked;
+@property (nonatomic, strong) NSArray <CommentModel *> *commentArray;
 
 @end
 

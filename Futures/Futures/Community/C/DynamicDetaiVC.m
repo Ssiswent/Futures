@@ -13,6 +13,7 @@
 #import "CustomTBC.h"
 
 #import "CommunityDynamicModel.h"
+#import "CommentModel.h"
 
 #import "DynamicDetailHeaderView.h"
 
@@ -79,7 +80,7 @@ NSString *DynamicDetailCommentCellID = @"DynamicDetailCommentCell";
     }
     else
     {
-        return 3;
+        return 2;
     }
 }
 
@@ -93,7 +94,9 @@ NSString *DynamicDetailCommentCellID = @"DynamicDetailCommentCell";
     }
     else
     {
+        NSInteger commentNum = indexPath.row % 2;
         DynamicDetailCommentCell *commentCell = [tableView dequeueReusableCellWithIdentifier:DynamicDetailCommentCellID];
+        commentCell.commentModel = _dynamicModel.commentArray[commentNum];
         return commentCell;
     }
 }
