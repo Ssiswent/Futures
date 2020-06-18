@@ -14,6 +14,7 @@
 #import "CommentModel.h"
 
 #import "DynamicDetaiVC.h"
+#import "PublishVC.h"
 
 @interface CommunityFocusVC ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -48,6 +49,14 @@ NSString *CommunityDynamicCellID1 = @"CommunityDynamicCell1";
     _bottomView.layer.shadowOffset = CGSizeMake(0,0);
     _bottomView.layer.shadowOpacity = 1;
     _bottomView.layer.shadowRadius = 36;
+}
+
+- (IBAction)publishBtnClicked:(id)sender {
+    PublishVC *publishVC = [PublishVC new];
+    YPNavigationController *navC = [[YPNavigationController alloc]initWithRootViewController:publishVC];
+    //    PublishVC.delegate = self;
+    navC.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:navC animated:YES completion:nil];
 }
 
 #pragma mark - TableViewDataSource

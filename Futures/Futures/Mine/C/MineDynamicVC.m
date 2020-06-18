@@ -275,7 +275,7 @@
 
 - (void)getHotDynamics{
     WEAKSELF
-    NSDictionary *dic = @{@"_orderBy":@"publishTime",@"userId":@155};
+    NSDictionary *dic = @{@"_orderBy":@"publishTime",@"userId":_userId};
     [ENDNetWorkManager postWithPathUrl:@"/user/talk/getTalkList/155" parameters:dic queryParams:nil Header:nil success:^(BOOL success, id result) {
         NSError *error;
         weakSelf.hotDynamicsArray = [MTLJSONAdapter modelsOfClass:[CommunityDynamicModel class] fromJSONArray:result[@"data"][@"list"] error:&error];

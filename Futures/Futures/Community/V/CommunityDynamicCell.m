@@ -105,19 +105,19 @@
 //    self.contentLabel.text = contentArray[1];
     self.contentLabel.text = dynamicModel.content;
     
-    if(dynamicModel.picture)
+    if([dynamicModel.picture isEqualToString:@""])
+    {
+        self.contentImgView.hidden = YES;
+        self.contentImgViewHeight.constant = 0;
+        self.contentImgViewTop.constant = 0;
+    }
+    else
     {
         self.contentImgView.hidden = NO;
         self.contentImgViewHeight.constant = 200;
         self.contentImgViewTop.constant = 5;
         [self.contentImgView sd_setImageWithURL:[NSURL URLWithString:dynamicModel.picture]
         placeholderImage:[UIImage imageNamed:@"contentImg"]];
-    }
-    else
-    {
-        self.contentImgView.hidden = YES;
-        self.contentImgViewHeight.constant = 0;
-        self.contentImgViewTop.constant = 0;
     }
     
     NSDate *publishDate = [NSDate dateWithTimeIntervalSince1970:dynamicModel.publishTime / 1000];
@@ -134,7 +134,7 @@
 //    NSLog(@"dynamic%@",dynamicModel.content);
 //    NSLog(@"publishDate:%@",publishDate);
 //    NSLog(@"todayDate:%@",todayDate);
-    
+
     NSString *timeStr1 = [NSString stringWithFormat:@"%ld小时%ld分钟前更新",(long)hoursBetweenDates,(long)minutesBetweenDates];
     NSString *timeStr2 = [NSString stringWithFormat:@"%ld分钟前更新",(long)minutesBetweenDates];
     NSString *timeStr3 = [NSString stringWithFormat:@"%ld天前更新",(long)daysBetweenDates];

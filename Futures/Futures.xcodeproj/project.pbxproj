@@ -158,6 +158,9 @@
 		CBBC0DBB249A4A86005CDC7D /* DynamicDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0DBA249A4A86005CDC7D /* DynamicDetailHeaderView.m */; };
 		CBBC0DBD249A6126005CDC7D /* DynamicDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC0DBC249A6126005CDC7D /* DynamicDetailHeaderView.xib */; };
 		CBBC0DC0249AF7D5005CDC7D /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0DBF249AF7D5005CDC7D /* CommentModel.m */; };
+		CBBC0DC4249B34D2005CDC7D /* PublishVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0DC2249B34D2005CDC7D /* PublishVC.m */; };
+		CBBC0DC5249B34D2005CDC7D /* PublishVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC0DC3249B34D2005CDC7D /* PublishVC.xib */; };
+		CBBC0DCB249B4392005CDC7D /* UITextView+WZB.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0DCA249B4392005CDC7D /* UITextView+WZB.m */; };
 		CBEFF5BE2497579F0029AE26 /* HomeFourBtnVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */; };
 		CBEFF5C2249758310029AE26 /* HomeCalendarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5C0249758310029AE26 /* HomeCalendarVC.m */; };
 		CBEFF5C3249758310029AE26 /* HomeCalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF5C1249758310029AE26 /* HomeCalendarVC.xib */; };
@@ -441,6 +444,12 @@
 		CBBC0DBC249A6126005CDC7D /* DynamicDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicDetailHeaderView.xib; sourceTree = "<group>"; };
 		CBBC0DBE249AF7D5005CDC7D /* CommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
 		CBBC0DBF249AF7D5005CDC7D /* CommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		CBBC0DC1249B34D2005CDC7D /* PublishVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublishVC.h; sourceTree = "<group>"; };
+		CBBC0DC2249B34D2005CDC7D /* PublishVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublishVC.m; sourceTree = "<group>"; };
+		CBBC0DC3249B34D2005CDC7D /* PublishVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublishVC.xib; sourceTree = "<group>"; };
+		CBBC0DC9249B4392005CDC7D /* UITextView+WZB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+WZB.h"; sourceTree = "<group>"; };
+		CBBC0DCA249B4392005CDC7D /* UITextView+WZB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+WZB.m"; sourceTree = "<group>"; };
+		CBBC0DCC249B4F42005CDC7D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		CBEFF5BC2497579F0029AE26 /* HomeFourBtnVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFourBtnVC.h; sourceTree = "<group>"; };
 		CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFourBtnVC.m; sourceTree = "<group>"; };
 		CBEFF5BF249758310029AE26 /* HomeCalendarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCalendarVC.h; sourceTree = "<group>"; };
@@ -586,6 +595,8 @@
 				1814026A248779D900CA3E92 /* UIImage+OriginalImage.m */,
 				CBA5A347248F8013003BA799 /* YPNavigationController+Configure.h */,
 				CBA5A348248F8013003BA799 /* YPNavigationController+Configure.m */,
+				CBBC0DC9249B4392005CDC7D /* UITextView+WZB.h */,
+				CBBC0DCA249B4392005CDC7D /* UITextView+WZB.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -826,6 +837,9 @@
 				CBBC0DAA249A490A005CDC7D /* DynamicDetaiVC.h */,
 				CBBC0DAB249A490A005CDC7D /* DynamicDetaiVC.m */,
 				CBBC0DAC249A490A005CDC7D /* DynamicDetaiVC.xib */,
+				CBBC0DC1249B34D2005CDC7D /* PublishVC.h */,
+				CBBC0DC2249B34D2005CDC7D /* PublishVC.m */,
+				CBBC0DC3249B34D2005CDC7D /* PublishVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1032,6 +1046,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 1814021324876C6100CA3E92;
 			productRefGroup = 1814021D24876C6200CA3E92 /* Products */;
@@ -1096,6 +1111,7 @@
 				CBBC0DAE249A490A005CDC7D /* DynamicDetaiVC.xib in Resources */,
 				CB3B995F24988EEC006F3256 /* HomeNewsTimeCell.xib in Resources */,
 				CBAD62B1248A2A320097BD9D /* CommunityDynamicCell.xib in Resources */,
+				CBBC0DC5249B34D2005CDC7D /* PublishVC.xib in Resources */,
 				CBAD62982489DCB50097BD9D /* CommunityTopicCell.xib in Resources */,
 				CBA5A341248F6E76003BA799 /* MineSettingsVC.xib in Resources */,
 				CBBC0DBD249A6126005CDC7D /* DynamicDetailHeaderView.xib in Resources */,
@@ -1160,6 +1176,8 @@
 				181402CD248779DA00CA3E92 /* EGHViewsTool.m in Sources */,
 				CBAD6293248957E10097BD9D /* MineUserModel.m in Sources */,
 				181402E0248779DA00CA3E92 /* ZCBaseView.m in Sources */,
+				CBBC0DC4249B34D2005CDC7D /* PublishVC.m in Sources */,
+				CBBC0DCB249B4392005CDC7D /* UITextView+WZB.m in Sources */,
 				CBEFF5CC249758650029AE26 /* HomeNewsVC.m in Sources */,
 				CBEFF5D1249779DD0029AE26 /* HomeCalendarColletionCell.m in Sources */,
 				181402EA248779DA00CA3E92 /* YKLineChartView.m in Sources */,
@@ -1275,6 +1293,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1814022E24876C6700CA3E92 /* Base */,
+				CBBC0DCC249B4F42005CDC7D /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1286,6 +1305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1344,6 +1364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

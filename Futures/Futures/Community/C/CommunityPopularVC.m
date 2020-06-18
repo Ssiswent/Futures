@@ -19,6 +19,7 @@
 #import "CommentModel.h"
 
 #import "DynamicDetaiVC.h"
+#import "PublishVC.h"
 
 @interface CommunityPopularVC ()<UITableViewDataSource, UITableViewDelegate, CommunityFocusCellDelegate>
 
@@ -69,6 +70,17 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
     
     _numberOfSections = 4;
 }
+
+- (IBAction)publishBtnClicked:(id)sender {
+   PublishVC *publishVC = [PublishVC new];
+    YPNavigationController *navC = [[YPNavigationController alloc]initWithRootViewController:publishVC];
+    //    PublishVC.delegate = self;
+    navC.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:navC animated:YES completion:nil];
+}
+
+
+#pragma mark - CommunityFocusCellDelegate
 
 - (void)communityFocusCellDidClickRemoveBtn:(CommunityFocusCell *)communityFocusCell
 {

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "arrow_down.png",
+      "filename" : "arrows_down_white.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "arrows_down_white@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "arrows_down_white@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

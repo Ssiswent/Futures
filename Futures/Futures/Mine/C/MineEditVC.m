@@ -210,6 +210,7 @@ NSString *MineInformationCellID = @"MineInformationCell";
     }
 }
 
+//获取照片
 - (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage *photo = [info objectForKey:UIImagePickerControllerOriginalImage];
@@ -225,7 +226,7 @@ NSString *MineInformationCellID = @"MineInformationCell";
     imagePickerVc.navigationBar.translucent = NO;
     
     imagePickerVc.isSelectOriginalPhoto = YES;
-    imagePickerVc.needShowStatusBar = NO;
+//    imagePickerVc.needShowStatusBar = NO;
     imagePickerVc.allowTakePicture = NO; // 在内部显示拍照按钮
     imagePickerVc.allowTakeVideo = NO;   // 在内部显示拍视频按
     
