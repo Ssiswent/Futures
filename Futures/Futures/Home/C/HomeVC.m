@@ -23,7 +23,12 @@
 
 #import "CustomTBC.h"
 
-@interface HomeVC ()<UITableViewDataSource, UITableViewDelegate,YPNavigationBarConfigureStyle, HomeFourBtnCellDelegate>
+#import "LoginVC.h"
+#import "CheckInVC.h"
+
+#import "CheckInModel.h"
+
+@interface HomeVC ()<UITableViewDataSource, UITableViewDelegate,YPNavigationBarConfigureStyle, HomeFourBtnCellDelegate, HomeCheckInCellDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -31,6 +36,10 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @property (strong , nonatomic) NSArray *newsArray;
+
+@property (strong , nonatomic) NSArray *checkInList;
+@property (strong , nonatomic) NSMutableArray <NSDate *> *datesArray;
+@property (nonatomic, assign) BOOL hasCheckedIn;
 
 @end
 
@@ -43,12 +52,28 @@ NSString *HomeADCellID = @"HomeADCell";
 NSString *HomeGoldCellID = @"HomeGoldCell";
 NSString *HomeNewsCellID = @"HomeNewsCell";
 
+- (NSMutableArray<NSDate *> *)datesArray
+{
+    if(_datesArray == nil)
+    {
+        _datesArray = NSMutableArray.new;
+    }
+    return _datesArray;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initialSetup];
     [self registerTableView];
     [self getTopics];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self getSignList];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -97,6 +122,31 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
     _searchBar.searchTextField.attributedPlaceholder = string;
 }
 
+// MARK: HomeCheckInCellDelegate
+
+- (void)homeCheckInCellDidClickCheckInBtn:(HomeCheckInCell *)homeCheckInCell
+{
+    //获取用户偏好
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    //读取userId
+    NSNumber *userId = [userDefault objectForKey:@"userId"];
+    if(userId != nil)
+    {
+        CheckInVC *checkInVC = CheckInVC.new;
+        checkInVC.datesArray = _datesArray;
+        checkInVC.checkInList = _checkInList;
+        checkInVC.hasCheckedIn = _hasCheckedIn;
+        [self.navigationController pushViewController:checkInVC animated:YES];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        //        loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:loginVC animated:YES completion:nil];
+        [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
+    }
+}
+
 #pragma mark - yp_navigtionBarConfiguration
 - (YPNavigationBarConfigurations) yp_navigtionBarConfiguration {
     return YPNavigationBarHidden;
@@ -143,6 +193,7 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
     HomeFourBtnCell *fourBtnCell = [tableView dequeueReusableCellWithIdentifier:HomeFourBtnCellID];
     fourBtnCell.delegate = self;
     HomeCheckInCell *checkInCell = [tableView dequeueReusableCellWithIdentifier:HomeCheckInCellID];
+    checkInCell.delegate = self;
     HomeADCell *adCell = [tableView dequeueReusableCellWithIdentifier:HomeADCellID];
     HomeGoldCell *goldCell = [tableView dequeueReusableCellWithIdentifier:HomeGoldCellID];
     HomeNewsCell *newsCell = [tableView dequeueReusableCellWithIdentifier:HomeNewsCellID];
@@ -237,6 +288,37 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求新闻失败" afterHideTime:DELAYTiME];
     }];
+}
+
+- (void)getSignList
+{
+    WEAKSELF
+    NSDictionary *dic = @{@"userId":@4181};
+    [ENDNetWorkManager getWithPathUrl:@"/user/sign/getSignList" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.checkInList = [MTLJSONAdapter modelsOfClass:[CheckInModel class] fromJSONArray:result[@"data"] error:&error];
+        for (CheckInModel *checkInModel in weakSelf.checkInList) {
+            NSDate *checkInDate = [NSDate dateWithTimeIntervalSince1970: checkInModel.time / 1000];
+            [weakSelf.datesArray addObject:checkInDate];
+            if([self isSameDay:checkInDate date2:[NSDate date]])
+            {
+                weakSelf.hasCheckedIn = YES;
+            }
+        }
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"请求签到记录失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+// 判断是否是同一天
+- (BOOL)isSameDay:(NSDate *)date1 date2:(NSDate *)date2
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    unsigned unitFlag = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+    NSDateComponents *comp1 = [calendar components:unitFlag fromDate:date1];
+    NSDateComponents *comp2 = [calendar components:unitFlag fromDate:date2];
+    return (([comp1 day] == [comp2 day]) && ([comp1 month] == [comp2 month]) && ([comp1 year] == [comp2 year]));
 }
 
 @end

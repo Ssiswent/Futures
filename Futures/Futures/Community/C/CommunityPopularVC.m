@@ -17,9 +17,12 @@
 
 #import "CommunityDynamicModel.h"
 #import "CommentModel.h"
+#import "CommunityDynamicListModel.h"
 
 #import "DynamicDetaiVC.h"
 #import "PublishVC.h"
+
+#import <MJRefresh.h>
 
 @interface CommunityPopularVC ()<UITableViewDataSource, UITableViewDelegate, CommunityFocusCellDelegate>
 
@@ -27,14 +30,30 @@
 @property (weak, nonatomic) IBOutlet UITableView *popularTableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 
-@property (strong , nonatomic) NSArray *dynamicsArray;
+@property (strong , nonatomic) NSMutableArray *dynamicsArray;
 @property (strong , nonatomic) NSArray *allCommentsArray;
+
+@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) CommunityDynamicListModel *listModel;
+
+@property (assign, nonatomic) NSInteger pageNumber;
+@property (nonatomic, assign) BOOL loadMore;
 
 @property (assign, nonatomic) NSInteger numberOfSections;
 
 @end
 
 @implementation CommunityPopularVC
+
+- (NSMutableArray *)dynamicsArray
+{
+    if(_dynamicsArray == nil)
+    {
+        NSMutableArray *array = NSMutableArray.new;
+        _dynamicsArray = array;
+    }
+    return _dynamicsArray;
+}
 
 NSString *CommunityHeaderCellID = @"CommunityHeaderCell";
 NSString *CommunityTopicCellID = @"CommunityTopicCell";
@@ -46,6 +65,33 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
     [self getDynamics];
     [self getComments];
     [self initialSetup];
+    
+    [self setMJRefresh];
+}
+
+- (void)setMJRefresh
+{
+    _popularTableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            WEAKSELF
+            weakSelf.loadMore = NO;
+            weakSelf.pageNumber = 1;
+    //        [weakSelf.tableView.mj_header endRefreshing];
+            [weakSelf getDynamics];
+        }];
+        
+        // 设置自动切换透明度(在导航栏下面自动隐藏)
+        _popularTableView.mj_header.automaticallyChangeAlpha = NO;
+        
+        // 上拉刷新
+        _popularTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            WEAKSELF
+            weakSelf.loadMore = YES;
+            weakSelf.pageNumber ++;
+    //        [weakSelf.tableView.mj_footer endRefreshing];
+            [weakSelf getDynamics];
+        }];
+        
+        [_popularTableView.mj_header beginRefreshing];
 }
 
 -(UIView *)listView{
@@ -304,15 +350,41 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 
 #pragma mark - API
 
-- (void)getDynamics{
+-(void)getDynamics{
     WEAKSELF
-    [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:nil Header:nil success:^(BOOL success, id result) {
+    NSDictionary *dic = @{@"pageNumber":@(_pageNumber)};
+    [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
         NSError *error;
-        weakSelf.dynamicsArray = [MTLJSONAdapter modelsOfClass:[CommunityDynamicModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
-        [weakSelf.popularTableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationAutomatic];
+        weakSelf.listModel = [MTLJSONAdapter modelOfClass:[CommunityDynamicListModel class] fromJSONDictionary:result[@"data"] error:&error];
+        if (!weakSelf.loadMore) {
+            [weakSelf.dynamicsArray removeAllObjects];
+        }
+        [weakSelf.dynamicsArray addObjectsFromArray:weakSelf.listModel.dynamicsArray];
+        [weakSelf.popularTableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationFade];
+        if (!weakSelf.loadMore) {
+            [weakSelf.popularTableView.mj_header endRefreshing];
+        }
+        else
+        {
+            if (weakSelf.listModel.hasMore)
+            {
+                [weakSelf.popularTableView.mj_footer endRefreshing];
+            }
+            else
+            {
+                [weakSelf.popularTableView.mj_footer endRefreshingWithNoMoreData];
+            }
+        }
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
-        [Toast makeText:weakSelf.view Message:@"请求热门动态失败" afterHideTime:DELAYTiME];
+        if (weakSelf.loadMore) {
+            if (weakSelf.pageNumber >2) {
+                weakSelf.pageNumber --;
+            }
+        }
+        [weakSelf.popularTableView.mj_header endRefreshing];
+        [weakSelf.popularTableView.mj_footer endRefreshing];
+        [Toast makeText:weakSelf.view Message:@"请求热门说说失败" afterHideTime:DELAYTiME];
     }];
 }
 

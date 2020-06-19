@@ -15,10 +15,12 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (IBAction)checkInBtnClicked:(id)sender {
+    if([self.delegate respondsToSelector:@selector(homeCheckInCellDidClickCheckInBtn:)])
+    {
+        [self.delegate homeCheckInCellDidClickCheckInBtn:self];
+    }
 }
+
 
 @end

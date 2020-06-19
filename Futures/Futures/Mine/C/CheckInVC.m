@@ -43,7 +43,7 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
     for (NSDate *checkInDate in _datesArray) {
         [self.calendar selectDate:checkInDate];
     }
-    _checkInBtn.enabled = !_hasCheckedIn;
+//    _checkInBtn.enabled = !_hasCheckedIn;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -104,6 +104,7 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
     checkInSuccessView.dateLabel.text = dateStr;
     _checkInSuccessView = checkInSuccessView;
     [self signNow];
+//    [self addCoverView];
 }
 
 // 判断是否是同一天
@@ -199,7 +200,9 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
     NSDictionary *dic = @{@"userId":@4181};
     [ENDNetWorkManager postWithPathUrl:@"/user/sign/signNow" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
         weakSelf.checkInBtn.enabled = NO;
-        [self addCoverView];
+        [weakSelf addCoverView];
+        [self.calendar selectDate:[NSDate date]];
+//        [self.calendar reloadData];
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"签到失败" afterHideTime:DELAYTiME];
