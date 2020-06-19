@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CheckInSuccessView">
+            <rect key="frame" x="0.0" y="0.0" width="310" height="254"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNx-3S-eK5" userLabel="SuccessView">
+                    <rect key="frame" x="32" y="0.0" width="246" height="254"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkIn_success" translatesAutoresizingMaskIntoConstraints="NO" id="gYK-rZ-ALl" userLabel="SuccessImgView">
+                            <rect key="frame" x="0.0" y="0.0" width="246" height="254"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已签到2天，积分+10!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzk-6E-TzV" userLabel="DateLabel">
+                            <rect key="frame" x="55" y="168" width="136.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.15294379" green="0.152936399" blue="0.15294143560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="继续加油!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua0-Bk-vKJ" userLabel="Label">
+                            <rect key="frame" x="92.5" y="197" width="61.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.15294379" green="0.152936399" blue="0.15294143560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="gzk-6E-TzV" firstAttribute="centerX" secondItem="fNx-3S-eK5" secondAttribute="centerX" id="4jg-Lv-U0r"/>
+                        <constraint firstItem="gYK-rZ-ALl" firstAttribute="top" secondItem="fNx-3S-eK5" secondAttribute="top" id="BC3-S0-qjQ"/>
+                        <constraint firstItem="Ua0-Bk-vKJ" firstAttribute="centerX" secondItem="fNx-3S-eK5" secondAttribute="centerX" id="QQ5-kT-KKa"/>
+                        <constraint firstAttribute="bottom" secondItem="gYK-rZ-ALl" secondAttribute="bottom" id="TPP-FA-PBY"/>
+                        <constraint firstItem="Ua0-Bk-vKJ" firstAttribute="top" secondItem="gzk-6E-TzV" secondAttribute="bottom" constant="12" id="opx-c8-gaq"/>
+                        <constraint firstItem="gYK-rZ-ALl" firstAttribute="leading" secondItem="fNx-3S-eK5" secondAttribute="leading" id="pv2-qp-leJ"/>
+                        <constraint firstAttribute="trailing" secondItem="gYK-rZ-ALl" secondAttribute="trailing" id="t8T-Q3-nAp"/>
+                        <constraint firstAttribute="bottom" secondItem="Ua0-Bk-vKJ" secondAttribute="bottom" constant="40" id="xsx-f6-kin"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="fNx-3S-eK5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0Kr-pK-bZn"/>
+                <constraint firstAttribute="bottom" secondItem="fNx-3S-eK5" secondAttribute="bottom" id="0QZ-nG-lNk"/>
+                <constraint firstItem="fNx-3S-eK5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="8Us-vn-8IE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fNx-3S-eK5" secondAttribute="trailing" constant="32" id="y7V-l4-k5e"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="dateLabel" destination="gzk-6E-TzV" id="NOy-xq-udT"/>
+            </connections>
+            <point key="canvasLocation" x="-24" y="41"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="checkIn_success" width="309.5" height="253.5"/>
+    </resources>
+</document>

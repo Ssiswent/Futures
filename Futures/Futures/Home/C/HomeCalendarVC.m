@@ -24,6 +24,8 @@
 
 @property (weak, nonatomic) IBOutlet FSCalendar *calendar;
 @property (weak, nonatomic) IBOutlet UIView *calendarBgView;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarWidth;
 
 @end
 
@@ -47,13 +49,17 @@ NSString *HomeCalendarColletionCellID = @"HomeCalendarColletionCell";
 //    //赋值
 //    maskLayer.path = maskPath.CGPath;
 //    _calendarBgView.layer.mask = maskLayer;
-//    self.calendar.appearance
+    
+    //隐藏header两侧
+//    self.calendar.appearance.headerMinimumDissolvedAlpha = 0;
     self.calendar.backgroundColor = [UIColor clearColor];
     self.calendar.scope = FSCalendarScopeWeek;
     [self.calendar selectDate:[NSDate date]];
-    self.calendar.appearance.headerTitleFont = [UIFont systemFontOfSize:15 weight:UIFontWeightBold];
     self.calendar.appearance.weekdayFont = [UIFont systemFontOfSize:11 weight:UIFontWeightBold];
     self.calendar.appearance.titleFont = [UIFont systemFontOfSize:15 weight:UIFontWeightBold];
+    
+    _calendarWidth.constant = SCREEN_WIDTH;
+    _dateLabel.text = [self getTimeToTimeStr:[NSDate date]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -100,6 +106,20 @@ NSString *HomeCalendarColletionCellID = @"HomeCalendarColletionCell";
 - (NSInteger)calendar:(FSCalendar *)calendar numberOfEventsForDate:(NSDate *)date
 {
     return 1;
+}
+
+- (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition
+{
+    _dateLabel.text = [self getTimeToTimeStr:date];
+}
+
+- (NSString *)getTimeToTimeStr:(NSDate *)date{
+    //实例化一个NSDateFormatter对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    [dateFormatter setDateFormat:@"YYYY年M月d日"];
+    NSString *timeStr = [dateFormatter stringFromDate:date];
+    return timeStr;
 }
 
 @end

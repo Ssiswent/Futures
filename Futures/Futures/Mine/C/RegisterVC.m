@@ -76,6 +76,7 @@
         _registerBtn.enabled = NO;
     }
 }
+
 - (IBAction)codeBtnClicked:(id)sender {
     MineCodeView *mineCodeView = [[NSBundle mainBundle]loadNibNamed:@"MineCodeView" owner:nil options:nil].firstObject;
     mineCodeView.delegate = self;

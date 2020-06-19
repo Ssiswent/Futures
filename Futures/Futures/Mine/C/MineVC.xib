@@ -291,6 +291,9 @@
                         <constraint firstAttribute="width" secondItem="LAh-VG-BTD" secondAttribute="height" multiplier="345:80" id="ZYK-6C-Rkd"/>
                     </constraints>
                     <state key="normal" image="checkin"/>
+                    <connections>
+                        <action selector="checkInBtnClicked:" destination="-1" eventType="touchUpInside" id="xGW-10-61X"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIF-j1-NWj" userLabel="FunctionHeaderView">
                     <rect key="frame" x="0.0" y="383.5" width="414" height="36"/>

@@ -162,6 +162,12 @@
 		CBBC0DC4249B34D2005CDC7D /* PublishVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0DC2249B34D2005CDC7D /* PublishVC.m */; };
 		CBBC0DC5249B34D2005CDC7D /* PublishVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC0DC3249B34D2005CDC7D /* PublishVC.xib */; };
 		CBBC0DCB249B4392005CDC7D /* UITextView+WZB.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0DCA249B4392005CDC7D /* UITextView+WZB.m */; };
+		CBC9BC91249C579B007A6B54 /* CheckInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC9BC8F249C579B007A6B54 /* CheckInVC.m */; };
+		CBC9BC92249C579B007A6B54 /* CheckInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC9BC90249C579B007A6B54 /* CheckInVC.xib */; };
+		CBC9BC95249C929B007A6B54 /* CheckInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC9BC94249C929B007A6B54 /* CheckInModel.m */; };
+		CBC9BC9E249CAB65007A6B54 /* DIYCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC9BC9C249CAB65007A6B54 /* DIYCalendarCell.m */; };
+		CBC9BCA1249CEFC5007A6B54 /* CheckInSuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC9BCA0249CEFC5007A6B54 /* CheckInSuccessView.m */; };
+		CBC9BCA3249CEFCD007A6B54 /* CheckInSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC9BCA2249CEFCD007A6B54 /* CheckInSuccessView.xib */; };
 		CBEFF5BE2497579F0029AE26 /* HomeFourBtnVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */; };
 		CBEFF5C2249758310029AE26 /* HomeCalendarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5C0249758310029AE26 /* HomeCalendarVC.m */; };
 		CBEFF5C3249758310029AE26 /* HomeCalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF5C1249758310029AE26 /* HomeCalendarVC.xib */; };
@@ -453,6 +459,16 @@
 		CBBC0DC9249B4392005CDC7D /* UITextView+WZB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+WZB.h"; sourceTree = "<group>"; };
 		CBBC0DCA249B4392005CDC7D /* UITextView+WZB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+WZB.m"; sourceTree = "<group>"; };
 		CBBC0DCC249B4F42005CDC7D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CBC9BC8E249C579B007A6B54 /* CheckInVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInVC.h; sourceTree = "<group>"; };
+		CBC9BC8F249C579B007A6B54 /* CheckInVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckInVC.m; sourceTree = "<group>"; };
+		CBC9BC90249C579B007A6B54 /* CheckInVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInVC.xib; sourceTree = "<group>"; };
+		CBC9BC93249C929B007A6B54 /* CheckInModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInModel.h; sourceTree = "<group>"; };
+		CBC9BC94249C929B007A6B54 /* CheckInModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckInModel.m; sourceTree = "<group>"; };
+		CBC9BC9C249CAB65007A6B54 /* DIYCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYCalendarCell.m; sourceTree = "<group>"; };
+		CBC9BC9D249CAB65007A6B54 /* DIYCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYCalendarCell.h; sourceTree = "<group>"; };
+		CBC9BC9F249CEFC5007A6B54 /* CheckInSuccessView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckInSuccessView.h; sourceTree = "<group>"; };
+		CBC9BCA0249CEFC5007A6B54 /* CheckInSuccessView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckInSuccessView.m; sourceTree = "<group>"; };
+		CBC9BCA2249CEFCD007A6B54 /* CheckInSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInSuccessView.xib; sourceTree = "<group>"; };
 		CBEFF5BC2497579F0029AE26 /* HomeFourBtnVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFourBtnVC.h; sourceTree = "<group>"; };
 		CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFourBtnVC.m; sourceTree = "<group>"; };
 		CBEFF5BF249758310029AE26 /* HomeCalendarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCalendarVC.h; sourceTree = "<group>"; };
@@ -950,6 +966,9 @@
 				CBBC0D862499C225005CDC7D /* MineLikeChildBVC.h */,
 				CBBC0D872499C225005CDC7D /* MineLikeChildBVC.m */,
 				CBBC0D882499C225005CDC7D /* MineLikeChildBVC.xib */,
+				CBC9BC8E249C579B007A6B54 /* CheckInVC.h */,
+				CBC9BC8F249C579B007A6B54 /* CheckInVC.m */,
+				CBC9BC90249C579B007A6B54 /* CheckInVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -987,6 +1006,11 @@
 				CBBC0D8B2499C678005CDC7D /* MineLikeCell.h */,
 				CBBC0D8C2499C678005CDC7D /* MineLikeCell.m */,
 				CBBC0D8D2499C678005CDC7D /* MineLikeCell.xib */,
+				CBC9BC9D249CAB65007A6B54 /* DIYCalendarCell.h */,
+				CBC9BC9C249CAB65007A6B54 /* DIYCalendarCell.m */,
+				CBC9BC9F249CEFC5007A6B54 /* CheckInSuccessView.h */,
+				CBC9BCA0249CEFC5007A6B54 /* CheckInSuccessView.m */,
+				CBC9BCA2249CEFCD007A6B54 /* CheckInSuccessView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -994,6 +1018,8 @@
 		CBEC542B248B3AE800B3D94C /* M */ = {
 			isa = PBXGroup;
 			children = (
+				CBC9BC93249C929B007A6B54 /* CheckInModel.h */,
+				CBC9BC94249C929B007A6B54 /* CheckInModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -1075,6 +1101,7 @@
 				CBAD62AC248A15560097BD9D /* CommunityFocusCollectionCell.xib in Resources */,
 				CBA5A3532490795E003BA799 /* RegisterVC.xib in Resources */,
 				CBAD62512488CCBA0097BD9D /* HomeBannerCollectionCell.xib in Resources */,
+				CBC9BCA3249CEFCD007A6B54 /* CheckInSuccessView.xib in Resources */,
 				CBEFF5C3249758310029AE26 /* HomeCalendarVC.xib in Resources */,
 				1814022F24876C6700CA3E92 /* LaunchScreen.storyboard in Resources */,
 				CBF7D4782499AF7000A7761A /* MineMessagesVC.xib in Resources */,
@@ -1088,6 +1115,7 @@
 				CB0338872498BE25008060A0 /* MineInformationCell.xib in Resources */,
 				CB03386E2498B346008060A0 /* MineEditVC.xib in Resources */,
 				CBBC0D8F2499C678005CDC7D /* MineLikeCell.xib in Resources */,
+				CBC9BC92249C579B007A6B54 /* CheckInVC.xib in Resources */,
 				CBAD62652488F53C0097BD9D /* HomeADCell.xib in Resources */,
 				CBA5A346248F6FE6003BA799 /* MineSettingsCell.xib in Resources */,
 				CBAD62B9248A98CA0097BD9D /* CommunityDynamicHeaderView.xib in Resources */,
@@ -1201,6 +1229,7 @@
 				181402F9248779DA00CA3E92 /* YKLineEntity.m in Sources */,
 				1814030324877DD300CA3E92 /* Reachability.m in Sources */,
 				CBA5A340248F6E76003BA799 /* MineSettingsVC.m in Sources */,
+				CBC9BCA1249CEFC5007A6B54 /* CheckInSuccessView.m in Sources */,
 				CB3B994A24985C1E006F3256 /* HomeBusinessCell.m in Sources */,
 				CBA5A349248F8013003BA799 /* YPNavigationController+Configure.m in Sources */,
 				CB0338822498B91E008060A0 /* NetworkTool.swift in Sources */,
@@ -1210,6 +1239,7 @@
 				CBAD625F2488F1B60097BD9D /* HomeCheckInCell.m in Sources */,
 				181402DB248779DA00CA3E92 /* UIImage+OriginalImage.m in Sources */,
 				CBAD62502488CCBA0097BD9D /* HomeBannerCollectionCell.m in Sources */,
+				CBC9BC9E249CAB65007A6B54 /* DIYCalendarCell.m in Sources */,
 				18140315248783BD00CA3E92 /* MineVC.m in Sources */,
 				CBAD62972489DCB50097BD9D /* CommunityTopicCell.m in Sources */,
 				CB076F49249BBA0500B49D44 /* UIView+CornerAndBorder.m in Sources */,
@@ -1234,6 +1264,7 @@
 				181402D1248779DA00CA3E92 /* NSString+DealError.m in Sources */,
 				CBAD62552488D9C60097BD9D /* HomeBannerCell.m in Sources */,
 				181402CE248779DA00CA3E92 /* StringAndLabelDealTool.m in Sources */,
+				CBC9BC95249C929B007A6B54 /* CheckInModel.m in Sources */,
 				CBAD628B248950140097BD9D /* CommunityHeaderCell.m in Sources */,
 				181402F7248779DA00CA3E92 /* ZCBaseViewController.m in Sources */,
 				CBBC0DBB249A4A86005CDC7D /* DynamicDetailHeaderView.m in Sources */,
@@ -1278,6 +1309,7 @@
 				181402CB248779DA00CA3E92 /* TimerTool.m in Sources */,
 				181402D0248779DA00CA3E92 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				181402E1248779DA00CA3E92 /* YKTimeLineView.m in Sources */,
+				CBC9BC91249C579B007A6B54 /* CheckInVC.m in Sources */,
 				CBAD62B4248A7C970097BD9D /* CommunityDynamicModel.m in Sources */,
 				181402ED248779DA00CA3E92 /* QHDataCollectionViewCell.m in Sources */,
 				181402D8248779DA00CA3E92 /* ENDLCPNetWorkERROR.m in Sources */,

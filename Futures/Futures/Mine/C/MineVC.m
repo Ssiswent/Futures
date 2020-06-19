@@ -27,6 +27,10 @@
 #import "MineCollectionVC.h"
 #import "MineLikeVC.h"
 
+#import "CheckInVC.h"
+
+#import "CheckInModel.h"
+
 @interface MineVC ()<YPNavigationBarConfigureStyle, LoginVCDelegate, AccountSwitchVCDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *avatarView;
@@ -64,9 +68,22 @@
 
 @property (nonatomic, assign)BOOL hasUserId;
 
+@property (strong , nonatomic) NSArray *checkInList;
+@property (strong , nonatomic) NSMutableArray <NSDate *> *datesArray;
+@property (nonatomic, assign) BOOL hasCheckedIn;
+
 @end
 
 @implementation MineVC
+
+- (NSMutableArray<NSDate *> *)datesArray
+{
+    if(_datesArray == nil)
+    {
+        _datesArray = NSMutableArray.new;
+    }
+    return _datesArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -128,6 +145,7 @@
         _userId = userId;
         _hasUserId = YES;
         [self getUser];
+        [self getSignList];
         
         self.avatarImgViewWidth.constant = 65;
         self.avatarImgViewHeight.constant = 65;
@@ -190,6 +208,24 @@
     }
 }
 
+- (IBAction)checkInBtnClicked:(id)sender {
+    if(_hasUserId)
+    {
+        CheckInVC *checkInVC = CheckInVC.new;
+        checkInVC.datesArray = _datesArray;
+        checkInVC.checkInList = _checkInList;
+        checkInVC.hasCheckedIn = _hasCheckedIn;
+        [self.navigationController pushViewController:checkInVC animated:YES];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        loginVC.delegate = self;
+        //        loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:loginVC animated:YES completion:nil];
+        [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
+    }
+}
 
 #pragma mark - Gestures
 
@@ -448,5 +484,37 @@
         [Toast makeText:weakSelf.view Message:@"请求用户数据失败" afterHideTime:DELAYTiME];
     }];
 }
+
+- (void)getSignList
+{
+    WEAKSELF
+    NSDictionary *dic = @{@"userId":@4181};
+    [ENDNetWorkManager getWithPathUrl:@"/user/sign/getSignList" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.checkInList = [MTLJSONAdapter modelsOfClass:[CheckInModel class] fromJSONArray:result[@"data"] error:&error];
+        for (CheckInModel *checkInModel in weakSelf.checkInList) {
+            NSDate *checkInDate = [NSDate dateWithTimeIntervalSince1970: checkInModel.time / 1000];
+            [weakSelf.datesArray addObject:checkInDate];
+            if([self isSameDay:checkInDate date2:[NSDate date]])
+            {
+                weakSelf.hasCheckedIn = YES;
+            }
+        }
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"请求签到记录失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+// 判断是否是同一天
+- (BOOL)isSameDay:(NSDate *)date1 date2:(NSDate *)date2
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    unsigned unitFlag = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+    NSDateComponents *comp1 = [calendar components:unitFlag fromDate:date1];
+    NSDateComponents *comp2 = [calendar components:unitFlag fromDate:date2];
+    return (([comp1 day] == [comp2 day]) && ([comp1 month] == [comp2 month]) && ([comp1 year] == [comp2 year]));
+}
+
 
 @end
