@@ -169,6 +169,7 @@
 		CBC9BCA1249CEFC5007A6B54 /* CheckInSuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC9BCA0249CEFC5007A6B54 /* CheckInSuccessView.m */; };
 		CBC9BCA3249CEFCD007A6B54 /* CheckInSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC9BCA2249CEFCD007A6B54 /* CheckInSuccessView.xib */; };
 		CBD33D08249D1B050092CBDE /* CommunityDynamicListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD33D06249D1B040092CBDE /* CommunityDynamicListModel.m */; };
+		CBD33D0B249D9E960092CBDE /* CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD33D0A249D9E960092CBDE /* CoverView.m */; };
 		CBEFF5BE2497579F0029AE26 /* HomeFourBtnVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */; };
 		CBEFF5C2249758310029AE26 /* HomeCalendarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5C0249758310029AE26 /* HomeCalendarVC.m */; };
 		CBEFF5C3249758310029AE26 /* HomeCalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF5C1249758310029AE26 /* HomeCalendarVC.xib */; };
@@ -472,6 +473,8 @@
 		CBC9BCA2249CEFCD007A6B54 /* CheckInSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInSuccessView.xib; sourceTree = "<group>"; };
 		CBD33D06249D1B040092CBDE /* CommunityDynamicListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityDynamicListModel.m; sourceTree = "<group>"; };
 		CBD33D07249D1B050092CBDE /* CommunityDynamicListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDynamicListModel.h; sourceTree = "<group>"; };
+		CBD33D09249D9E960092CBDE /* CoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoverView.h; sourceTree = "<group>"; };
+		CBD33D0A249D9E960092CBDE /* CoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoverView.m; sourceTree = "<group>"; };
 		CBEFF5BC2497579F0029AE26 /* HomeFourBtnVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFourBtnVC.h; sourceTree = "<group>"; };
 		CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFourBtnVC.m; sourceTree = "<group>"; };
 		CBEFF5BF249758310029AE26 /* HomeCalendarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCalendarVC.h; sourceTree = "<group>"; };
@@ -1016,6 +1019,8 @@
 				CBC9BC9F249CEFC5007A6B54 /* CheckInSuccessView.h */,
 				CBC9BCA0249CEFC5007A6B54 /* CheckInSuccessView.m */,
 				CBC9BCA2249CEFCD007A6B54 /* CheckInSuccessView.xib */,
+				CBD33D09249D9E960092CBDE /* CoverView.h */,
+				CBD33D0A249D9E960092CBDE /* CoverView.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1248,6 +1253,7 @@
 				18140315248783BD00CA3E92 /* MineVC.m in Sources */,
 				CBAD62972489DCB50097BD9D /* CommunityTopicCell.m in Sources */,
 				CB076F49249BBA0500B49D44 /* UIView+CornerAndBorder.m in Sources */,
+				CBD33D0B249D9E960092CBDE /* CoverView.m in Sources */,
 				181402D7248779DA00CA3E92 /* ENDNetWorkPUT.m in Sources */,
 				181402DC248779DA00CA3E92 /* BaseViewController.m in Sources */,
 				CBA5A3522490795E003BA799 /* RegisterVC.m in Sources */,

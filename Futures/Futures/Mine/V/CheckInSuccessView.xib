@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="310" height="254"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNx-3S-eK5" userLabel="SuccessView">
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNx-3S-eK5" userLabel="SuccessView">
                     <rect key="frame" x="32" y="0.0" width="246" height="254"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkIn_success" translatesAutoresizingMaskIntoConstraints="NO" id="gYK-rZ-ALl" userLabel="SuccessImgView">

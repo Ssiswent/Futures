@@ -326,26 +326,53 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 3)
+    if(_numberOfSections == 4)
     {
-        NSInteger count = self.allCommentsArray.count;
-        if(count % 2 != 0)
+        if(indexPath.section == 3)
         {
-            count --;
+            NSInteger count = self.allCommentsArray.count;
+            if(count % 2 != 0)
+            {
+                count --;
+            }
+            NSInteger commentsNum1 = indexPath.row % (count / 2) * 2;
+            NSInteger commentsNum2 = commentsNum1 + 1;
+            NSMutableArray *temp = NSMutableArray.new;
+            [temp addObject: self.allCommentsArray[commentsNum1]];
+            [temp addObject: self.allCommentsArray[commentsNum2]];
+            
+            CommunityDynamicModel *dynamicModel = self.dynamicsArray[indexPath.row];
+            dynamicModel.commentArray = temp;
+            
+            DynamicDetaiVC *dynamicDetaiVC = DynamicDetaiVC.new;
+            dynamicDetaiVC.dynamicModel = dynamicModel;
+            [self.navigationController pushViewController:dynamicDetaiVC animated:YES];
         }
-        NSInteger commentsNum1 = indexPath.row % (count / 2) * 2;
-        NSInteger commentsNum2 = commentsNum1 + 1;
-        NSMutableArray *temp = NSMutableArray.new;
-        [temp addObject: self.allCommentsArray[commentsNum1]];
-        [temp addObject: self.allCommentsArray[commentsNum2]];
-        
-        CommunityDynamicModel *dynamicModel = self.dynamicsArray[indexPath.row];
-        dynamicModel.commentArray = temp;
-        
-        DynamicDetaiVC *dynamicDetaiVC = DynamicDetaiVC.new;
-        dynamicDetaiVC.dynamicModel = dynamicModel;
-        [self.navigationController pushViewController:dynamicDetaiVC animated:YES];
     }
+    else
+    {
+        if(indexPath.section == 2)
+        {
+            NSInteger count = self.allCommentsArray.count;
+            if(count % 2 != 0)
+            {
+                count --;
+            }
+            NSInteger commentsNum1 = indexPath.row % (count / 2) * 2;
+            NSInteger commentsNum2 = commentsNum1 + 1;
+            NSMutableArray *temp = NSMutableArray.new;
+            [temp addObject: self.allCommentsArray[commentsNum1]];
+            [temp addObject: self.allCommentsArray[commentsNum2]];
+            
+            CommunityDynamicModel *dynamicModel = self.dynamicsArray[indexPath.row];
+            dynamicModel.commentArray = temp;
+            
+            DynamicDetaiVC *dynamicDetaiVC = DynamicDetaiVC.new;
+            dynamicDetaiVC.dynamicModel = dynamicModel;
+            [self.navigationController pushViewController:dynamicDetaiVC animated:YES];
+        }
+    }
+    
 }
 
 #pragma mark - API

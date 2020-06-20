@@ -136,7 +136,7 @@ NSString *HomeFastNewsCellID = @"HomeFastNewsCell";
     }
     else
     {
-        return 6;
+        return self.fastNewsArray.count;
     }
 }
 

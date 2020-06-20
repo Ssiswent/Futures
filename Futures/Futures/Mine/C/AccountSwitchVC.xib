@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="轻触头像切换账号" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDq-ZW-MCN">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="轻触+号切换账号" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDq-ZW-MCN">
                     <rect key="frame" x="117" y="147.5" width="180" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="180" id="6bS-Dg-9cM"/>
@@ -30,7 +30,7 @@
                     <color key="textColor" red="0.15808042880000001" green="0.15807285900000001" blue="0.15807795520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JxM-aR-3x9" userLabel="AvatarImgView">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" translatesAutoresizingMaskIntoConstraints="NO" id="JxM-aR-3x9" userLabel="AvatarImgView">
                     <rect key="frame" x="54.5" y="272" width="90" height="90"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="4wF-29-3Ax"/>
@@ -105,6 +105,7 @@
         </view>
     </objects>
     <resources>
+        <image name="head" width="65" height="65"/>
         <image name="switch_btn" width="94.5" height="90"/>
         <image name="switch_img" width="37" height="30"/>
     </resources>

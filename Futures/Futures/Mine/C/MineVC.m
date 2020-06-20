@@ -488,9 +488,11 @@
 - (void)getSignList
 {
     WEAKSELF
-    NSDictionary *dic = @{@"userId":@4181};
+    NSDictionary *dic = @{@"userId":_userId};
     [ENDNetWorkManager getWithPathUrl:@"/user/sign/getSignList" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
         NSError *error;
+        [weakSelf.datesArray removeAllObjects];
+        weakSelf.hasCheckedIn = NO;
         weakSelf.checkInList = [MTLJSONAdapter modelsOfClass:[CheckInModel class] fromJSONArray:result[@"data"] error:&error];
         for (CheckInModel *checkInModel in weakSelf.checkInList) {
             NSDate *checkInDate = [NSDate dateWithTimeIntervalSince1970: checkInModel.time / 1000];
@@ -500,6 +502,7 @@
                 weakSelf.hasCheckedIn = YES;
             }
         }
+        NSLog(@"datesArray:%@",weakSelf.datesArray);
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求签到记录失败" afterHideTime:DELAYTiME];

@@ -12,17 +12,25 @@
 
 + (instancetype)checkInSuccessView
 {
+    
     return [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass([CheckInSuccessView class]) owner:nil options:nil] firstObject];
 }
 
 //- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 //{
+//    UIView *view = [[UIView alloc]initWithFrame:CGRectZero];
+//    
 //    CGPoint successViewPoint = [self convertPoint:point toView:self];
 //    if([self pointInside:successViewPoint withEvent:event])
 //    {
-//        return nil;
+//        return view;
 //    }
-//    return  [super hitTest:point withEvent:event];
+//    return [super hitTest:point withEvent:event];
+//}
+//
+//- (void)dealloc
+//{
+//    NSLog(@"销毁了");
 //}
 
 @end

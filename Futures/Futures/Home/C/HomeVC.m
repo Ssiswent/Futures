@@ -41,6 +41,9 @@
 @property (strong , nonatomic) NSMutableArray <NSDate *> *datesArray;
 @property (nonatomic, assign) BOOL hasCheckedIn;
 
+@property (nonatomic, strong)NSNumber *userId;
+
+
 @end
 
 @implementation HomeVC
@@ -73,6 +76,7 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self getUserDefault];
     [self getSignList];
 }
 
@@ -80,6 +84,15 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
 {
     [super viewDidAppear:animated];
     [CustomTBC setTabBarHidden:NO TabBarVC:self.tabBarController];
+}
+
+- (void)getUserDefault
+{
+    //获取用户偏好
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    //读取userId
+    NSNumber *userId = [userDefault objectForKey:@"userId"];
+    _userId = userId;
 }
 
 - (void)registerTableView
@@ -293,9 +306,11 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
 - (void)getSignList
 {
     WEAKSELF
-    NSDictionary *dic = @{@"userId":@4181};
+    NSDictionary *dic = @{@"userId":_userId};
     [ENDNetWorkManager getWithPathUrl:@"/user/sign/getSignList" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
         NSError *error;
+        [weakSelf.datesArray removeAllObjects];
+        weakSelf.hasCheckedIn = NO;
         weakSelf.checkInList = [MTLJSONAdapter modelsOfClass:[CheckInModel class] fromJSONArray:result[@"data"] error:&error];
         for (CheckInModel *checkInModel in weakSelf.checkInList) {
             NSDate *checkInDate = [NSDate dateWithTimeIntervalSince1970: checkInModel.time / 1000];

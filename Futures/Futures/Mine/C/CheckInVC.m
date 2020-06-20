@@ -18,6 +18,8 @@
 
 #import "CheckInModel.h"
 
+#import "CoverView.h"
+
 #import <FSCalendar.h>
 
 @interface CheckInVC ()<UIGestureRecognizerDelegate, FSCalendarDataSource, FSCalendarDelegate>
@@ -26,12 +28,23 @@
 
 @property (nonatomic, strong)NSNumber *userId;
 
-@property (weak, nonatomic)UIView *coverView;
-@property (weak, nonatomic)CheckInSuccessView *checkInSuccessView;
+@property (weak, nonatomic) CoverView *coverView;
+
+@property (copy,nonatomic) NSString *dateStr;
+@property (weak, nonatomic) CheckInSuccessView *checkInSuccessView;
 
 @end
 
 @implementation CheckInVC
+
+- (NSMutableArray<NSDate *> *)datesArray
+{
+    if(_datesArray == nil)
+    {
+        _datesArray = NSMutableArray.new;
+    }
+    return _datesArray;
+}
 
 NSString *DIYCalendarCellID = @"DIYCalendarCell";
 
@@ -40,10 +53,7 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
     [self initialSetup];
     [self getUserDefault];
     
-    for (NSDate *checkInDate in _datesArray) {
-        [self.calendar selectDate:checkInDate];
-    }
-//    _checkInBtn.enabled = !_hasCheckedIn;
+    _checkInBtn.enabled = !_hasCheckedIn;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -88,23 +98,23 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
 }
 
 - (IBAction)checkInBtnClicked:(id)sender {
-    CheckInSuccessView *checkInSuccessView =  [CheckInSuccessView checkInSuccessView];
-    NSString *dateStr;
-    
-    CheckInModel *lastModel = _checkInList.lastObject;
-    NSDate *lastDate = [NSDate dateWithTimeIntervalSince1970: lastModel.time / 1000];
-    if([self isSameDay:lastDate date2:[NSDate date]])
+    NSDate *lastDay = [NSDate dateWithTimeInterval: -24*60*60 sinceDate:[NSDate date]];
+    if(self.datesArray.count != 0)
     {
-        dateStr = [NSString stringWithFormat:@"已签到%@天，积分+10!",lastModel.continueTimes];
+        CheckInModel *lastModel = _checkInList.lastObject;
+        NSDate *lastDate = [NSDate dateWithTimeIntervalSince1970: lastModel.time / 1000];
+        if([self isSameDay:lastDate date2:lastDay])
+        {
+            NSNumber *dateNum = lastModel.continueTimes;
+            NSInteger dateInt = dateNum.integerValue;
+            _dateStr = [NSString stringWithFormat:@"已签到%ld天，积分+10!",dateInt + 1];
+        }
+        else
+        {
+            _dateStr = @"已签到1天，积分+10!";
+        }
     }
-    else
-    {
-        dateStr = @"已签到1天，积分+10!";
-    }
-    checkInSuccessView.dateLabel.text = dateStr;
-    _checkInSuccessView = checkInSuccessView;
     [self signNow];
-//    [self addCoverView];
 }
 
 // 判断是否是同一天
@@ -126,40 +136,77 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
     _userId = userId;
 }
 
-- (void)removeCoverView
+//- (void)removeCoverView
+//{
+//    [UIView animateWithDuration:0.5 animations:^{
+//        self.coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+//        self.checkInSuccessView.alpha = 0;
+//        CGRect frame = self.checkInSuccessView.frame;
+//        frame.size = CGSizeMake(0, 0);
+//        self.checkInSuccessView.frame = frame;
+//    }completion:^(BOOL finished) {
+//        [self.coverView removeFromSuperview];
+//    }];
+//}
+
+- (void)removeCoverView1
 {
     [UIView animateWithDuration:0.5 animations:^{
         self.coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
-        self.checkInSuccessView.alpha = 0;
-        CGRect frame = self.checkInSuccessView.frame;
-        frame.size = CGSizeMake(0, 0);
-        self.checkInSuccessView.frame = frame;
+        self.coverView.successView.alpha = 0;
     }completion:^(BOOL finished) {
         [self.coverView removeFromSuperview];
     }];
 }
 
-- (void)addCoverView
+//- (void)addCoverView
+//{
+//    _checkInSuccessView =  [CheckInSuccessView checkInSuccessView];
+//    _checkInSuccessView.dateLabel.text = _dateStr;
+//    UIView *coverView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//    coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+//
+//    _checkInSuccessView.alpha = 0;
+//    [coverView addSubview:_checkInSuccessView];
+//    [_checkInSuccessView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.mas_equalTo(coverView);
+//    }];
+//    _checkInSuccessView.userInteractionEnabled = NO;
+//    _coverView = coverView;
+//
+//    NSArray *array = [UIApplication sharedApplication].windows;
+//    UIWindow *keyWindow = [array objectAtIndex:0];
+//    [keyWindow addSubview:_coverView];
+//    [UIView animateWithDuration:0.5 animations:^{
+//        self.coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+//        self.checkInSuccessView.alpha = 1;
+//        CGRect frame = self.checkInSuccessView.frame;
+//        frame.size = CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH * (253.5 / 309.5));
+//        self.checkInSuccessView.frame = frame;
+//    }completion:^(BOOL finished) {
+//        WEAKSELF
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(coverViewClicked)];
+//        [weakSelf.coverView addGestureRecognizer:tap];
+//    }];
+//}
+
+- (void)addCoverView1
 {
-    UIView *coverView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    CoverView *coverView = [[CoverView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+
+    coverView.successView.alpha = 0;
+    coverView.successView.dateLabel.text = _dateStr;
     
-    _checkInSuccessView.alpha = 0;
-    [coverView addSubview:_checkInSuccessView];
-    [_checkInSuccessView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(coverView);
-    }];
     _coverView = coverView;
     
     NSArray *array = [UIApplication sharedApplication].windows;
     UIWindow *keyWindow = [array objectAtIndex:0];
     [keyWindow addSubview:_coverView];
+
     [UIView animateWithDuration:0.5 animations:^{
         self.coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
-        self.checkInSuccessView.alpha = 1;
-        CGRect frame = self.checkInSuccessView.frame;
-        frame.size = CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH * (253.5 / 309.5));
-        self.checkInSuccessView.frame = frame;
+        self.coverView.successView.alpha = 1;
     }completion:^(BOOL finished) {
         WEAKSELF
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(coverViewClicked)];
@@ -169,24 +216,22 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
 
 - (void)coverViewClicked
 {
-    [self removeCoverView];
+    [self removeCoverView1];
 }
 
-#pragma mark - FSCalendarDelegate
-
-- (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition
-{
-    
-}
+#pragma mark - FSCalendarDataSource
 
 - (FSCalendarCell *)calendar:(FSCalendar *)calendar cellForDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition
 {
     DIYCalendarCell *cell = [calendar dequeueReusableCellWithIdentifier:DIYCalendarCellID forDate:date atMonthPosition:monthPosition];
-    
-    for (NSDate *checkedInDate in self.datesArray) {
-        if([date isEqualToDate:checkedInDate])
-        {
-            cell.hasChecked = YES;
+    cell.hasChecked = NO;
+    if(self.datesArray.count != 0)
+    {
+        for (NSDate *checkedInDate in self.datesArray) {
+            if([self isSameDay:date date2:checkedInDate])
+            {
+                cell.hasChecked = YES;
+            }
         }
     }
     return cell;
@@ -197,17 +242,16 @@ NSString *DIYCalendarCellID = @"DIYCalendarCell";
 - (void)signNow
 {
     WEAKSELF
-    NSDictionary *dic = @{@"userId":@4181};
+    NSDictionary *dic = @{@"userId":_userId};
     [ENDNetWorkManager postWithPathUrl:@"/user/sign/signNow" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
         weakSelf.checkInBtn.enabled = NO;
-        [weakSelf addCoverView];
-        [self.calendar selectDate:[NSDate date]];
-//        [self.calendar reloadData];
+        [self addCoverView1];
+        [self.datesArray addObject:[NSDate date]];
+        [self.calendar reloadData];
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"签到失败" afterHideTime:DELAYTiME];
     }];
 }
-
 
 @end
