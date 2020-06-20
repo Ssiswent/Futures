@@ -290,12 +290,12 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
     //11 Pro
     else if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
     {
-        
+        showY = 555;
     }
     //8 Plus
     else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 736)
     {
-        
+        showY = 537;
     }
     //11 Pro Max
     else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)

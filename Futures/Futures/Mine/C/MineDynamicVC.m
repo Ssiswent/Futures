@@ -128,32 +128,35 @@
     
     self.categoryView.listContainer = (id<JXCategoryViewListContainer>)self.pagerView.listContainerView;
     
+    _verticalOffset = JXTableHeaderViewHeight - _thresholdDistance;
+    
     //调整pagingView的位置
     self.pagerView.pinSectionHeaderVerticalOffset = _verticalOffset;
 }
 
 - (void)screenAdapter
 {
+    //_thresholdDistance = scrollView.contentOffset.y
+    _thresholdDistance = 86;
+    
     //8(SE2)
     if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 667)
     {
-        _verticalOffset = 64;
         _thresholdDistance = 86;
     }
     //11 Pro
     else if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
     {
-        
+        _thresholdDistance = 62;
     }
     //8 Plus
     else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 736)
     {
-        
+        _thresholdDistance = 86;
     }
     //11 Pro Max
     else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)
     {
-        _verticalOffset = 84;
         _thresholdDistance = 64;
     }
 }

@@ -46,7 +46,7 @@ NSString *MineDynamicCellID = @"MineDynamicCell";
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    CGFloat tableViewHeight = tableViewHeight = SCREEN_HEIGHT - 54;
+    CGFloat tableViewHeight =  SCREEN_HEIGHT - 54;
     //8(SE2)
     if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 667)
     {
@@ -55,12 +55,12 @@ NSString *MineDynamicCellID = @"MineDynamicCell";
     //11 Pro
     else if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
     {
-        
+        tableViewHeight = SCREEN_HEIGHT - 74;
     }
     //8 Plus
     else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 736)
     {
-        
+        tableViewHeight = SCREEN_HEIGHT - 54;
     }
     //11 Pro Max
     else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)
