@@ -60,7 +60,11 @@ NSString *DynamicDetailCommentCellID = @"DynamicDetailCommentCell";
     
     UIBarButtonItem *reportButton = [[UIBarButtonItem alloc]initWithImage:[UIImage originalImageWithName:@"ic_report"] style:UIBarButtonItemStylePlain target:self action:@selector(reportBtnClick)];
     
-    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:reportButton, shieldButton, nil]];
+    if(_rightBarBtnShow)
+    {
+        [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:reportButton, shieldButton, nil]];
+
+    }
     
     //启用右滑返回手势
     self.navigationController.interactivePopGestureRecognizer.delegate = self;

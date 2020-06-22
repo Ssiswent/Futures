@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (assign, nonatomic) NSInteger cellNum;
 
+@property (assign, nonatomic) BOOL rightBarBtnShow;
+
 @property (nonatomic, weak)id<DynamicDetailVCDelegate> delegate;
 
 @end

@@ -383,6 +383,7 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
             dynamicDetailVC.dynamicModel = dynamicModel;
             dynamicDetailVC.delegate = self;
             dynamicDetailVC.cellNum = indexPath.row;
+            dynamicDetailVC.rightBarBtnShow = YES;
             [self.navigationController pushViewController:dynamicDetailVC animated:YES];
         }
     }
@@ -408,6 +409,7 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
             dynamicDetailVC.dynamicModel = dynamicModel;
             dynamicDetailVC.cellNum = indexPath.row;
             dynamicDetailVC.delegate = self;
+            dynamicDetailVC.rightBarBtnShow = YES;
             [self.navigationController pushViewController:dynamicDetailVC animated:YES];
         }
     }
