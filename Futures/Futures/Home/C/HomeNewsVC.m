@@ -50,6 +50,8 @@ NSString *HomeFastNewsCellID = @"HomeFastNewsCell";
     [self setTagBtn:_tag4Btn];
     [self setTagBtn:_tag5Btn];
     
+    _tag1Btn.selected = YES;
+    
     [self.newsTableView registerNib:[UINib nibWithNibName:NSStringFromClass([HomeNewsBannerCell class]) bundle:nil] forCellReuseIdentifier:HomeNewsBannerCellID];
     [self.newsTableView registerNib:[UINib nibWithNibName:NSStringFromClass([HomeNewsTimeCell class]) bundle:nil] forCellReuseIdentifier:HomeNewsTimeCellID];
     [self.newsTableView registerNib:[UINib nibWithNibName:NSStringFromClass([HomeFastNewsCell class]) bundle:nil] forCellReuseIdentifier:HomeFastNewsCellID];

@@ -150,8 +150,8 @@
 		CBBC0D8A2499C225005CDC7D /* MineLikeChildBVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC0D882499C225005CDC7D /* MineLikeChildBVC.xib */; };
 		CBBC0D8E2499C678005CDC7D /* MineLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0D8C2499C678005CDC7D /* MineLikeCell.m */; };
 		CBBC0D8F2499C678005CDC7D /* MineLikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC0D8D2499C678005CDC7D /* MineLikeCell.xib */; };
-		CBBC0DAD249A490A005CDC7D /* DynamicDetaiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0DAB249A490A005CDC7D /* DynamicDetaiVC.m */; };
-		CBBC0DAE249A490A005CDC7D /* DynamicDetaiVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC0DAC249A490A005CDC7D /* DynamicDetaiVC.xib */; };
+		CBBC0DAD249A490A005CDC7D /* DynamicDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0DAB249A490A005CDC7D /* DynamicDetailVC.m */; };
+		CBBC0DAE249A490A005CDC7D /* DynamicDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC0DAC249A490A005CDC7D /* DynamicDetailVC.xib */; };
 		CBBC0DB2249A49C3005CDC7D /* DynamicDetailContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0DB0249A49C3005CDC7D /* DynamicDetailContentCell.m */; };
 		CBBC0DB3249A49C3005CDC7D /* DynamicDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC0DB1249A49C3005CDC7D /* DynamicDetailContentCell.xib */; };
 		CBBC0DB7249A4A6A005CDC7D /* DynamicDetailCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0DB5249A4A6A005CDC7D /* DynamicDetailCommentCell.m */; };
@@ -170,6 +170,8 @@
 		CBC9BCA3249CEFCD007A6B54 /* CheckInSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC9BCA2249CEFCD007A6B54 /* CheckInSuccessView.xib */; };
 		CBD33D08249D1B050092CBDE /* CommunityDynamicListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD33D06249D1B040092CBDE /* CommunityDynamicListModel.m */; };
 		CBD33D0B249D9E960092CBDE /* CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD33D0A249D9E960092CBDE /* CoverView.m */; };
+		CBD33D0F249E112F0092CBDE /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD33D0D249E112F0092CBDE /* FeedbackVC.m */; };
+		CBD33D10249E112F0092CBDE /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD33D0E249E112F0092CBDE /* FeedbackVC.xib */; };
 		CBEFF5BE2497579F0029AE26 /* HomeFourBtnVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */; };
 		CBEFF5C2249758310029AE26 /* HomeCalendarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF5C0249758310029AE26 /* HomeCalendarVC.m */; };
 		CBEFF5C3249758310029AE26 /* HomeCalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEFF5C1249758310029AE26 /* HomeCalendarVC.xib */; };
@@ -441,9 +443,9 @@
 		CBBC0D8B2499C678005CDC7D /* MineLikeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineLikeCell.h; sourceTree = "<group>"; };
 		CBBC0D8C2499C678005CDC7D /* MineLikeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineLikeCell.m; sourceTree = "<group>"; };
 		CBBC0D8D2499C678005CDC7D /* MineLikeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineLikeCell.xib; sourceTree = "<group>"; };
-		CBBC0DAA249A490A005CDC7D /* DynamicDetaiVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicDetaiVC.h; sourceTree = "<group>"; };
-		CBBC0DAB249A490A005CDC7D /* DynamicDetaiVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicDetaiVC.m; sourceTree = "<group>"; };
-		CBBC0DAC249A490A005CDC7D /* DynamicDetaiVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicDetaiVC.xib; sourceTree = "<group>"; };
+		CBBC0DAA249A490A005CDC7D /* DynamicDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicDetailVC.h; sourceTree = "<group>"; };
+		CBBC0DAB249A490A005CDC7D /* DynamicDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicDetailVC.m; sourceTree = "<group>"; };
+		CBBC0DAC249A490A005CDC7D /* DynamicDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicDetailVC.xib; sourceTree = "<group>"; };
 		CBBC0DAF249A49C3005CDC7D /* DynamicDetailContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicDetailContentCell.h; sourceTree = "<group>"; };
 		CBBC0DB0249A49C3005CDC7D /* DynamicDetailContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicDetailContentCell.m; sourceTree = "<group>"; };
 		CBBC0DB1249A49C3005CDC7D /* DynamicDetailContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicDetailContentCell.xib; sourceTree = "<group>"; };
@@ -475,6 +477,9 @@
 		CBD33D07249D1B050092CBDE /* CommunityDynamicListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityDynamicListModel.h; sourceTree = "<group>"; };
 		CBD33D09249D9E960092CBDE /* CoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoverView.h; sourceTree = "<group>"; };
 		CBD33D0A249D9E960092CBDE /* CoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoverView.m; sourceTree = "<group>"; };
+		CBD33D0C249E112F0092CBDE /* FeedbackVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackVC.h; sourceTree = "<group>"; };
+		CBD33D0D249E112F0092CBDE /* FeedbackVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackVC.m; sourceTree = "<group>"; };
+		CBD33D0E249E112F0092CBDE /* FeedbackVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
 		CBEFF5BC2497579F0029AE26 /* HomeFourBtnVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFourBtnVC.h; sourceTree = "<group>"; };
 		CBEFF5BD2497579F0029AE26 /* HomeFourBtnVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFourBtnVC.m; sourceTree = "<group>"; };
 		CBEFF5BF249758310029AE26 /* HomeCalendarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCalendarVC.h; sourceTree = "<group>"; };
@@ -861,9 +866,9 @@
 				CBAD627E2489385C0097BD9D /* CommunityFocusVC.h */,
 				CBAD627F2489385C0097BD9D /* CommunityFocusVC.m */,
 				CBAD62802489385C0097BD9D /* CommunityFocusVC.xib */,
-				CBBC0DAA249A490A005CDC7D /* DynamicDetaiVC.h */,
-				CBBC0DAB249A490A005CDC7D /* DynamicDetaiVC.m */,
-				CBBC0DAC249A490A005CDC7D /* DynamicDetaiVC.xib */,
+				CBBC0DAA249A490A005CDC7D /* DynamicDetailVC.h */,
+				CBBC0DAB249A490A005CDC7D /* DynamicDetailVC.m */,
+				CBBC0DAC249A490A005CDC7D /* DynamicDetailVC.xib */,
 				CBBC0DC1249B34D2005CDC7D /* PublishVC.h */,
 				CBBC0DC2249B34D2005CDC7D /* PublishVC.m */,
 				CBBC0DC3249B34D2005CDC7D /* PublishVC.xib */,
@@ -977,6 +982,9 @@
 				CBC9BC8E249C579B007A6B54 /* CheckInVC.h */,
 				CBC9BC8F249C579B007A6B54 /* CheckInVC.m */,
 				CBC9BC90249C579B007A6B54 /* CheckInVC.xib */,
+				CBD33D0C249E112F0092CBDE /* FeedbackVC.h */,
+				CBD33D0D249E112F0092CBDE /* FeedbackVC.m */,
+				CBD33D0E249E112F0092CBDE /* FeedbackVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1135,6 +1143,7 @@
 				CB3B995524987933006F3256 /* HomeNewsBannerCell.xib in Resources */,
 				CBAD629D2489E55C0097BD9D /* CommunityTopicCollectionCell.xib in Resources */,
 				CBAD628C248950140097BD9D /* CommunityHeaderCell.xib in Resources */,
+				CBD33D10249E112F0092CBDE /* FeedbackVC.xib in Resources */,
 				CBAD627D2489384C0097BD9D /* CommunityPopularVC.xib in Resources */,
 				18140316248783BD00CA3E92 /* MineVC.xib in Resources */,
 				CBA74A9B24921D760038CA59 /* MineDynamicHeaderView.xib in Resources */,
@@ -1151,7 +1160,7 @@
 				CBEFF5C8249758520029AE26 /* HomeBusinessVC.xib in Resources */,
 				1814022C24876C6700CA3E92 /* Assets.xcassets in Resources */,
 				CB3B994B24985C1E006F3256 /* HomeBusinessCell.xib in Resources */,
-				CBBC0DAE249A490A005CDC7D /* DynamicDetaiVC.xib in Resources */,
+				CBBC0DAE249A490A005CDC7D /* DynamicDetailVC.xib in Resources */,
 				CB3B995F24988EEC006F3256 /* HomeNewsTimeCell.xib in Resources */,
 				CBAD62B1248A2A320097BD9D /* CommunityDynamicCell.xib in Resources */,
 				CBBC0DC5249B34D2005CDC7D /* PublishVC.xib in Resources */,
@@ -1218,6 +1227,7 @@
 				CBA74AC22494DA140038CA59 /* DynamicListVC.m in Sources */,
 				181402CD248779DA00CA3E92 /* EGHViewsTool.m in Sources */,
 				CBAD6293248957E10097BD9D /* MineUserModel.m in Sources */,
+				CBD33D0F249E112F0092CBDE /* FeedbackVC.m in Sources */,
 				181402E0248779DA00CA3E92 /* ZCBaseView.m in Sources */,
 				CBBC0DC4249B34D2005CDC7D /* PublishVC.m in Sources */,
 				CBBC0DCB249B4392005CDC7D /* UITextView+WZB.m in Sources */,
@@ -1300,7 +1310,7 @@
 				181402D6248779DA00CA3E92 /* ENDNetWorkDELETE.m in Sources */,
 				181402FB248779DA00CA3E92 /* ListViewController.m in Sources */,
 				CBAD6290248957AF0097BD9D /* UserModel.m in Sources */,
-				CBBC0DAD249A490A005CDC7D /* DynamicDetaiVC.m in Sources */,
+				CBBC0DAD249A490A005CDC7D /* DynamicDetailVC.m in Sources */,
 				181403102487838200CA3E92 /* CommunityVC.m in Sources */,
 				181402EF248779DA00CA3E92 /* BusinessProcess.m in Sources */,
 				CBEFF5C2249758310029AE26 /* HomeCalendarVC.m in Sources */,

@@ -502,7 +502,6 @@
                 weakSelf.hasCheckedIn = YES;
             }
         }
-        NSLog(@"datesArray:%@",weakSelf.datesArray);
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求签到记录失败" afterHideTime:DELAYTiME];

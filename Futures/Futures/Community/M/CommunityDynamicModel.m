@@ -14,13 +14,14 @@
 
 + (NSDictionary*) JSONKeyPathsByPropertyKey{
     return @{
-             NSStringFromSelector(@selector(content)):@"content",
-             NSStringFromSelector(@selector(picture)):@"picture",
-             NSStringFromSelector(@selector(publishTime)):@"publishTime",
-             NSStringFromSelector(@selector(zanCount)):@"zanCount",
-             NSStringFromSelector(@selector(commentCount)):@"commentCount",
-             NSStringFromSelector(@selector(user)):@"user",
-             };
+        NSStringFromSelector(@selector(talkId)):@"id",
+        NSStringFromSelector(@selector(content)):@"content",
+        NSStringFromSelector(@selector(picture)):@"picture",
+        NSStringFromSelector(@selector(publishTime)):@"publishTime",
+        NSStringFromSelector(@selector(zanCount)):@"zanCount",
+        NSStringFromSelector(@selector(commentCount)):@"commentCount",
+        NSStringFromSelector(@selector(user)):@"user",
+    };
 }
 
 +(NSValueTransformer *)userJSONTransformer{

@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CommunityDynamicModel : BaseModel
 
+@property (nonatomic, strong)NSNumber *talkId;
 @property (nonatomic, copy)NSString *content;
 @property (nonatomic, copy)NSString *picture;
 @property (nonatomic, assign)double publishTime;

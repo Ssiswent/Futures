@@ -13,7 +13,7 @@
 #import "CommunityDynamicModel.h"
 #import "CommentModel.h"
 
-#import "DynamicDetaiVC.h"
+#import "DynamicDetailVC.h"
 
 @interface DynamicListVC () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, copy) void(^scrollCallback)(UIScrollView *scrollView);
@@ -115,9 +115,9 @@ NSString *MineDynamicCellID = @"MineDynamicCell";
     CommunityDynamicModel *dynamicModel = self.dataSource[indexPath.row];
     dynamicModel.commentArray = temp;
     
-    DynamicDetaiVC *dynamicDetaiVC = DynamicDetaiVC.new;
-    dynamicDetaiVC.dynamicModel = dynamicModel;
-    [self.navigationController pushViewController:dynamicDetaiVC animated:YES];
+    DynamicDetailVC *dynamicDetailVC = DynamicDetailVC.new;
+    dynamicDetailVC.dynamicModel = dynamicModel;
+    [self.navigationController pushViewController:dynamicDetailVC animated:YES];
 }
 
 #pragma mark - JXPagingViewListViewDelegate

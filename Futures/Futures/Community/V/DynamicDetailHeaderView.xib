@@ -39,10 +39,11 @@
                         <constraint firstAttribute="width" constant="7.5" id="sOT-4i-c2j"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="105" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-IF-MnH" userLabel="CommentCountLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-IF-MnH" userLabel="CommentCountLabel">
                     <rect key="frame" x="55" y="17" width="16" height="7"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="7" id="n9f-Cm-Lmx"/>
+                        <constraint firstAttribute="width" constant="16" id="zb4-q2-5vf"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <color key="textColor" red="0.37647601959999999" green="0.37646073099999999" blue="0.37647110220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -69,6 +70,7 @@
                     <rect key="frame" x="141" y="17" width="16" height="7"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="7" id="MtP-Cj-7yw"/>
+                        <constraint firstAttribute="width" constant="16" id="b7t-CU-v0B"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <color key="textColor" red="0.37647601959999999" green="0.37646073099999999" blue="0.37647110220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -95,6 +97,7 @@
                     <rect key="frame" x="227" y="17" width="16" height="7"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="7" id="CKO-j7-B6v"/>
+                        <constraint firstAttribute="width" constant="16" id="aix-ef-807"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <color key="textColor" red="0.37647601959999999" green="0.37646073099999999" blue="0.37647110220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

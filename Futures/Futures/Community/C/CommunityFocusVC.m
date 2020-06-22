@@ -13,7 +13,7 @@
 #import "CommunityDynamicModel.h"
 #import "CommentModel.h"
 
-#import "DynamicDetaiVC.h"
+#import "DynamicDetailVC.h"
 #import "PublishVC.h"
 
 @interface CommunityFocusVC ()<UITableViewDataSource, UITableViewDelegate>
@@ -142,9 +142,9 @@ NSString *CommunityDynamicCellID1 = @"CommunityDynamicCell1";
     CommunityDynamicModel *dynamicModel = self.dynamicsArray[indexPath.row];
     dynamicModel.commentArray = temp;
     
-    DynamicDetaiVC *dynamicDetaiVC = DynamicDetaiVC.new;
-    dynamicDetaiVC.dynamicModel = dynamicModel;
-    [self.navigationController pushViewController:dynamicDetaiVC animated:YES];
+    DynamicDetailVC *dynamicDetailVC = DynamicDetailVC.new;
+    dynamicDetailVC.dynamicModel = dynamicModel;
+    [self.navigationController pushViewController:dynamicDetailVC animated:YES];
     
 }
 

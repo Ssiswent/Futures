@@ -32,6 +32,12 @@
     [super awakeFromNib];
     _lineView.layer.cornerRadius = 1.5;
     _lineView.layer.masksToBounds = YES;
+    
+    //随机转发、点赞数
+    int count1 = arc4random() % 21;
+    int count2 = arc4random() % 21;
+    _shareCountLabel.text = [NSString stringWithFormat:@"%d",count1];
+    _likeCountLabel.text = [NSString stringWithFormat:@"%d",count2];
 }
 
 - (IBAction)commentBtnClicked:(id)sender {

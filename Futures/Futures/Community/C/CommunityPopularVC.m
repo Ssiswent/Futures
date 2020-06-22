@@ -19,12 +19,12 @@
 #import "CommentModel.h"
 #import "CommunityDynamicListModel.h"
 
-#import "DynamicDetaiVC.h"
+#import "DynamicDetailVC.h"
 #import "PublishVC.h"
 
 #import <MJRefresh.h>
 
-@interface CommunityPopularVC ()<UITableViewDataSource, UITableViewDelegate, CommunityFocusCellDelegate>
+@interface CommunityPopularVC ()<UITableViewDataSource, UITableViewDelegate, CommunityFocusCellDelegate, DynamicDetailVCDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *publishBtn;
 @property (weak, nonatomic) IBOutlet UITableView *popularTableView;
@@ -41,6 +41,9 @@
 
 @property (assign, nonatomic) NSInteger numberOfSections;
 
+@property (strong, nonatomic) NSNumber *shieldId;
+@property (strong, nonatomic) NSNumber *userId;
+
 @end
 
 @implementation CommunityPopularVC
@@ -49,8 +52,8 @@
 {
     if(_dynamicsArray == nil)
     {
-        NSMutableArray *array = NSMutableArray.new;
-        _dynamicsArray = array;
+        NSMutableArray *temp = NSMutableArray.new;
+        _dynamicsArray = temp;
     }
     return _dynamicsArray;
 }
@@ -61,6 +64,7 @@ NSString *CommunityFocusCellID = @"CommunityFocusCell";
 NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 
 - (void)viewDidLoad {
+    [self getUserDefault];
     [self registerTableView];
     [self getDynamics];
     [self getComments];
@@ -69,8 +73,18 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
     [self setMJRefresh];
 }
 
+- (void)getUserDefault
+{
+    //获取用户偏好
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    //读取userId
+    NSNumber *userId = [userDefault objectForKey:@"userId"];
+    _userId = userId;
+}
+
 - (void)setMJRefresh
 {
+    //下拉刷新
     _popularTableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             WEAKSELF
             weakSelf.loadMore = NO;
@@ -82,7 +96,7 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
         // 设置自动切换透明度(在导航栏下面自动隐藏)
         _popularTableView.mj_header.automaticallyChangeAlpha = NO;
         
-        // 上拉刷新
+        // 上拉加载
         _popularTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
             WEAKSELF
             weakSelf.loadMore = YES;
@@ -132,6 +146,27 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 {
     _numberOfSections = 3;
     [self.popularTableView deleteSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+#pragma mark - DynamicDetailVCDelegate
+
+- (void)DynamicDetailVCDidClickShieldBtn:(DynamicDetailVC *)dynamicDetailVC shieldNum:(NSInteger)shieldNum
+{
+    CommunityDynamicModel *blockDynamicModel = self.dynamicsArray[shieldNum];
+    _shieldId = blockDynamicModel.talkId;
+    if(_userId != nil)
+    {
+        [self blockDynamic];
+    }
+    [self.dynamicsArray removeObjectAtIndex:shieldNum];
+    if(_numberOfSections == 4)
+    {
+        [self.popularTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:shieldNum inSection:3]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    else
+    {
+        [self.popularTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:shieldNum inSection:2]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 #pragma mark - TableViewDataSource
@@ -344,9 +379,11 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
             CommunityDynamicModel *dynamicModel = self.dynamicsArray[indexPath.row];
             dynamicModel.commentArray = temp;
             
-            DynamicDetaiVC *dynamicDetaiVC = DynamicDetaiVC.new;
-            dynamicDetaiVC.dynamicModel = dynamicModel;
-            [self.navigationController pushViewController:dynamicDetaiVC animated:YES];
+            DynamicDetailVC *dynamicDetailVC = DynamicDetailVC.new;
+            dynamicDetailVC.dynamicModel = dynamicModel;
+            dynamicDetailVC.delegate = self;
+            dynamicDetailVC.cellNum = indexPath.row;
+            [self.navigationController pushViewController:dynamicDetailVC animated:YES];
         }
     }
     else
@@ -367,9 +404,11 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
             CommunityDynamicModel *dynamicModel = self.dynamicsArray[indexPath.row];
             dynamicModel.commentArray = temp;
             
-            DynamicDetaiVC *dynamicDetaiVC = DynamicDetaiVC.new;
-            dynamicDetaiVC.dynamicModel = dynamicModel;
-            [self.navigationController pushViewController:dynamicDetaiVC animated:YES];
+            DynamicDetailVC *dynamicDetailVC = DynamicDetailVC.new;
+            dynamicDetailVC.dynamicModel = dynamicModel;
+            dynamicDetailVC.cellNum = indexPath.row;
+            dynamicDetailVC.delegate = self;
+            [self.navigationController pushViewController:dynamicDetailVC animated:YES];
         }
     }
     
@@ -387,7 +426,7 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
             [weakSelf.dynamicsArray removeAllObjects];
         }
         [weakSelf.dynamicsArray addObjectsFromArray:weakSelf.listModel.dynamicsArray];
-        [weakSelf.popularTableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationFade];
+        [weakSelf.popularTableView reloadSections:[NSIndexSet indexSetWithIndex:3] withRowAnimation:UITableViewRowAnimationAutomatic];
         if (!weakSelf.loadMore) {
             [weakSelf.popularTableView.mj_header endRefreshing];
         }
@@ -424,6 +463,20 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求评论失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)blockDynamic{
+    WEAKSELF
+    NSDictionary *dic = @{
+        @"userId":_userId,
+        @"data":_shieldId,
+        @"type":@2
+    };
+    [ENDNetWorkManager postWithPathUrl:@"/user/personal/block" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"屏蔽失败" afterHideTime:DELAYTiME];
     }];
 }
 

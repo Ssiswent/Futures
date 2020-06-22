@@ -11,6 +11,7 @@
 #import "LoginVC.h"
 #import "AccountSwitchVC.h"
 #import "MineEditVC.h"
+#import "FeedbackVC.h"
 
 #import "MineSettingsCell.h"
 
@@ -18,7 +19,7 @@
 
 #import "CustomTBC.h"
 
-@interface MineSettingsVC ()<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, LoginVCDelegate, AccountSwitchVCDelegate>
+@interface MineSettingsVC ()<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, LoginVCDelegate, AccountSwitchVCDelegate, FeedbackVCDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
 
 @end
@@ -198,6 +199,27 @@ NSString *MineSettingsCellID = @"MineSettingsCell";
                 [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
             }
         }
+        if(indexPath.row == 2)
+        {
+            if(userId != nil)
+            {
+                FeedbackVC *feedbackVC = FeedbackVC.new;
+                feedbackVC.titleStr = @"反馈中心";
+                feedbackVC.tag1Str = @"功能建议";
+                feedbackVC.tag2Str = @"bug";
+                feedbackVC.delegate = self;
+                [self.navigationController pushViewController:feedbackVC animated:YES];
+            }
+            else
+            {
+                LoginVC *loginVC = [LoginVC new];
+                loginVC.delegate = self;
+                //        loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+                [self presentViewController:loginVC animated:YES completion:nil];
+                [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
+            }
+        }
+        
     }
     if(indexPath.section == 1)
     {
@@ -223,6 +245,12 @@ NSString *MineSettingsCellID = @"MineSettingsCell";
 - (void)accountSwitchVCDidGetUser:(AccountSwitchVC *)accountSwitchVC
 {
     [self.settingsTableView reloadData];
+}
+
+#pragma mark - FeedbackVCDelegate
+- (void)FeedbackVCDidSuccessFeedback:(FeedbackVC *)feedbackVC
+{
+    [Toast makeText:self.view Message:@"反馈成功" afterHideTime:DELAYTiME];
 }
 
 @end
