@@ -79,5 +79,12 @@
     }];
 }
 
+- (IBAction)commentBtn:(id)sender {
+    WEAKSELF
+    if(weakSelf.block)
+        {
+            weakSelf.block();
+        }
+}
 
 @end

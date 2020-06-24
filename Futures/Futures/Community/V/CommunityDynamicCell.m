@@ -164,7 +164,7 @@
         _likeCountLabel.textColor = [UIColor colorWithHexString:@"#AAAAAA"];
     }
     
-    _commentCountLabel.text =  [NSString stringWithFormat:@"%ld",(long)dynamicModel.commentCount];
+//    _commentCountLabel.text =  [NSString stringWithFormat:@"%ld",(long)dynamicModel.commentCount];
 }
 
 @end

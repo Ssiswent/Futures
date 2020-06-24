@@ -68,8 +68,6 @@
 		CB03386F2498B346008060A0 /* MineEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03386C2498B345008060A0 /* MineEditVC.m */; };
 		CB0338732498B3D9008060A0 /* MineInformationSignatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0338702498B3D9008060A0 /* MineInformationSignatureView.xib */; };
 		CB0338742498B3D9008060A0 /* MineInformationSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0338722498B3D9008060A0 /* MineInformationSignatureView.m */; };
-		CB03387B2498B5DE008060A0 /* MineInformationNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0338782498B5DE008060A0 /* MineInformationNameView.m */; };
-		CB03387C2498B5DE008060A0 /* MineInformationNameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0338792498B5DE008060A0 /* MineInformationNameView.xib */; };
 		CB0338822498B91E008060A0 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0338812498B91E008060A0 /* NetworkTool.swift */; };
 		CB0338862498BE25008060A0 /* MineInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0338842498BE25008060A0 /* MineInformationCell.m */; };
 		CB0338872498BE25008060A0 /* MineInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0338852498BE25008060A0 /* MineInformationCell.xib */; };
@@ -92,6 +90,9 @@
 		CB3B995F24988EEC006F3256 /* HomeNewsTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB3B995D24988EEC006F3256 /* HomeNewsTimeCell.xib */; };
 		CB6DA4CC2490AF06007D5131 /* MineCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6DA4C92490AF06007D5131 /* MineCodeView.xib */; };
 		CB6DA4CD2490AF06007D5131 /* MineCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6DA4CB2490AF06007D5131 /* MineCodeView.m */; };
+		CB780AE824A31C100016E695 /* HomeNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB780AE624A31C100016E695 /* HomeNewsModel.m */; };
+		CB780AEC24A32EDC0016E695 /* MineInformationNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB780AE924A32EDC0016E695 /* MineInformationNameView.m */; };
+		CB780AED24A32EDC0016E695 /* MineInformationNameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB780AEB24A32EDC0016E695 /* MineInformationNameView.xib */; };
 		CBA5A340248F6E76003BA799 /* MineSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5A33E248F6E76003BA799 /* MineSettingsVC.m */; };
 		CBA5A341248F6E76003BA799 /* MineSettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA5A33F248F6E76003BA799 /* MineSettingsVC.xib */; };
 		CBA5A345248F6FE6003BA799 /* MineSettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5A343248F6FE6003BA799 /* MineSettingsCell.m */; };
@@ -119,7 +120,6 @@
 		CBAD626A2488F7350097BD9D /* HomeGoldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD62682488F7350097BD9D /* HomeGoldCell.xib */; };
 		CBAD626E24891DCF0097BD9D /* HomeNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD626C24891DCF0097BD9D /* HomeNewsCell.m */; };
 		CBAD626F24891DCF0097BD9D /* HomeNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD626D24891DCF0097BD9D /* HomeNewsCell.xib */; };
-		CBAD6272248923B10097BD9D /* HomeNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD6271248923B10097BD9D /* HomeNewsModel.m */; };
 		CBAD627C2489384C0097BD9D /* CommunityPopularVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD627A2489384C0097BD9D /* CommunityPopularVC.m */; };
 		CBAD627D2489384C0097BD9D /* CommunityPopularVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAD627B2489384C0097BD9D /* CommunityPopularVC.xib */; };
 		CBAD62812489385C0097BD9D /* CommunityFocusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD627F2489385C0097BD9D /* CommunityFocusVC.m */; };
@@ -315,9 +315,6 @@
 		CB0338702498B3D9008060A0 /* MineInformationSignatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineInformationSignatureView.xib; sourceTree = "<group>"; };
 		CB0338712498B3D9008060A0 /* MineInformationSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineInformationSignatureView.h; sourceTree = "<group>"; };
 		CB0338722498B3D9008060A0 /* MineInformationSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineInformationSignatureView.m; sourceTree = "<group>"; };
-		CB0338782498B5DE008060A0 /* MineInformationNameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineInformationNameView.m; path = "../../../../../../团队项目/futures/futures/futures/Mine/V/MineInformationNameView.m"; sourceTree = "<group>"; };
-		CB0338792498B5DE008060A0 /* MineInformationNameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MineInformationNameView.xib; path = "../../../../../../团队项目/futures/futures/futures/Mine/V/MineInformationNameView.xib"; sourceTree = "<group>"; };
-		CB03387A2498B5DE008060A0 /* MineInformationNameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineInformationNameView.h; path = "../../../../../../团队项目/futures/futures/futures/Mine/V/MineInformationNameView.h"; sourceTree = "<group>"; };
 		CB0338802498B91D008060A0 /* Futures-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Futures-Bridging-Header.h"; sourceTree = "<group>"; };
 		CB0338812498B91E008060A0 /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		CB0338832498BE25008060A0 /* MineInformationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineInformationCell.h; sourceTree = "<group>"; };
@@ -352,6 +349,11 @@
 		CB6DA4C92490AF06007D5131 /* MineCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineCodeView.xib; sourceTree = "<group>"; };
 		CB6DA4CA2490AF06007D5131 /* MineCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCodeView.h; sourceTree = "<group>"; };
 		CB6DA4CB2490AF06007D5131 /* MineCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCodeView.m; sourceTree = "<group>"; };
+		CB780AE624A31C100016E695 /* HomeNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNewsModel.m; sourceTree = "<group>"; };
+		CB780AE724A31C100016E695 /* HomeNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNewsModel.h; sourceTree = "<group>"; };
+		CB780AE924A32EDC0016E695 /* MineInformationNameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineInformationNameView.m; sourceTree = "<group>"; };
+		CB780AEA24A32EDC0016E695 /* MineInformationNameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineInformationNameView.h; sourceTree = "<group>"; };
+		CB780AEB24A32EDC0016E695 /* MineInformationNameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineInformationNameView.xib; sourceTree = "<group>"; };
 		CBA5A33D248F6E76003BA799 /* MineSettingsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineSettingsVC.h; sourceTree = "<group>"; };
 		CBA5A33E248F6E76003BA799 /* MineSettingsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineSettingsVC.m; sourceTree = "<group>"; };
 		CBA5A33F248F6E76003BA799 /* MineSettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineSettingsVC.xib; sourceTree = "<group>"; };
@@ -394,8 +396,6 @@
 		CBAD626B24891DCF0097BD9D /* HomeNewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeNewsCell.h; sourceTree = "<group>"; };
 		CBAD626C24891DCF0097BD9D /* HomeNewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeNewsCell.m; sourceTree = "<group>"; };
 		CBAD626D24891DCF0097BD9D /* HomeNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNewsCell.xib; sourceTree = "<group>"; };
-		CBAD6270248923B10097BD9D /* HomeNewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HomeNewsModel.h; path = Futures/Home/V/HomeNewsModel.h; sourceTree = SOURCE_ROOT; };
-		CBAD6271248923B10097BD9D /* HomeNewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HomeNewsModel.m; path = Futures/Home/V/HomeNewsModel.m; sourceTree = SOURCE_ROOT; };
 		CBAD62792489384C0097BD9D /* CommunityPopularVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunityPopularVC.h; sourceTree = "<group>"; };
 		CBAD627A2489384C0097BD9D /* CommunityPopularVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunityPopularVC.m; sourceTree = "<group>"; };
 		CBAD627B2489384C0097BD9D /* CommunityPopularVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityPopularVC.xib; sourceTree = "<group>"; };
@@ -548,12 +548,13 @@
 				1814022D24876C6700CA3E92 /* LaunchScreen.storyboard */,
 				1814023024876C6700CA3E92 /* Info.plist */,
 				1814023124876C6700CA3E92 /* main.m */,
-				18140239248779D900CA3E92 /* SupportFile */,
+				CB0338802498B91D008060A0 /* Futures-Bridging-Header.h */,
+				18140239248779D900CA3E92 /* SupportFiles */,
 			);
 			path = Futures;
 			sourceTree = "<group>";
 		};
-		18140239248779D900CA3E92 /* SupportFile */ = {
+		18140239248779D900CA3E92 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
 				18140265248779D900CA3E92 /* Category */,
@@ -564,9 +565,8 @@
 				18140245248779D900CA3E92 /* Tools */,
 				181402C5248779DA00CA3E92 /* PrefixHeader.pch */,
 				CB0338812498B91E008060A0 /* NetworkTool.swift */,
-				CB0338802498B91D008060A0 /* Futures-Bridging-Header.h */,
 			);
-			path = SupportFile;
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		18140245248779D900CA3E92 /* Tools */ = {
@@ -741,7 +741,7 @@
 		181403052487826300CA3E92 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				1814031924879B9600CA3E92 /* M */,
+				CB780AE524A31BBC0016E695 /* M */,
 				1814031824879B8D00CA3E92 /* V */,
 				1814031724879B8200CA3E92 /* C */,
 			);
@@ -838,21 +838,21 @@
 			path = V;
 			sourceTree = "<group>";
 		};
-		1814031924879B9600CA3E92 /* M */ = {
-			isa = PBXGroup;
-			children = (
-				CBAD6270248923B10097BD9D /* HomeNewsModel.h */,
-				CBAD6271248923B10097BD9D /* HomeNewsModel.m */,
-			);
-			path = M;
-			sourceTree = "<group>";
-		};
 		6CFCC60E6A34E5D8BDE26A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				093094F2C929266EE6142479 /* Pods_Futures.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB780AE524A31BBC0016E695 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				CB780AE724A31C100016E695 /* HomeNewsModel.h */,
+				CB780AE624A31C100016E695 /* HomeNewsModel.m */,
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 		CBAD6273248937B40097BD9D /* C */ = {
@@ -977,11 +977,11 @@
 				CBBC0D822499C217005CDC7D /* MineLikeChildAVC.m */,
 				CBBC0D832499C217005CDC7D /* MineLikeChildAVC.xib */,
 				CBBC0D862499C225005CDC7D /* MineLikeChildBVC.h */,
-				CBBC0D872499C225005CDC7D /* MineLikeChildBVC.m */,
 				CBBC0D882499C225005CDC7D /* MineLikeChildBVC.xib */,
 				CBC9BC8E249C579B007A6B54 /* CheckInVC.h */,
 				CBC9BC8F249C579B007A6B54 /* CheckInVC.m */,
 				CBC9BC90249C579B007A6B54 /* CheckInVC.xib */,
+				CBBC0D872499C225005CDC7D /* MineLikeChildBVC.m */,
 				CBD33D0C249E112F0092CBDE /* FeedbackVC.h */,
 				CBD33D0D249E112F0092CBDE /* FeedbackVC.m */,
 				CBD33D0E249E112F0092CBDE /* FeedbackVC.xib */,
@@ -992,6 +992,9 @@
 		CBEC542A248B3AE300B3D94C /* V */ = {
 			isa = PBXGroup;
 			children = (
+				CB780AEA24A32EDC0016E695 /* MineInformationNameView.h */,
+				CB780AE924A32EDC0016E695 /* MineInformationNameView.m */,
+				CB780AEB24A32EDC0016E695 /* MineInformationNameView.xib */,
 				CBA5A342248F6FE6003BA799 /* MineSettingsCell.h */,
 				CBA5A343248F6FE6003BA799 /* MineSettingsCell.m */,
 				CBA5A344248F6FE6003BA799 /* MineSettingsCell.xib */,
@@ -1001,9 +1004,6 @@
 				CBA74A9724921C810038CA59 /* MineDynamicHeaderView.h */,
 				CBA74A9824921C810038CA59 /* MineDynamicHeaderView.m */,
 				CBA74A9A24921D760038CA59 /* MineDynamicHeaderView.xib */,
-				CB03387A2498B5DE008060A0 /* MineInformationNameView.h */,
-				CB0338782498B5DE008060A0 /* MineInformationNameView.m */,
-				CB0338792498B5DE008060A0 /* MineInformationNameView.xib */,
 				CB0338712498B3D9008060A0 /* MineInformationSignatureView.h */,
 				CB0338722498B3D9008060A0 /* MineInformationSignatureView.m */,
 				CB0338702498B3D9008060A0 /* MineInformationSignatureView.xib */,
@@ -1124,7 +1124,6 @@
 				1814022F24876C6700CA3E92 /* LaunchScreen.storyboard in Resources */,
 				CBF7D4782499AF7000A7761A /* MineMessagesVC.xib in Resources */,
 				CB3B995A24988E7A006F3256 /* HomeFastNewsCell.xib in Resources */,
-				CB03387C2498B5DE008060A0 /* MineInformationNameView.xib in Resources */,
 				CBF7D47D2499B9EA00A7761A /* MineCollectionVC.xib in Resources */,
 				1814030C2487836D00CA3E92 /* HomeVC.xib in Resources */,
 				CB6DA4CC2490AF06007D5131 /* MineCodeView.xib in Resources */,
@@ -1148,6 +1147,7 @@
 				18140316248783BD00CA3E92 /* MineVC.xib in Resources */,
 				CBA74A9B24921D760038CA59 /* MineDynamicHeaderView.xib in Resources */,
 				CB03389124990244008060A0 /* MineFocusAndFansVC.xib in Resources */,
+				CB780AED24A32EDC0016E695 /* MineInformationNameView.xib in Resources */,
 				CBAD625B2488E6410097BD9D /* HomeFourBtnCell.xib in Resources */,
 				CBAD62822489385C0097BD9D /* CommunityFocusVC.xib in Resources */,
 				CBA5A34E248FD5F6003BA799 /* LoginVC.xib in Resources */,
@@ -1255,6 +1255,7 @@
 				CB0338822498B91E008060A0 /* NetworkTool.swift in Sources */,
 				CB0338862498BE25008060A0 /* MineInformationCell.m in Sources */,
 				181402E7248779DA00CA3E92 /* YKViewBase.m in Sources */,
+				CB780AEC24A32EDC0016E695 /* MineInformationNameView.m in Sources */,
 				181402EB248779DA00CA3E92 /* ZCManage.m in Sources */,
 				CBAD625F2488F1B60097BD9D /* HomeCheckInCell.m in Sources */,
 				181402DB248779DA00CA3E92 /* UIImage+OriginalImage.m in Sources */,
@@ -1283,6 +1284,7 @@
 				CBBC0DC0249AF7D5005CDC7D /* CommentModel.m in Sources */,
 				181402FD248779DA00CA3E92 /* BaseModel.m in Sources */,
 				181402D1248779DA00CA3E92 /* NSString+DealError.m in Sources */,
+				CB780AE824A31C100016E695 /* HomeNewsModel.m in Sources */,
 				CBAD62552488D9C60097BD9D /* HomeBannerCell.m in Sources */,
 				181402CE248779DA00CA3E92 /* StringAndLabelDealTool.m in Sources */,
 				CBC9BC95249C929B007A6B54 /* CheckInModel.m in Sources */,
@@ -1318,14 +1320,12 @@
 				CBAD62A6248A0F5C0097BD9D /* CommunityFocusCell.m in Sources */,
 				CBA5A345248F6FE6003BA799 /* MineSettingsCell.m in Sources */,
 				CBEFF5BE2497579F0029AE26 /* HomeFourBtnVC.m in Sources */,
-				CBAD6272248923B10097BD9D /* HomeNewsModel.m in Sources */,
 				CBD33D08249D1B050092CBDE /* CommunityDynamicListModel.m in Sources */,
 				181402FA248779DA00CA3E92 /* CustomTBC.m in Sources */,
 				181402E6248779DA00CA3E92 /* QHDHHeadCollectionViewCell.m in Sources */,
 				CBAD626E24891DCF0097BD9D /* HomeNewsCell.m in Sources */,
 				181402D4248779DA00CA3E92 /* ENDNetWorkPOST.m in Sources */,
 				CBBC0D802499C0DB005CDC7D /* MineLikeVC.m in Sources */,
-				CB03387B2498B5DE008060A0 /* MineInformationNameView.m in Sources */,
 				CBBC0DB7249A4A6A005CDC7D /* DynamicDetailCommentCell.m in Sources */,
 				181402CC248779DA00CA3E92 /* ENDGradientLabel.m in Sources */,
 				181402CB248779DA00CA3E92 /* TimerTool.m in Sources */,
@@ -1482,7 +1482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A84QXBXH2V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Futures/SupportFile/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = Futures/SupportFiles/PrefixHeader.pch;
 				INFOPLIST_FILE = Futures/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1491,7 +1491,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ssiswent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Futures/SupportFile/Futures-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Futures/Futures-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Futures-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1508,7 +1508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A84QXBXH2V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Futures/SupportFile/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = Futures/SupportFiles/PrefixHeader.pch;
 				INFOPLIST_FILE = Futures/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1517,7 +1517,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ssiswent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Futures/SupportFile/Futures-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Futures/Futures-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Futures-Swift.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

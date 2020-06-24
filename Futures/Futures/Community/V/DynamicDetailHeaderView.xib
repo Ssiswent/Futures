@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -110,8 +111,20 @@
                         <constraint firstAttribute="height" constant="0.5" id="Rhy-SA-4Mw"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKd-Hs-XKq">
+                    <rect key="frame" x="306" y="0.0" width="54" height="43.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="54" id="xn9-Cc-7vt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="立即评论"/>
+                    <connections>
+                        <action selector="commentBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="g3d-Bd-Ehn"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="CID-IM-yKV" firstAttribute="top" secondItem="cRI-H9-G9M" secondAttribute="top" id="3SW-Bi-iYI"/>
                 <constraint firstItem="uk9-Xs-8hd" firstAttribute="leading" secondItem="pu9-J2-Gda" secondAttribute="trailing" id="Di0-mR-Pka"/>
@@ -120,6 +133,7 @@
                 <constraint firstItem="2VH-Ul-Wqz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="U1X-a8-MfI"/>
                 <constraint firstItem="Ern-CZ-J6O" firstAttribute="leading" secondItem="CID-IM-yKV" secondAttribute="trailing" id="UDx-C8-g5T"/>
                 <constraint firstAttribute="trailing" secondItem="2VH-Ul-Wqz" secondAttribute="trailing" id="bvm-6a-kcV"/>
+                <constraint firstItem="hKd-Hs-XKq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dU8-GT-atn"/>
                 <constraint firstAttribute="bottom" secondItem="2VH-Ul-Wqz" secondAttribute="bottom" id="eFz-dj-Hj6"/>
                 <constraint firstItem="cRI-H9-G9M" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="fmJ-NV-iSu"/>
                 <constraint firstItem="Ern-CZ-J6O" firstAttribute="bottom" secondItem="CID-IM-yKV" secondAttribute="bottom" constant="-4" id="g2z-M4-NDq"/>
@@ -130,9 +144,10 @@
                 <constraint firstItem="CID-IM-yKV" firstAttribute="leading" secondItem="gq8-IF-MnH" secondAttribute="trailing" constant="30" id="vEs-FL-9cr"/>
                 <constraint firstItem="wXt-qd-Ewa" firstAttribute="top" secondItem="cRI-H9-G9M" secondAttribute="bottom" constant="2" id="vgt-SE-ISd"/>
                 <constraint firstItem="uk9-Xs-8hd" firstAttribute="bottom" secondItem="pu9-J2-Gda" secondAttribute="bottom" constant="-4" id="wMs-Gj-5P0"/>
+                <constraint firstItem="2VH-Ul-Wqz" firstAttribute="top" secondItem="hKd-Hs-XKq" secondAttribute="bottom" id="wfR-4h-jyA"/>
+                <constraint firstAttribute="trailing" secondItem="hKd-Hs-XKq" secondAttribute="trailing" constant="15" id="zsN-d4-eOI"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="commentBtn" destination="cRI-H9-G9M" id="VjH-zZ-hTy"/>
                 <outlet property="commentCountLabel" destination="gq8-IF-MnH" id="2kq-S0-BdR"/>
@@ -145,4 +160,9 @@
             <point key="canvasLocation" x="3.6231884057971016" y="25.446428571428569"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

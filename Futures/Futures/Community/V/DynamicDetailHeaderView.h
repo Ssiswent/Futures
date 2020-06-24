@@ -10,9 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^CommentBtnClickedBlock)(void);
+
 @interface DynamicDetailHeaderView : UIView
 
 + (instancetype)dynamicDetailHeaderView;
+
+@property (nonatomic, copy) CommentBtnClickedBlock block;
 
 @end
 

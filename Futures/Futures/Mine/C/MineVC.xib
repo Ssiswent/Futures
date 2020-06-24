@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,6 +23,7 @@
                 <outlet property="dynamicView" destination="lYg-hP-W20" id="DWF-Na-M3S"/>
                 <outlet property="fansCountLabel" destination="Upp-2b-nNq" id="BMF-R5-CIL"/>
                 <outlet property="fansView" destination="RP5-93-spN" id="uOf-yR-Qga"/>
+                <outlet property="feedbackView" destination="VGy-ZQ-iR2" id="Jc6-z9-fFh"/>
                 <outlet property="focusView" destination="xOQ-Mb-9eV" id="nzQ-dZ-Z0V"/>
                 <outlet property="followsCountLabel" destination="JZk-q7-cPE" id="eNx-fp-i2c"/>
                 <outlet property="levelView" destination="rmK-Rp-F06" id="6Jw-RS-L81"/>
@@ -262,7 +264,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="PhF-TF-DcQ" firstAttribute="leading" secondItem="gRI-Dl-LEY" secondAttribute="leading" constant="16" id="4UM-aa-iKr"/>
                         <constraint firstAttribute="trailing" secondItem="Sc6-bB-k9T" secondAttribute="trailing" id="8ug-YC-HgO"/>
@@ -713,13 +715,14 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3R-o6-iCW" userLabel="BottomView">
                     <rect key="frame" x="0.0" y="847" width="414" height="49"/>
-                    <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="49" id="PMe-ZJ-3ht"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="L3R-o6-iCW" secondAttribute="trailing" id="2Bs-6I-AKp"/>
                 <constraint firstAttribute="bottom" secondItem="L3R-o6-iCW" secondAttribute="bottom" id="3nd-2h-KNc"/>
@@ -743,7 +746,6 @@
                 <constraint firstItem="NlI-sD-s4A" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="s2m-T3-ea3"/>
                 <constraint firstItem="gRI-Dl-LEY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="utl-h3-IWZ"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="137.68115942028987" y="147.99107142857142"/>
         </view>
     </objects>
@@ -765,5 +767,11 @@
         <image name="mine_pwd" width="20" height="20"/>
         <image name="newsHeader" width="4" height="13"/>
         <image name="woman" width="11" height="12"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

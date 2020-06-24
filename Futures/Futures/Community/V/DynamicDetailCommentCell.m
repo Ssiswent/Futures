@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 @property (weak, nonatomic) IBOutlet UIButton *seeAllBtn;
+@property (weak, nonatomic) IBOutlet UIView *replyView;
+@property (weak, nonatomic) IBOutlet UILabel *replyLabel;
+@property (weak, nonatomic) IBOutlet UIView *commentView;
 
 @end
 
@@ -32,16 +35,20 @@
 
 - (void)initialSetup
 {
+    _replyView.layer.cornerRadius = 5;
+    _replyView.layer.masksToBounds = YES;
     
-    UIColor *btnBgNormalColor = [UIColor colorWithHexString:@"#E9E9E9"];
-    UIImage *btnBgNormalImg = [UIImage imageWithColor:btnBgNormalColor];
-    [_seeAllBtn setBackgroundImage:btnBgNormalImg forState:UIControlStateNormal];
-    _seeAllBtn.layer.cornerRadius = 5;
-    _seeAllBtn.layer.masksToBounds = YES;
     _avatarImgView.layer.cornerRadius = 15;
     _avatarImgView.layer.masksToBounds = YES;
     
-//    [_seeAllBtn setTitle:@"查看全部999条回复" forState:UIControlStateNormal];
+    //    [_seeAllBtn setTitle:@"查看全部999条回复" forState:UIControlStateNormal];
+    
+    NSMutableAttributedString * attributedText = [[NSMutableAttributedString alloc] initWithString:@"squall回复@价值荣耀：我估计，肯定有效，不过， 如果，换成其他人，出于人道主义，就给了，遇..."];
+    // 改变文字颜色
+    [attributedText setAttributes:@{NSForegroundColorAttributeName :[UIColor colorWithHexString:@"#293AFF"]} range:NSMakeRange(0, 6)];
+    // 改变文字颜色
+    [attributedText setAttributes:@{NSForegroundColorAttributeName :[UIColor colorWithHexString:@"#293AFF"]} range:NSMakeRange(8, 5)];
+    _replyLabel.attributedText = attributedText;
 }
 
 - (void)setCommentModel:(CommentModel *)commentModel

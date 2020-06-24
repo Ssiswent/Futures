@@ -26,6 +26,7 @@
 #import "MineMessagesVC.h"
 #import "MineCollectionVC.h"
 #import "MineLikeVC.h"
+#import "FeedbackVC.h"
 
 #import "CheckInVC.h"
 
@@ -60,6 +61,7 @@
 @property (weak, nonatomic) IBOutlet UIView *likeView;
 @property (weak, nonatomic) IBOutlet UIView *commentView;
 @property (weak, nonatomic) IBOutlet UIView *collectView;
+@property (weak, nonatomic) IBOutlet UIView *feedbackView;
 
 
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
@@ -132,6 +134,7 @@
     [self addClickCommentViewGes];
     [self addClickCollectViewGes];
     [self addClickLikeViewGes];
+    [self addClickFeedBackViewGes];
 }
 
 - (void)getUserDefault
@@ -274,11 +277,7 @@
 
 - (void)accountViewClicked
 {
-    //获取用户偏好
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    //读取userId
-    NSNumber *userId = [userDefault objectForKey:@"userId"];
-    if(userId == nil)
+    if(!_hasUserId)
     {
         LoginVC *loginVC = [LoginVC new];
         loginVC.delegate = self;
@@ -313,7 +312,9 @@
     else
     {
         LoginVC *loginVC = [LoginVC new];
-        [self.navigationController pushViewController:loginVC animated:YES];
+        loginVC.delegate = self;
+        //    loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:loginVC animated:YES completion:nil];
         [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
     }
 }
@@ -338,7 +339,9 @@
     else
     {
         LoginVC *loginVC = [LoginVC new];
-        [self.navigationController pushViewController:loginVC animated:YES];
+        loginVC.delegate = self;
+        //    loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:loginVC animated:YES completion:nil];
         [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
     }
 }
@@ -360,7 +363,9 @@
     else
     {
         LoginVC *loginVC = [LoginVC new];
-        [self.navigationController pushViewController:loginVC animated:YES];
+        loginVC.delegate = self;
+        //    loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:loginVC animated:YES completion:nil];
         [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
     }
 }
@@ -388,7 +393,9 @@
     else
     {
         LoginVC *loginVC = [LoginVC new];
-        [self.navigationController pushViewController:loginVC animated:YES];
+        loginVC.delegate = self;
+        //    loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:loginVC animated:YES completion:nil];
         [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
     }
 }
@@ -409,7 +416,9 @@
     else
     {
         LoginVC *loginVC = [LoginVC new];
-        [self.navigationController pushViewController:loginVC animated:YES];
+        loginVC.delegate = self;
+        //    loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:loginVC animated:YES completion:nil];
         [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
     }
 }
@@ -431,7 +440,33 @@
     else
     {
         LoginVC *loginVC = [LoginVC new];
-        [self.navigationController pushViewController:loginVC animated:YES];
+        loginVC.delegate = self;
+        //    loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:loginVC animated:YES completion:nil];
+        [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
+    }
+}
+
+- (void)addClickFeedBackViewGes
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(feedbackViewClicked)];
+    [_feedbackView addGestureRecognizer:tap];
+}
+
+- (void)feedbackViewClicked
+{
+    if(_hasUserId)
+    {
+        FeedbackVC *feedbackVC = [[FeedbackVC alloc] init];
+        feedbackVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:feedbackVC animated:YES];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        loginVC.delegate = self;
+        //    loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:loginVC animated:YES completion:nil];
         [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
     }
 }

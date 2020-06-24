@@ -28,7 +28,7 @@
 
 #import "CheckInModel.h"
 
-@interface HomeVC ()<UITableViewDataSource, UITableViewDelegate,YPNavigationBarConfigureStyle, HomeFourBtnCellDelegate, HomeCheckInCellDelegate>
+@interface HomeVC ()<UITableViewDataSource, UITableViewDelegate,YPNavigationBarConfigureStyle, HomeFourBtnCellDelegate, HomeCheckInCellDelegate, LoginVCDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -70,14 +70,17 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
     
     [self initialSetup];
     [self registerTableView];
-    [self getTopics];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self getUserDefault];
-    [self getSignList];
+    if(_userId != nil)
+    {
+        [self getSignList];
+    }
+    [self getTopics];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -139,11 +142,7 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
 
 - (void)homeCheckInCellDidClickCheckInBtn:(HomeCheckInCell *)homeCheckInCell
 {
-    //获取用户偏好
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    //读取userId
-    NSNumber *userId = [userDefault objectForKey:@"userId"];
-    if(userId != nil)
+    if(_userId != nil)
     {
         CheckInVC *checkInVC = CheckInVC.new;
         checkInVC.datesArray = _datesArray;
@@ -154,10 +153,18 @@ NSString *HomeNewsCellID = @"HomeNewsCell";
     else
     {
         LoginVC *loginVC = [LoginVC new];
+        loginVC.delegate = self;
         //        loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:loginVC animated:YES completion:nil];
         [Toast makeText:loginVC.view Message:@"请先注册或登录" afterHideTime:DELAYTiME];
     }
+}
+
+#pragma mark - LoginVCDelegate
+
+- (void)LoginVCDidGetUser:(LoginVC *)loginVC
+{
+    [self getUserDefault];
 }
 
 #pragma mark - yp_navigtionBarConfiguration

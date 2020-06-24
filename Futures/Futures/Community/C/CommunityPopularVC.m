@@ -86,26 +86,26 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 {
     //下拉刷新
     _popularTableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            WEAKSELF
-            weakSelf.loadMore = NO;
-            weakSelf.pageNumber = 1;
-    //        [weakSelf.tableView.mj_header endRefreshing];
-            [weakSelf getDynamics];
-        }];
-        
-        // 设置自动切换透明度(在导航栏下面自动隐藏)
-        _popularTableView.mj_header.automaticallyChangeAlpha = NO;
-        
-        // 上拉加载
-        _popularTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-            WEAKSELF
-            weakSelf.loadMore = YES;
-            weakSelf.pageNumber ++;
-    //        [weakSelf.tableView.mj_footer endRefreshing];
-            [weakSelf getDynamics];
-        }];
-        
-        [_popularTableView.mj_header beginRefreshing];
+        WEAKSELF
+        weakSelf.loadMore = NO;
+        weakSelf.pageNumber = 1;
+        //        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf getDynamics];
+    }];
+    
+    // 设置自动切换透明度(在导航栏下面自动隐藏)
+    _popularTableView.mj_header.automaticallyChangeAlpha = NO;
+    
+    // 上拉加载
+    _popularTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        WEAKSELF
+        weakSelf.loadMore = YES;
+        weakSelf.pageNumber ++;
+        //        [weakSelf.tableView.mj_footer endRefreshing];
+        [weakSelf getDynamics];
+    }];
+    
+    [_popularTableView.mj_header beginRefreshing];
 }
 
 -(UIView *)listView{
@@ -116,7 +116,7 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 {
     [self.popularTableView registerNib:[UINib nibWithNibName:NSStringFromClass([CommunityHeaderCell class]) bundle:nil] forCellReuseIdentifier:CommunityHeaderCellID];
     [self.popularTableView registerNib:[UINib nibWithNibName:NSStringFromClass([CommunityTopicCell class]) bundle:nil] forCellReuseIdentifier:CommunityTopicCellID];
-     [self.popularTableView registerNib:[UINib nibWithNibName:NSStringFromClass([CommunityFocusCell class]) bundle:nil] forCellReuseIdentifier:CommunityFocusCellID];
+    [self.popularTableView registerNib:[UINib nibWithNibName:NSStringFromClass([CommunityFocusCell class]) bundle:nil] forCellReuseIdentifier:CommunityFocusCellID];
     [self.popularTableView registerNib:[UINib nibWithNibName:NSStringFromClass([CommunityDynamicCell class]) bundle:nil] forCellReuseIdentifier:CommunityDynamicCellID];
 }
 
@@ -132,7 +132,7 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 }
 
 - (IBAction)publishBtnClicked:(id)sender {
-   PublishVC *publishVC = [PublishVC new];
+    PublishVC *publishVC = [PublishVC new];
     YPNavigationController *navC = [[YPNavigationController alloc]initWithRootViewController:publishVC];
     //    PublishVC.delegate = self;
     navC.modalPresentationStyle = UIModalPresentationFullScreen;
@@ -260,55 +260,27 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if(_numberOfSections == 4)
+    if(section == _numberOfSections - 1)
     {
-        if(section == 3)
-        {
-            CommunityDynamicHeaderView *dynamicHeaderView = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([CommunityDynamicHeaderView class]) owner:nil options:nil].firstObject;
-            return dynamicHeaderView;
-        }
-        else
-        {
-            return nil;
-        }
+        CommunityDynamicHeaderView *dynamicHeaderView = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([CommunityDynamicHeaderView class]) owner:nil options:nil].firstObject;
+        return dynamicHeaderView;
     }
+    
     else
     {
-        if(section == 2)
-        {
-            CommunityDynamicHeaderView *dynamicHeaderView = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([CommunityDynamicHeaderView class]) owner:nil options:nil].firstObject;
-            return dynamicHeaderView;
-        }
-        else
-        {
-            return nil;
-        }
+        return nil;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if(_numberOfSections == 4)
+    if(section == _numberOfSections - 1)
     {
-        if(section == 3)
-        {
-            return 36;
-        }
-        else
-        {
-            return 0.001;
-        }
+        return 36;
     }
     else
     {
-        if(section == 2)
-        {
-            return 36;
-        }
-        else
-        {
-            return 0.001;
-        }
+        return 0.001;
     }
 }
 
@@ -361,59 +333,29 @@ NSString *CommunityDynamicCellID = @"CommunityDynamicCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(_numberOfSections == 4)
+    if(indexPath.section == _numberOfSections - 1)
     {
-        if(indexPath.section == 3)
+        NSInteger count = self.allCommentsArray.count;
+        if(count % 2 != 0)
         {
-            NSInteger count = self.allCommentsArray.count;
-            if(count % 2 != 0)
-            {
-                count --;
-            }
-            NSInteger commentsNum1 = indexPath.row % (count / 2) * 2;
-            NSInteger commentsNum2 = commentsNum1 + 1;
-            NSMutableArray *temp = NSMutableArray.new;
-            [temp addObject: self.allCommentsArray[commentsNum1]];
-            [temp addObject: self.allCommentsArray[commentsNum2]];
-            
-            CommunityDynamicModel *dynamicModel = self.dynamicsArray[indexPath.row];
-            dynamicModel.commentArray = temp;
-            
-            DynamicDetailVC *dynamicDetailVC = DynamicDetailVC.new;
-            dynamicDetailVC.dynamicModel = dynamicModel;
-            dynamicDetailVC.delegate = self;
-            dynamicDetailVC.cellNum = indexPath.row;
-            dynamicDetailVC.rightBarBtnShow = YES;
-            [self.navigationController pushViewController:dynamicDetailVC animated:YES];
+            count --;
         }
+        NSInteger commentsNum1 = indexPath.row % (count / 2) * 2;
+        NSInteger commentsNum2 = commentsNum1 + 1;
+        NSMutableArray *temp = NSMutableArray.new;
+        [temp addObject: self.allCommentsArray[commentsNum1]];
+        [temp addObject: self.allCommentsArray[commentsNum2]];
+        
+        CommunityDynamicModel *dynamicModel = self.dynamicsArray[indexPath.row];
+        dynamicModel.commentArray = temp;
+        
+        DynamicDetailVC *dynamicDetailVC = DynamicDetailVC.new;
+        dynamicDetailVC.dynamicModel = dynamicModel;
+        dynamicDetailVC.delegate = self;
+        dynamicDetailVC.cellNum = indexPath.row;
+        dynamicDetailVC.rightBarBtnShow = YES;
+        [self.navigationController pushViewController:dynamicDetailVC animated:YES];
     }
-    else
-    {
-        if(indexPath.section == 2)
-        {
-            NSInteger count = self.allCommentsArray.count;
-            if(count % 2 != 0)
-            {
-                count --;
-            }
-            NSInteger commentsNum1 = indexPath.row % (count / 2) * 2;
-            NSInteger commentsNum2 = commentsNum1 + 1;
-            NSMutableArray *temp = NSMutableArray.new;
-            [temp addObject: self.allCommentsArray[commentsNum1]];
-            [temp addObject: self.allCommentsArray[commentsNum2]];
-            
-            CommunityDynamicModel *dynamicModel = self.dynamicsArray[indexPath.row];
-            dynamicModel.commentArray = temp;
-            
-            DynamicDetailVC *dynamicDetailVC = DynamicDetailVC.new;
-            dynamicDetailVC.dynamicModel = dynamicModel;
-            dynamicDetailVC.cellNum = indexPath.row;
-            dynamicDetailVC.delegate = self;
-            dynamicDetailVC.rightBarBtnShow = YES;
-            [self.navigationController pushViewController:dynamicDetailVC animated:YES];
-        }
-    }
-    
 }
 
 #pragma mark - API
